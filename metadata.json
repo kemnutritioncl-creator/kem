@@ -1,0 +1,6 @@
+{
+  "name": "KEM Nutrition Academy",
+  "description": "Sitio web de marca personal y academia para maternidad (KEM Mom) y profesionales de la salud (KEM Pro) dirigido por Katherinne Elgueta Mora.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
