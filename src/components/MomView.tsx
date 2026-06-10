@@ -127,7 +127,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
       </section>
 
       {/* 2. Para quién es */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
@@ -176,7 +176,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
       </section>
 
       {/* 3. El problema antes del programa */}
-      <section className="py-20 bg-stone-50 border-y border-stone-100">
+      <section className="py-12 sm:py-20 bg-stone-50 border-y border-stone-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
           <span className="text-naranja font-mono text-xs uppercase tracking-widest font-bold">La realidad actual</span>
           <h2 className="font-serif text-3xl text-carbon-title font-semibold tracking-tight leading-snug">
@@ -207,7 +207,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
       </section>
 
       {/* 4. La transformación */}
-      <section className="py-20 bg-white relative">
+      <section className="py-12 sm:py-20 bg-white relative">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <div className="w-12 h-12 rounded-full bg-verde/10 text-verde flex items-center justify-center mx-auto">
             <ShieldCheck className="w-6 h-6" />
@@ -223,7 +223,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
       </section>
 
       {/* 5. Qué incluye el programa */}
-      <section className="py-20 bg-[#FBF9F6]/40 border-t border-stone-150">
+      <section className="py-12 sm:py-20 bg-[#FBF9F6]/40 border-t border-stone-150">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="text-center space-y-3">
@@ -276,7 +276,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
       </section>
 
       {/* 6. Plan de estudios / Currículo (8 módulos) */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="text-center space-y-3">
@@ -309,7 +309,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
       </section>
 
       {/* 7. Planes y Precios */}
-      <section className="py-20 bg-[#FBF9F6]" id="planes-precios">
+      <section className="py-12 sm:py-20 bg-[#FBF9F6]" id="planes-precios">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="text-center space-y-3">
@@ -493,7 +493,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
       </section>
 
       {/* 9. Prueba social de madres */}
-      <section className="py-20 bg-bg-warm/40">
+      <section className="py-12 sm:py-20 bg-bg-warm/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center space-y-3 max-w-xl mx-auto">
             <span className="text-naranja font-mono text-xs uppercase tracking-widest font-bold">Reseñas clínicas</span>
@@ -582,7 +582,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
       </section>
 
       {/* 12. CTA Final hacia checkout */}
-      <section className="py-20 bg-gradient-to-tr from-[#2D3142] to-stone-900 text-white text-center relative overflow-hidden">
+      <section className="py-12 sm:py-20 bg-gradient-to-tr from-[#2D3142] to-stone-900 text-white text-center relative overflow-hidden">
         <div className="absolute top-1/2 left-1/4 w-80 h-80 bg-naranja/10 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10">
           <h2 className="font-serif text-3xl sm:text-4xl font-semibold tracking-tight">Inicia hoy tu embarazo sin preocupaciones</h2>
@@ -605,30 +605,27 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
       {showConfigAlert && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
           <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full border border-stone-200 shadow-2xl font-sans text-center space-y-4">
-            <div className="w-12 h-12 rounded-full bg-orange-50 text-orange-500 flex items-center justify-center mx-auto text-xl">⚠️</div>
-            <h4 className="font-serif font-bold text-carbon-title text-lg leading-tight">Enlace de Checkout no configurado</h4>
+            <div className="w-12 h-12 rounded-full bg-naranja/10 text-naranja flex items-center justify-center mx-auto text-xl">💬</div>
+            <h4 className="font-serif font-bold text-carbon-title text-lg leading-tight">Inscripción y Consultas</h4>
             <p className="text-xs sm:text-sm text-stone-600 font-light leading-relaxed">
-              El botón que presionaste ({alertTier}) requiere la dirección Webpay de Transbank clínica final para completar la compra. 
-              <br/><br/>
-              <strong>¿Cómo solucionarlo?</strong> Utiliza el <strong>Panel de Control Flotante (Icono de Tuerca)</strong> situado en la esquina inferior derecha de la pantalla para pegar tu enlace.
+              Para inscribirte en el plan <strong>{alertTier}</strong> o recibir asistencia sobre el proceso, puedes conversar directamente con Katherinne por WhatsApp. Te guiará con gusto en el registro.
             </p>
             <div className="pt-2 flex gap-3">
               <button
                 onClick={() => setShowConfigAlert(false)}
                 className="flex-1 py-2.5 rounded-lg border border-stone-300 text-stone-700 text-xs font-semibold hover:bg-stone-50 cursor-pointer"
               >
-                Volver al Sitio
+                Volver
               </button>
-              <button
-                onClick={() => {
-                  setShowConfigAlert(false);
-                  const btn = document.getElementById('trigger-config-panel');
-                  if (btn) btn.click();
-                }}
-                className="flex-1 py-2.5 rounded-lg bg-violeta text-white font-semibold text-xs hover:bg-[#5A3FA0] transition-colors cursor-pointer"
+              <a
+                href={urls.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setShowConfigAlert(false)}
+                className="flex-1 py-2.5 rounded-lg bg-verde hover:bg-opacity-90 text-white font-semibold text-xs transition-colors flex items-center justify-center"
               >
-                Configurar Ahora
-              </button>
+                Preguntar por WhatsApp →
+              </a>
             </div>
           </div>
         </div>

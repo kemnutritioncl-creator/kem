@@ -254,7 +254,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
       </section>
 
       {/* 3. Sobre Katherinne (Quién soy) */}
-      <section className="py-20 bg-bg-warm/40" id="sobre-katherinne">
+      <section className="py-12 sm:py-20 bg-bg-warm/40" id="sobre-katherinne">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
@@ -341,7 +341,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
       </section>
 
       {/* 4. El problema (Empatía pura) */}
-      <section className="py-20 bg-white border-y border-stone-100">
+      <section className="py-12 sm:py-20 bg-white border-y border-stone-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
           
           <span className="text-naranja font-mono text-xs uppercase tracking-widest font-bold">
@@ -390,7 +390,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
       </section>
 
       {/* 10. CTA Final con captura de leads */}
-      <section className="py-20 bg-gradient-to-tr from-[#2D3142] to-[#1F212E] text-white overflow-hidden relative">
+      <section className="py-12 sm:py-20 bg-gradient-to-tr from-[#2D3142] to-[#1F212E] text-white overflow-hidden relative">
         <div className="absolute top-1/2 left-1/4 w-[30vw] h-[30vw] bg-naranja/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-1/4 right-1/4 w-[30vw] h-[30vw] bg-violeta/15 rounded-full blur-3xl pointer-events-none" />
 
@@ -464,7 +464,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
       </section>
 
       {/* 5. Mini presentación KEM Mom (Tarjeta integrada con gradiente) */}
-      <section className="py-20 bg-gradient-to-br from-bg-warm to-white">
+      <section className="py-12 sm:py-20 bg-gradient-to-br from-bg-warm to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="bg-white rounded-[32px] border border-stone-200/60 p-8 sm:p-12 lg:p-16 shadow-lg relative overflow-hidden">
@@ -554,7 +554,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
       </section>
 
       {/* 6. Mini presentación KEM Pro (Tarjeta con acento violeta) */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="bg-white rounded-[32px] border border-stone-200/60 p-8 sm:p-12 lg:p-16 shadow-lg relative overflow-hidden">
@@ -644,7 +644,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
       </section>
 
       {/* 7. Prueba social segmentada (dos columnas) */}
-      <section className="py-20 bg-bg-warm/60 border-t border-stone-200/55" id="testimonios">
+      <section className="py-12 sm:py-20 bg-bg-warm/60 border-t border-stone-200/55" id="testimonios">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="text-center space-y-4 max-w-2xl mx-auto">
@@ -721,7 +721,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
       </section>
 
       {/* 9. Preguntas frecuentes generales (Estilo acordeón limpio) */}
-      <section className="py-20 bg-bg-warm/40 border-y border-stone-150">
+      <section className="py-12 sm:py-20 bg-bg-warm/40 border-y border-stone-150">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           
           <div className="text-center space-y-3">
