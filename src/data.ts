@@ -6,11 +6,31 @@
 import { CourseModule, Testimonial, FaqItem } from './types';
 
 export const universities = [
-  { name: "Pontificia Universidad Católica de Chile", logo: "PUC" },
-  { name: "Universidad Central", logo: "UCEN" },
-  { name: "Universidad Mayor", logo: "UMAYOR" },
-  { name: "Universidad Andrés Bello", logo: "UNAB" },
-  { name: "Universidad Católica del Norte", logo: "UCN" }
+  { 
+    name: "Pontificia Universidad Católica de Chile", 
+    logo: "PUC",
+    logoUrl: "https://lh3.googleusercontent.com/d/1AAzyqhfPV_Y5b2P_7jdlE__0sCfTn0IP"
+  },
+  { 
+    name: "Universidad Central", 
+    logo: "UCEN",
+    logoUrl: "https://lh3.googleusercontent.com/d/1latn_BGOX01IuZJ51-iJkYdsf-Ip7K_o"
+  },
+  { 
+    name: "Universidad Mayor", 
+    logo: "UMAYOR",
+    logoUrl: "https://lh3.googleusercontent.com/d/11dN4Bd8fJAbTCHqZ8OshXUIonxDT2UrT"
+  },
+  { 
+    name: "Universidad Andrés Bello", 
+    logo: "UNAB",
+    logoUrl: "https://lh3.googleusercontent.com/d/14M101YO6AK16HKmTCQJJPPdak8THMNAy"
+  },
+  { 
+    name: "Universidad Católica del Norte", 
+    logo: "UCN",
+    logoUrl: "https://lh3.googleusercontent.com/d/1aPSkuQWTTokcWOl2EcDEG43XNWE-Y0aY"
+  }
 ];
 
 export const momModules: CourseModule[] = [
@@ -128,7 +148,7 @@ export const momTestimonials: Testimonial[] = [
     id: "m3",
     name: "Camila Oteíza",
     role: "Mamá de Sofía (1 año)",
-    text: "Tantas opiniones contradictorias en redes me tenían estresada. En esta academia encontré evidencia respaldada pero explicada de forma simple para el día a día. Mi lactancia fue otra historia gracias a esto.",
+    text: "Tantas opiniones contradictorias en redes me tenían abrumada. En esta academia encontré evidencia respaldada pero explicada de forma simple para el día a día. Mi lactancia fue otra historia gracias a esto.",
     rating: 5
   }
 ];
@@ -160,7 +180,7 @@ export const proTestimonials: Testimonial[] = [
 export const generalFaqs: FaqItem[] = [
   {
     question: "¿Qué es KEM Nutrition Academy?",
-    answer: "Es la plataforma de educación nutricional especializada dirigida por Katherinne Elgueta Mora, Magíster en Nutrición Clínica Pediátrica. Proporcionamos una vía para que las madres vivan su proceso con tranquilidad (KEM Mom) y para que los profesionales se capaciten con base científica aplicada (KEM Pro)."
+    answer: "Es la plataforma de educación nutricional especializada dirigida por Katherinne Elgueta Mora, Magíster en Nutrición Clínica Pediátrica. Proporcionamos una vía para que las madres vivan su proceso con tranquilidad (Kem Mom) y para que los profesionales se capaciten con base científica aplicada (Kem Pro)."
   },
   {
     question: "¿Los cursos son en vivo o grabados?",
@@ -168,7 +188,7 @@ export const generalFaqs: FaqItem[] = [
   },
   {
     question: "¿Recibo certificación al terminar?",
-    answer: "Sí, todos los inscritos en KEM Pro reciben un certificado de finalización emitido por KEM Nutrition Academy que acredita las horas lectivas del programa clínico. KEM Mom emite una constancia de participación al completar el programa de educación para el hogar."
+    answer: "Sí, todos los inscritos en Kem Pro reciben un certificado de finalización emitido por KEM Nutrition Academy que acredita las horas lectivas del programa clínico. Kem Mom emite una constancia de participación al completar el programa de educación para el hogar."
   },
   {
     question: "¿Qué métodos de pago están disponibles?",
@@ -179,7 +199,7 @@ export const generalFaqs: FaqItem[] = [
 export const momFaqs: FaqItem[] = [
   {
     question: "Ya hay mucha información gratis en internet, ¿por qué pagar por un programa?",
-    answer: "En internet abunda la sobreinformación y los consejos contradictorios que generan estrés y culpa. Este programa condensa evidencia científica actualizada, filtrada por una docente universitaria y clínica, dándote respuestas claras y prácticas adaptadas a tu vida real, sin mitos ni restricciones innecesarias."
+    answer: "En internet abunda la sobreinformación y los consejos contradictorios que generan confusión y dudas. Este programa condensa evidencia científica actualizada, filtrada por una docente universitaria y clínica, dándote respuestas claras y prácticas adaptadas a tu vida real, sin mitos ni restricciones innecesarias."
   },
   {
     question: "Tengo muy poco tiempo y energía durante el embarazo, ¿cómo lo haré?",
@@ -195,7 +215,7 @@ export const momFaqs: FaqItem[] = [
   },
   {
     question: "Prefiero consultar directo cuando tenga una duda particular, ¿cómo me ayuda el programa?",
-    answer: "El programa te enseña las bases esenciales para prevenir complicaciones antes de que aparezcan. Te brinda autonomía. Y si tienes inquietudes, cuentas con la comunidad de mamás de KEM Mom y las sesiones de preguntas directas."
+    answer: "El programa te enseña las bases esenciales para prevenir complicaciones antes de que aparezcan. Te brinda autonomía. Y si tienes inquietudes, cuentas con la comunidad de mamás de Kem Mom y las sesiones de preguntas directas."
   }
 ];
 
@@ -210,7 +230,7 @@ export const proFaqs: FaqItem[] = [
   },
   {
     question: "¿Voy a recuperar rápido la inversión económica?",
-    answer: "Perfectamente. La consulta en nutrición materna es un área con alta demanda y poca oferta especializada de calidad. Con solo atender a 2 gestantes mensuales con un estándar premium, habrás amortizado la totalidad del programa KEM Pro."
+    answer: "Perfectamente. La consulta en nutrición materna es un área con alta demanda y poca oferta especializada de calidad. Con solo atender a 2 gestantes mensuales con un estándar premium, habrás amortizado la totalidad del programa Kem Pro."
   },
   {
     question: "No tengo el tiempo para destinar horas de estudio por mi carga laboral actual.",

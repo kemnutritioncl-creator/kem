@@ -28,10 +28,11 @@ interface ProViewProps {
   urls: CheckoutUrls;
   priceEsencial: string;
   priceAcompañamiento: string;
+  priceConsulta: string;
   setCurrentPage: (page: PageId) => void;
 }
 
-export default function ProView({ urls, priceEsencial, priceAcompañamiento, setCurrentPage }: ProViewProps) {
+export default function ProView({ urls, priceEsencial, priceAcompañamiento, priceConsulta, setCurrentPage }: ProViewProps) {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [showConfigAlert, setShowConfigAlert] = useState(false);
   const [alertTier, setAlertTier] = useState('');
@@ -53,7 +54,7 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, set
   }, []);
 
   const handleCheckoutClick = (e: React.MouseEvent, tierName: string, url: string) => {
-    if (!url || url.includes('PEGAR_URL') || url === '#' || url.endsWith('Esencial') || url.endsWith('Acompanamiento')) {
+    if (!url || url.includes('PEGAR_URL') || url === '#' || url.endsWith('Esencial') || url.endsWith('Acompanamiento') || url.endsWith('Consulta')) {
       e.preventDefault();
       setAlertTier(tierName);
       setShowConfigAlert(true);
@@ -76,7 +77,7 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, set
             <div className="lg:col-span-8 space-y-6 text-center lg:text-left">
               <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-violeta/10 border border-violeta/20 text-violeta">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span className="text-xs font-bold uppercase tracking-wider">KEM Pro Academy</span>
+                <span className="text-xs font-bold uppercase tracking-wider">Kem Pro Academy</span>
               </div>
 
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-carbon-title font-semibold tracking-tight">
@@ -108,14 +109,15 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, set
             </div>
 
             <div className="lg:col-span-4 flex justify-center">
-              <div className="relative w-64 h-64 sm:w-72 sm:h-72">
-                <div className="absolute inset-0 bg-gradient-to-tr from-violeta/20 to-verde/10 rounded-full rotate-45 scale-105" />
-                <div className="absolute inset-2 bg-white rounded-full flex flex-col items-center justify-center p-6 text-center border border-stone-100 shadow-md">
-                  <div className="w-16 h-16 rounded-full bg-violeta/5 text-violeta flex items-center justify-center mb-3">
-                    <Award className="w-8 h-8" />
-                  </div>
-                  <span className="text-[10px] tracking-widest uppercase font-mono text-stone-400 font-bold block mb-1">[FOTO EN CONSULTA]</span>
-                  <p className="text-xs text-stone-500 max-w-[160px] leading-tight">Preparación avanzada con autoridad docente universitaria.</p>
+              <div className="relative w-64 h-64 sm:w-72 sm:h-72 select-none">
+                <div className="absolute inset-0 bg-gradient-to-tr from-violeta/20 to-verde/10 rounded-full rotate-6 scale-105" />
+                <div className="absolute inset-0 bg-white rounded-full overflow-hidden border-2 border-stone-100 shadow-md">
+                  <img 
+                    src="https://lh3.googleusercontent.com/d/1pJM1vAda6tpbRYFYERLJA5aHFFDq5yxu"
+                    alt="KEM Pro Academy Hero" 
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -212,7 +214,7 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, set
           </div>
           <p className="text-stone-400 font-mono text-xs uppercase tracking-widest font-bold">Nuestra Meta</p>
           <h2 className="font-serif text-3xl sm:text-4xl text-carbon-title font-semibold tracking-tight">
-            La Transformación KEM Pro
+            La Transformación Kem Pro
           </h2>
           <blockquote className="text-xl sm:text-2xl font-serif italic text-stone-700 max-w-3xl mx-auto leading-relaxed">
             "Al terminar este programa vas a sentirte preparada para atender gestantes con absoluta seguridad clínica, con una metodología clara, herramientas profesionales validadas y recursos de autoría listos para aplicar."
@@ -283,7 +285,7 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, set
           
           <div className="text-center space-y-3">
             <span className="text-violeta font-mono text-xs uppercase tracking-widest font-bold">Formación Técnica Unificadora</span>
-            <h2 className="font-serif text-3xl font-semibold text-carbon-title tracking-tight text-center">Plan de Estudios KEM Pro</h2>
+            <h2 className="font-serif text-3xl font-semibold text-carbon-title tracking-tight text-center">Plan de Estudios Kem Pro</h2>
             <p className="text-xs text-stone-500 max-w-sm mx-auto font-light">
               Un recorrido profundo de 10 módulos creados meticulosamente con base metodológica formal.
             </p>
@@ -320,7 +322,7 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, set
             <p className="text-sm text-stone-500 max-w-md mx-auto font-light">Opciones de financiamiento rápido con reembolso directo y Webpay de Chile.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
             
             {/* Card 1: Plan Esencial */}
             <div className="bg-white rounded-3xl border border-stone-200/70 p-8 flex flex-col justify-between shadow-xs hover:border-violeta/40 hover:shadow-md transition-all">
@@ -359,7 +361,7 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, set
               <div className="pt-8">
                 <a
                   href={urls.proEsencial}
-                  onClick={(e) => handleCheckoutClick(e, 'KEM Pro Esencial', urls.proEsencial)}
+                  onClick={(e) => handleCheckoutClick(e, 'Kem Pro Esencial', urls.proEsencial)}
                   className="block text-center w-full py-3.5 rounded-full bg-stone-900 text-white font-bold text-xs tracking-wider uppercase hover:bg-stone-800 transition-colors cursor-pointer"
                   id="pro-checkout-esencial"
                 >
@@ -401,7 +403,7 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, set
                     <Check className="w-4 h-4 text-violeta shrink-0 font-bold" /> <strong>1 sesión de consultoría técnica individual al mes</strong> para analizar tus propios pacientes.
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-violeta shrink-0 font-bold" /> Pauta preferencial para derivación directa de pacientes ginecológicos de KEM Mom.
+                    <Check className="w-4 h-4 text-violeta shrink-0 font-bold" /> Pauta preferencial para derivación directa de pacientes ginecológicos de Kem Mom.
                   </li>
                 </ul>
               </div>
@@ -409,11 +411,58 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, set
               <div className="pt-8">
                 <a
                   href={urls.proAcompañamiento}
-                  onClick={(e) => handleCheckoutClick(e, 'KEM Pro Acompañamiento', urls.proAcompañamiento)}
+                  onClick={(e) => handleCheckoutClick(e, 'Kem Pro Acompañamiento', urls.proAcompañamiento)}
                   className="block text-center w-full py-4 rounded-full bg-violeta text-white font-bold text-xs tracking-wider uppercase hover:bg-violeta-dark shadow-md transition-all cursor-pointer animate-pulse-slow"
                   id="pro-checkout-acompanamiento"
                 >
                   Inscribirme al Plan Acompañamiento
+                </a>
+              </div>
+
+            </div>
+
+            {/* Card 3: Consulta Clínica Individual */}
+            <div className="bg-white rounded-3xl border border-stone-200/70 p-8 flex flex-col justify-between shadow-xs hover:border-[#6FA987]/40 hover:shadow-md transition-all">
+              
+              <div className="space-y-6">
+                <div>
+                  <span className="px-3 py-1 rounded-full bg-verde/10 text-verde text-[10px] font-bold uppercase tracking-wider">
+                    Sesión Individual
+                  </span>
+                  <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2">Consulta Clínica 1:1</h3>
+                  <p className="text-xs text-stone-505 mt-1">Sesión individual exclusiva y 100% personalizada.</p>
+                </div>
+
+                <div className="flex items-baseline gap-1 bg-stone-50 p-4 rounded-xl border border-stone-100">
+                  <span className="text-xs font-bold text-stone-400 font-sans">CLP</span>
+                  <span className="text-3xl font-serif font-extrabold text-[#2D3142]">${priceConsulta}</span>
+                  <span className="text-xs text-stone-505 font-light">Por Sesión</span>
+                </div>
+
+                <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans">
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-[#6FA987] shrink-0" /> <strong>1 sesión clínica personalizada de 45-60 min Obesidad/Embarazo</strong>.
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-[#6FA987] shrink-0" /> Revisión integral de tus exámenes médicos y laboratorios reales.
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-[#6FA987] shrink-0" /> Diseño, calibración de pauta clínica o mentoría de caso personalizada.
+                  </li>
+                  <li className="flex items-center gap-2 text-stone-400">
+                    <X className="w-4 h-4 shrink-0" /> No otorga acceso continuo a los 10 módulos de la certificación.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="pt-8">
+                <a
+                  href={urls.proConsulta}
+                  onClick={(e) => handleCheckoutClick(e, 'Kem Pro Consulta Individual', urls.proConsulta)}
+                  className="block text-center w-full py-3.5 rounded-full bg-[#2D3142] text-white font-bold text-xs tracking-wider uppercase hover:bg-stone-850 transition-colors cursor-pointer"
+                  id="pro-checkout-consulta"
+                >
+                  Agendar Consulta Individual
                 </a>
               </div>
 
@@ -452,7 +501,7 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, set
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center space-y-3 max-w-xl mx-auto">
             <span className="text-[#6FA987] font-mono text-xs uppercase tracking-widest font-bold">Confianza de colegas</span>
-            <h2 className="font-serif text-3xl font-semibold text-carbon-title tracking-tight text-center">Colegas con sello KEM</h2>
+            <h2 className="font-serif text-3xl font-semibold text-carbon-title tracking-tight text-center">Nutricionistas que ya atienden con total seguridad y confianza</h2>
             <p className="text-sm text-stone-500 font-light">Lee las palabras de otros nutricionistas que aplicaron nuestra metodología de cálculo y pautas.</p>
           </div>
 
@@ -484,15 +533,20 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, set
       <section className="py-16 bg-white border-t border-stone-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="p-6 sm:p-10 rounded-2xl bg-[#F6F5FB] border border-violeta/10 flex flex-col sm:flex-row items-center gap-8">
-            <div className="w-24 h-24 rounded-full bg-stone-200 shrink-0 border-4 border-white shadow-md flex items-center justify-center font-serif text-2xl font-bold text-violeta relative">
-              K
+            <div className="w-24 h-24 rounded-full overflow-hidden shrink-0 border-4 border-white shadow-md relative">
+              <img 
+                src="https://lh3.googleusercontent.com/d/1toiIEgGroES39InEcNVkgpKrEYjwrybk" 
+                alt="Katherinne Elgueta Mora" 
+                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover"
+              />
               <div className="absolute -bottom-1 -right-1 bg-[#6FA987] text-white p-1 rounded-full"><Award className="w-3.5 h-3.5" /></div>
             </div>
             <div className="space-y-3 text-center sm:text-left">
-              <span className="px-2 py-0.5 rounded-full bg-violeta/10 text-violeta text-[9px] font-bold uppercase tracking-wider font-mono">Trayectoria Académica</span>
+              <span className="px-2 py-0.5 rounded-full bg-violeta/10 text-violeta text-[9px] font-bold uppercase tracking-wider font-mono">Mentoría y Respaldo Experto</span>
               <h4 className="font-serif text-lg font-bold text-carbon-title">Formación Académica con Katherinne Elgueta Mora</h4>
               <p className="text-xs text-[#514F5C] leading-relaxed font-light">
-                Magíster en Nutrición Clínica del INTA de la Universidad de Chile. Coordinadora activa de simulación clínica en el área sanitaria y más de 8 años capacitando formalmente a profesionales de la salud con un sello académico intachable.
+                Especialista con postgrado en el INTA (U. de Chile), brindándote la base científica más avanzada y herramientas prácticas para que lideres tus consultas con total solvencia.
               </p>
             </div>
           </div>
@@ -505,7 +559,7 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, set
           
           <div className="text-center space-y-3">
             <span className="text-verde font-mono text-xs uppercase tracking-widest font-bold">Consultas Técnicas</span>
-            <h2 className="font-serif text-3xl font-semibold text-carbon-title tracking-tight">Preguntas Frecuentes - KEM Pro</h2>
+            <h2 className="font-serif text-3xl font-semibold text-carbon-title tracking-tight">Preguntas Frecuentes - Kem Pro</h2>
             <p className="text-xs text-stone-505 font-light">Aclaramos rigurosamente cualquier objeción técnica de nuestro currículo.</p>
           </div>
 

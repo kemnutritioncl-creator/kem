@@ -15,7 +15,6 @@ import Footer from './components/Footer';
 import HomeView from './components/HomeView';
 import MomView from './components/MomView';
 import ProView from './components/ProView';
-import ConfigDrawer from './components/ConfigDrawer';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageId>('home');
@@ -29,17 +28,35 @@ export default function App() {
     return localStorage.getItem('kem_price_acompañamiento') || '217.000';
   });
 
+  const [priceConsulta, setPriceConsulta] = useState<string>(() => {
+    return localStorage.getItem('kem_price_consulta') || '47.000';
+  });
+
   // Unique Webpay and WhatsApp links
   const [urls, setUrls] = useState<CheckoutUrls>(() => {
     try {
       const cached = localStorage.getItem('kem_checkout_urls');
-      if (cached) return JSON.parse(cached);
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        // Ensure new fields are backward compatible in cached structures
+        return {
+          momEsencial: parsed.momEsencial || "https://webpay.transbank.cl/KEM-Mom-Esencial",
+          momAcompañamiento: parsed.momAcompañamiento || "https://webpay.transbank.cl/KEM-Mom-Acompanamiento",
+          momConsulta: parsed.momConsulta || "https://webpay.transbank.cl/KEM-Mom-Consulta",
+          proEsencial: parsed.proEsencial || "https://webpay.transbank.cl/KEM-Pro-Esencial",
+          proAcompañamiento: parsed.proAcompañamiento || "https://webpay.transbank.cl/KEM-Pro-Acompanamiento",
+          proConsulta: parsed.proConsulta || "https://webpay.transbank.cl/KEM-Pro-Consulta",
+          whatsapp: parsed.whatsapp || "https://wa.me/56985489624?text=Hola%20Katherinne%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%2520sobre%20KEM%20Nutrition%20Academy"
+        };
+      }
     } catch (e) {}
     return {
       momEsencial: "https://webpay.transbank.cl/KEM-Mom-Esencial",
       momAcompañamiento: "https://webpay.transbank.cl/KEM-Mom-Acompanamiento",
+      momConsulta: "https://webpay.transbank.cl/KEM-Mom-Consulta",
       proEsencial: "https://webpay.transbank.cl/KEM-Pro-Esencial",
       proAcompañamiento: "https://webpay.transbank.cl/KEM-Pro-Acompanamiento",
+      proConsulta: "https://webpay.transbank.cl/KEM-Pro-Consulta",
       whatsapp: "https://wa.me/56985489624?text=Hola%20Katherinne%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20KEM%20Nutrition%20Academy"
     };
   });
@@ -52,6 +69,10 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem('kem_price_acompañamiento', priceAcompañamiento);
   }, [priceAcompañamiento]);
+
+  useEffect(() => {
+    localStorage.setItem('kem_price_consulta', priceConsulta);
+  }, [priceConsulta]);
 
   useEffect(() => {
     localStorage.setItem('kem_checkout_urls', JSON.stringify(urls));
@@ -123,6 +144,7 @@ export default function App() {
             urls={urls} 
             priceEsencial={priceEsencial} 
             priceAcompañamiento={priceAcompañamiento} 
+            priceConsulta={priceConsulta}
             setCurrentPage={handlePageChange}
           />
         )}
@@ -131,6 +153,7 @@ export default function App() {
             urls={urls} 
             priceEsencial={priceEsencial} 
             priceAcompañamiento={priceAcompañamiento} 
+            priceConsulta={priceConsulta}
             setCurrentPage={handlePageChange}
           />
         )}
@@ -143,15 +166,6 @@ export default function App() {
         whatsappUrl={urls.whatsapp}
       />
 
-      {/* Collapsible settings gear drawer to live-update checkout links on Webpay & pricing values */}
-      <ConfigDrawer 
-        urls={urls} 
-        setUrls={setUrls}
-        priceEsencial={priceEsencial}
-        setPriceEsencial={setPriceEsencial}
-        priceAcompañamiento={priceAcompañamiento}
-        setPriceAcompañamiento={setPriceAcompañamiento}
-      />
     </div>
   );
 }

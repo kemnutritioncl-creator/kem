@@ -28,10 +28,11 @@ interface MomViewProps {
   urls: CheckoutUrls;
   priceEsencial: string;
   priceAcompañamiento: string;
+  priceConsulta: string;
   setCurrentPage: (page: PageId) => void;
 }
 
-export default function MomView({ urls, priceEsencial, priceAcompañamiento, setCurrentPage }: MomViewProps) {
+export default function MomView({ urls, priceEsencial, priceAcompañamiento, priceConsulta, setCurrentPage }: MomViewProps) {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [showConfigAlert, setShowConfigAlert] = useState(false);
   const [alertTier, setAlertTier] = useState('');
@@ -53,7 +54,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, set
   }, []);
 
   const handleCheckoutClick = (e: React.MouseEvent, tierName: string, url: string) => {
-    if (!url || url.includes('PEGAR_URL') || url === '#' || url.endsWith('Esencial') || url.endsWith('Acompanamiento')) {
+    if (!url || url.includes('PEGAR_URL') || url === '#' || url.endsWith('Esencial') || url.endsWith('Acompanamiento') || url.endsWith('Consulta')) {
       e.preventDefault();
       setAlertTier(tierName);
       setShowConfigAlert(true);
@@ -76,7 +77,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, set
             <div className="lg:col-span-8 space-y-6 text-center lg:text-left">
               <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-naranja/10 border border-naranja/20 text-naranja">
                 <Heart className="w-3.5 h-3.5 fill-naranja/10" />
-                <span className="text-xs font-bold uppercase tracking-wider">KEM Mom Academy</span>
+                <span className="text-xs font-bold uppercase tracking-wider">Kem Mom Academy</span>
               </div>
 
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-carbon-title font-semibold tracking-tight">
@@ -108,14 +109,15 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, set
             </div>
 
             <div className="lg:col-span-4 flex justify-center">
-              <div className="relative w-64 h-64 sm:w-72 sm:h-72">
-                <div className="absolute inset-0 bg-gradient-to-tr from-naranja/20 to-verde/10 rounded-full rotate-45 scale-105" />
-                <div className="absolute inset-2 bg-white rounded-full flex flex-col items-center justify-center p-6 text-center border border-stone-100 shadow-md">
-                  <div className="w-16 h-16 rounded-full bg-naranja/5 text-naranja flex items-center justify-center mb-3">
-                    <Heart className="w-8 h-8 fill-naranja/10" />
-                  </div>
-                  <span className="text-[10px] tracking-widest uppercase font-mono text-stone-400 font-bold block mb-1">[FOTO MAMÁ]</span>
-                  <p className="text-xs text-stone-500 max-w-[160px] leading-tight">Maternidad guiada paso a paso con empatía y claridad.</p>
+              <div className="relative w-64 h-64 sm:w-72 sm:h-72 select-none">
+                <div className="absolute inset-0 bg-gradient-to-tr from-naranja/20 to-verde/10 rounded-full rotate-6 scale-105" />
+                <div className="absolute inset-0 bg-white rounded-full overflow-hidden border-2 border-stone-100 shadow-md">
+                  <img 
+                    src="https://lh3.googleusercontent.com/d/1AKWh181CV8t6qqVM01szMhVBUrLdDlr8"
+                    alt="KEM Mom Academy Hero" 
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -212,7 +214,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, set
           </div>
           <p className="text-stone-400 font-mono text-xs uppercase tracking-widest font-bold">Nuestra Promesa</p>
           <h2 className="font-serif text-3xl sm:text-4xl text-carbon-title font-semibold tracking-tight">
-            La Transformación KEM Mom
+            La Transformación Kem Mom
           </h2>
           <blockquote className="text-xl sm:text-2xl font-serif italic text-stone-700 max-w-3xl mx-auto leading-relaxed">
             "Al terminar este programa vas a sentirte más segura y confiada para decidir sobre tu alimentación y la de tu bebé, con claridad, paz mental y completamente libre de juicios."
@@ -279,7 +281,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, set
           
           <div className="text-center space-y-3">
             <span className="text-[#6FA987] font-mono text-xs uppercase tracking-widest font-bold">Cronograma de Contenido</span>
-            <h2 className="font-serif text-3xl font-semibold text-carbon-title tracking-tight text-center">Plan de Estudios KEM Mom</h2>
+            <h2 className="font-serif text-3xl font-semibold text-carbon-title tracking-tight text-center">Plan de Estudios Kem Mom</h2>
             <p className="text-xs text-stone-500 max-w-sm mx-auto font-light">
               Explora en detalle el contenido de los 8 módulos estructurales concebidos para tu evolución.
             </p>
@@ -316,7 +318,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, set
             <p className="text-sm text-stone-500 max-w-md mx-auto font-light">Valores en pesos chilenos (CLP). Inscripción inmediata segura vía Webpay.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
             
             {/* Card 1: Plan Esencial */}
             <div className="bg-white rounded-3xl border border-stone-200/70 p-8 flex flex-col justify-between shadow-xs hover:border-naranja/40 hover:shadow-md transition-all">
@@ -327,13 +329,13 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, set
                     Plan Esencial (Asíncrono)
                   </span>
                   <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2">Embarazo con Confianza</h3>
-                  <p className="text-xs text-stone-500 mt-1">Estudia a tu propio ritmo con la guía oficial.</p>
+                  <p className="text-xs text-stone-505 mt-1">Estudia a tu propio ritmo con la guía oficial.</p>
                 </div>
 
                 <div className="flex items-baseline gap-1 bg-stone-50 p-4 rounded-xl border border-stone-100">
                   <span className="text-xs font-bold text-stone-400 font-sans">CLP</span>
-                  <span className="text-3xl sm:text-4xl font-serif font-extrabold text-[#2D3142]">${priceEsencial}</span>
-                  <span className="text-xs text-stone-500 font-light">Pago Único</span>
+                  <span className="text-3xl font-serif font-extrabold text-[#2D3142]">${priceEsencial}</span>
+                  <span className="text-xs text-stone-505 font-light">Pago Único</span>
                 </div>
 
                 <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans">
@@ -347,7 +349,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, set
                     <Check className="w-4 h-4 text-verde shrink-0" /> Comunidad interactiva de apoyo.
                   </li>
                   <li className="flex items-center gap-2 text-stone-400">
-                    <X className="w-4 h-4 shrink-0" /> No incluye sesiones grupales en vivo ni individuales.
+                    <X className="w-4 h-4 shrink-0" /> No incluye sesiones grupales en vivo ni consultas uno a uno.
                   </li>
                 </ul>
               </div>
@@ -355,7 +357,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, set
               <div className="pt-8">
                 <a
                   href={urls.momEsencial}
-                  onClick={(e) => handleCheckoutClick(e, 'KEM Mom Esencial', urls.momEsencial)}
+                  onClick={(e) => handleCheckoutClick(e, 'Kem Mom Esencial', urls.momEsencial)}
                   className="block text-center w-full py-3.5 rounded-full bg-stone-900 text-white font-bold text-xs tracking-wider uppercase hover:bg-stone-800 transition-colors cursor-pointer"
                   id="mom-checkout-esencial"
                 >
@@ -367,7 +369,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, set
 
             {/* Card 2: Plan Acompañamiento - DESTACADO */}
             <div className="bg-white rounded-3xl border-2 border-naranja p-8 flex flex-col justify-between shadow-lg relative transform md:scale-102">
-              <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-naranja text-white font-mono text-[9px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-sm">
+              <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-naranja text-white font-mono text-[9px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-sm whitespace-nowrap">
                 Altamente Recomendado
               </div>
 
@@ -377,13 +379,13 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, set
                     Plan Completo + Acompañamiento
                   </span>
                   <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2">Seguridad + Cercanía</h3>
-                  <p className="text-xs text-stone-500 mt-1">Con sesiones en vivo y supervisión uno a uno.</p>
+                  <p className="text-xs text-stone-505 mt-1">Con sesiones en vivo y supervisión uno a uno.</p>
                 </div>
 
                 <div className="flex items-baseline gap-1 bg-gradient-to-tr from-naranja/5 to-naranja/15 p-4 rounded-xl border border-naranja/10">
                   <span className="text-xs font-bold text-naranja font-sans">CLP</span>
-                  <span className="text-3xl sm:text-4xl font-serif font-extrabold text-[#2D3142]">${priceAcompañamiento}</span>
-                  <span className="text-xs text-stone-500 font-light">Pago Único</span>
+                  <span className="text-3xl font-serif font-extrabold text-[#2D3142]">${priceAcompañamiento}</span>
+                  <span className="text-xs text-stone-505 font-light">Pago Único</span>
                 </div>
 
                 <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans">
@@ -405,11 +407,58 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, set
               <div className="pt-8">
                 <a
                   href={urls.momAcompañamiento}
-                  onClick={(e) => handleCheckoutClick(e, 'KEM Mom Acompañamiento', urls.momAcompañamiento)}
-                  className="block text-center w-full py-4 rounded-full bg-naranja text-white font-bold text-xs tracking-wider uppercase hover:bg-orange-600 shadow-md transition-all cursor-pointer"
+                  onClick={(e) => handleCheckoutClick(e, 'Kem Mom Acompañamiento', urls.momAcompañamiento)}
+                  className="block text-center w-full py-4 rounded-full bg-naranja text-white font-bold text-xs tracking-wider uppercase hover:bg-orange-600 shadow-md transition-all cursor-pointer animate-pulse-slow"
                   id="mom-checkout-acompanamiento"
                 >
                   Inscribirme al Plan Acompañamiento
+                </a>
+              </div>
+
+            </div>
+
+            {/* Card 3: Consulta Clínica Individual */}
+            <div className="bg-white rounded-3xl border border-stone-200/70 p-8 flex flex-col justify-between shadow-xs hover:border-verde/40 hover:shadow-md transition-all">
+              
+              <div className="space-y-6">
+                <div>
+                  <span className="px-3 py-1 rounded-full bg-verde/10 text-verde text-[10px] font-bold uppercase tracking-wider">
+                    Sesión Individual
+                  </span>
+                  <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2">Consulta Clínica 1:1</h3>
+                  <p className="text-xs text-stone-505 mt-1">Sesión individual exclusiva y 100% personalizada.</p>
+                </div>
+
+                <div className="flex items-baseline gap-1 bg-stone-50 p-4 rounded-xl border border-stone-100">
+                  <span className="text-xs font-bold text-stone-400 font-sans">CLP</span>
+                  <span className="text-3xl font-serif font-extrabold text-[#2D3142]">${priceConsulta}</span>
+                  <span className="text-xs text-stone-505 font-light">Por Sesión</span>
+                </div>
+
+                <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans">
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-verde shrink-0" /> <strong>1 sesión clínica personalizada de 45-60 min Obesidad/Embarazo</strong>.
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-verde shrink-0" /> Revisión profunda de exámenes médicos y laboratorios reales.
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-verde shrink-0" /> Diseño y calibración de tu pauta y suplementación a medida.
+                  </li>
+                  <li className="flex items-center gap-2 text-stone-400">
+                    <X className="w-4 h-4 shrink-0" /> No otorga acceso continuo a los 8 módulos de la academia grabada.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="pt-8">
+                <a
+                  href={urls.momConsulta}
+                  onClick={(e) => handleCheckoutClick(e, 'Kem Mom Consulta Individual', urls.momConsulta)}
+                  className="block text-center w-full py-3.5 rounded-full bg-[#2D3142] text-white font-bold text-xs tracking-wider uppercase hover:bg-stone-850 transition-colors cursor-pointer"
+                  id="mom-checkout-consulta"
+                >
+                  Agendar Consulta Individual
                 </a>
               </div>
 
@@ -448,7 +497,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, set
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center space-y-3 max-w-xl mx-auto">
             <span className="text-naranja font-mono text-xs uppercase tracking-widest font-bold">Reseñas clínicas</span>
-            <h2 className="font-serif text-3xl font-semibold text-carbon-title tracking-tight text-center">Historias de éxito materno</h2>
+            <h2 className="font-serif text-3xl font-semibold text-carbon-title tracking-tight text-center">La tranquilidad de mamás que ya viven su embarazo sin miedos</h2>
             <p className="text-sm text-stone-500 font-light">Observa los comentarios auténticos de mujeres que redefinieron su proceso de gestación.</p>
           </div>
 
@@ -480,15 +529,20 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, set
       <section className="py-16 bg-white border-t border-stone-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="p-6 sm:p-10 rounded-2xl bg-[#FBF9F6]/80 border border-stone-200/50 flex flex-col sm:flex-row items-center gap-8">
-            <div className="w-24 h-24 rounded-full bg-stone-200 shrink-0 border-4 border-white shadow-md flex items-center justify-center font-serif text-2xl font-bold text-[#6C4BB6] relative">
-              K
+            <div className="w-24 h-24 rounded-full overflow-hidden shrink-0 border-4 border-white shadow-md relative">
+              <img 
+                src="https://lh3.googleusercontent.com/d/1toiIEgGroES39InEcNVkgpKrEYjwrybk" 
+                alt="Katherinne Elgueta Mora" 
+                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover"
+              />
               <div className="absolute -bottom-1 -right-1 bg-verde text-white p-1 rounded-full"><Award className="w-3.5 h-3.5" /></div>
             </div>
             <div className="space-y-3 text-center sm:text-left">
-              <span className="px-2 py-0.5 rounded-full bg-naranja/10 text-naranja text-[9px] font-bold uppercase tracking-wider font-mono">Directora KEM Nutrition</span>
+              <span className="px-2 py-0.5 rounded-full bg-naranja/10 text-naranja text-[9px] font-bold uppercase tracking-wider font-mono">Tu mentora experta</span>
               <h4 className="font-serif text-lg font-bold text-carbon-title">Sobre Katherinne Elgueta Mora</h4>
               <p className="text-xs text-[#514F5C] leading-relaxed font-light">
-                Magíster en Nutrición Clínica del INTA, Universidad de Chile, y experimentada docente universitaria. Integra un enfoque de vanguardia estrictamente basado en estudios científicos con la empatía y contención que demanda tu maternidad real.
+                Especialista con postgrado en el INTA (U. de Chile), entregándote la tranquilidad de un respaldo científico de excelencia combinado con el cuidado empático que merece tu proceso.
               </p>
             </div>
           </div>
@@ -501,7 +555,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, set
           
           <div className="text-center space-y-3">
             <span className="text-[#6FA987] font-mono text-xs uppercase tracking-widest font-bold font-sans">Derribando Objeciones</span>
-            <h2 className="font-serif text-3xl font-semibold text-carbon-title tracking-tight">Preguntas Frecuentes - KEM Mom</h2>
+            <h2 className="font-serif text-3xl font-semibold text-carbon-title tracking-tight">Preguntas Frecuentes - Kem Mom</h2>
             <p className="text-xs text-stone-505 font-light">Resolvemos con total transparencia tus principales dudas iniciales.</p>
           </div>
 

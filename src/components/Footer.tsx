@@ -95,7 +95,7 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
                   id="footer-shortcut-mom"
                 >
                   <Heart className="w-3.5 h-3.5 text-naranja fill-naranja/10" />
-                  KEM Mom (Para Madres)
+                  Kem Mom (Para Madres)
                 </button>
               </li>
               <li>
@@ -105,7 +105,7 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
                   id="footer-shortcut-pro"
                 >
                   <Sparkles className="w-3.5 h-3.5 text-[#8C6CE6]" />
-                  KEM Pro (Nutricionistas)
+                  Kem Pro (Nutricionistas)
                 </button>
               </li>
               <li>
@@ -147,7 +147,7 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
               <span className="font-semibold text-[#F2994A] block mb-1 uppercase tracking-wider text-[10px]">
                 Aviso Importante de Responsabilidad Médica
               </span>
-              Todo el contenido educativo provisto en las academias KEM Mom y KEM Pro, guías descargables, checklists, recetarios y charlas, es estrictamente informativo y docente. No sustituye de ninguna forma la consulta clínica individualizada, controles ginecobstétricos, de matonería o pediátricos, ni constituye asesoría clínica vinculante.
+              Todo el contenido educativo provisto en las academias Kem Mom y Kem Pro, guías descargables, checklists, recetarios y charlas, es estrictamente informativo y docente. No sustituye de ninguna forma la consulta clínica individualizada, controles ginecobstétricos, de matonería o pediátricos, ni constituye asesoría clínica vinculante.
             </div>
           </div>
         </div>

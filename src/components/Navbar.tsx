@@ -91,7 +91,7 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
             >
               <span className="flex items-center gap-1">
                 <Heart className="w-3.5 h-3.5 inline text-naranja fill-naranja/20" />
-                KEM Mom
+                Kem Mom
               </span>
               {currentPage === 'kem-mom' && (
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-naranja rounded-full" />
@@ -106,7 +106,7 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
             >
               <span className="flex items-center gap-1">
                 <Sparkles className="w-3.5 h-3.5 inline text-violeta" />
-                KEM Pro
+                Kem Pro
               </span>
               {currentPage === 'kem-pro' && (
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-violeta rounded-full" />
@@ -175,7 +175,7 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
             }`}
             id="mobile-nav-mom"
           >
-            KEM Mom (Para Madres)
+            Kem Mom (Para Madres)
           </button>
           <button
             onClick={() => handleNavClick('kem-pro')}
@@ -184,7 +184,7 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
             }`}
             id="mobile-nav-pro"
           >
-            KEM Pro (Nutricionistas)
+            Kem Pro (Nutricionistas)
           </button>
           <button
             onClick={handleTeacherClick}

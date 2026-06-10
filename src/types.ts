@@ -8,8 +8,10 @@ export type PageId = 'home' | 'kem-mom' | 'kem-pro';
 export interface CheckoutUrls {
   momEsencial: string;
   momAcompañamiento: string;
+  momConsulta: string;
   proEsencial: string;
   proAcompañamiento: string;
+  proConsulta: string;
   whatsapp: string;
 }
 
