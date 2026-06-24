@@ -21,15 +21,27 @@ export default function App() {
   
   // Pricing state synced with local storage for high-fidelity persistence
   const [priceEsencial, setPriceEsencial] = useState<string>(() => {
-    return localStorage.getItem('kem_price_esencial') || '97.000';
+    try {
+      return localStorage.getItem('kem_price_esencial') || '97.000';
+    } catch (e) {
+      return '97.000';
+    }
   });
   
   const [priceAcompañamiento, setPriceAcompañamiento] = useState<string>(() => {
-    return localStorage.getItem('kem_price_acompañamiento') || '217.000';
+    try {
+      return localStorage.getItem('kem_price_acompañamiento') || '217.000';
+    } catch (e) {
+      return '217.000';
+    }
   });
 
   const [priceConsulta, setPriceConsulta] = useState<string>(() => {
-    return localStorage.getItem('kem_price_consulta') || '47.000';
+    try {
+      return localStorage.getItem('kem_price_consulta') || '47.000';
+    } catch (e) {
+      return '47.000';
+    }
   });
 
   // Unique Webpay and WhatsApp links
@@ -46,7 +58,7 @@ export default function App() {
           proEsencial: parsed.proEsencial || "https://webpay.transbank.cl/KEM-Pro-Esencial",
           proAcompañamiento: parsed.proAcompañamiento || "https://webpay.transbank.cl/KEM-Pro-Acompanamiento",
           proConsulta: parsed.proConsulta || "https://webpay.transbank.cl/KEM-Pro-Consulta",
-          whatsapp: parsed.whatsapp || "https://wa.me/56985489624?text=Hola%20Katherinne%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%2520sobre%20KEM%20Nutrition%20Academy"
+          whatsapp: "https://wa.me/56985489624?text=Hola%20Katherinne%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20KEM%20Nutrition%20Academy"
         };
       }
     } catch (e) {}
@@ -63,19 +75,27 @@ export default function App() {
 
   // Sync state modifications to LocalStorage automatically
   useEffect(() => {
-    localStorage.setItem('kem_price_esencial', priceEsencial);
+    try {
+      localStorage.setItem('kem_price_esencial', priceEsencial);
+    } catch (e) {}
   }, [priceEsencial]);
 
   useEffect(() => {
-    localStorage.setItem('kem_price_acompañamiento', priceAcompañamiento);
+    try {
+      localStorage.setItem('kem_price_acompañamiento', priceAcompañamiento);
+    } catch (e) {}
   }, [priceAcompañamiento]);
 
   useEffect(() => {
-    localStorage.setItem('kem_price_consulta', priceConsulta);
+    try {
+      localStorage.setItem('kem_price_consulta', priceConsulta);
+    } catch (e) {}
   }, [priceConsulta]);
 
   useEffect(() => {
-    localStorage.setItem('kem_checkout_urls', JSON.stringify(urls));
+    try {
+      localStorage.setItem('kem_checkout_urls', JSON.stringify(urls));
+    } catch (e) {}
   }, [urls]);
 
   // Support smooth scroll triggers both locally and across pages

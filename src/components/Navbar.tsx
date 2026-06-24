@@ -134,7 +134,13 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
             <button
-              onClick={() => handleNavClick(currentPage === 'home' ? 'kem-mom' : currentPage)}
+              onClick={() => {
+                if (currentPage === 'home') {
+                  handleNavClick('kem-mom');
+                } else {
+                  document.getElementById('planes-precios')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
               className="px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white bg-violeta hover:bg-violeta-dark transition-all shadow-sm cursor-pointer"
               id="nav-cta-btn"
             >
@@ -175,7 +181,7 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
             }`}
             id="mobile-nav-mom"
           >
-            Kem Mom (Para Madres)
+            Kem Mom (Para madres)
           </button>
           <button
             onClick={() => handleNavClick('kem-pro')}
@@ -184,7 +190,7 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
             }`}
             id="mobile-nav-pro"
           >
-            Kem Pro (Nutricionistas)
+            Kem Pro (Para profesionales)
           </button>
           <button
             onClick={handleTeacherClick}
@@ -205,7 +211,16 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
               Conversar por WhatsApp
             </a>
             <button
-              onClick={() => handleNavClick(currentPage === 'home' ? 'kem-mom' : currentPage)}
+              onClick={() => {
+                if (currentPage === 'home') {
+                  handleNavClick('kem-mom');
+                } else {
+                  setIsOpen(false);
+                  setTimeout(() => {
+                    document.getElementById('planes-precios')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }, 100);
+                }
+              }}
               className="w-full text-center py-3 rounded-xl text-sm font-semibold tracking-wider uppercase text-white bg-violeta"
               id="mobile-nav-cta"
             >

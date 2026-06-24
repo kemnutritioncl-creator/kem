@@ -34,6 +34,13 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
   // Setup Scroll Reveal animations behavior using custom IntersectionObserver
   useEffect(() => {
     const elements = document.querySelectorAll('.scroll-reveal');
+    if (typeof window === 'undefined' || !window.IntersectionObserver) {
+      elements.forEach(el => {
+        el.classList.add('visible');
+        el.classList.remove('opacity-0', 'translate-y-8');
+      });
+      return;
+    }
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -75,8 +82,8 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
             <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
               
               {/* Taglet */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-stone-200/85 shadow-xs animate-float">
-                <span className="w-2.5 h-2.5 rounded-full bg-verde animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-stone-200/85 shadow-xs">
+                <span className="w-2.5 h-2.5 rounded-full bg-verde" />
                 <span className="text-xs font-bold tracking-wider text-carbon-title uppercase font-sans">
                   Para mamás y profesionales de la nutrición
                 </span>
@@ -84,12 +91,12 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
 
               {/* Main Heading */}
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[52px] lg:leading-[1.12] text-carbon-title font-semibold tracking-tight">
-                El eslabón científico entre la <span className="bg-gradient-to-r from-naranja to-orange-500 bg-clip-text text-transparent font-extrabold">nutrición para tu familia</span> y la <span className="bg-gradient-to-r from-violeta to-indigo-600 bg-clip-text text-transparent font-extrabold">especialización profesional</span>.
+                El eslabón científico entre la <span className="bg-gradient-to-r from-naranja to-orange-500 bg-clip-text text-transparent font-extrabold">nutrición para tu familia</span> y la <span className="bg-gradient-to-r from-violeta to-indigo-600 bg-clip-text text-transparent font-extrabold">especialización profesional</span>
               </h1>
 
               {/* Subheading */}
               <p className="text-base sm:text-lg text-carbon-body leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light">
-                Nutrición basada en evidencia, explicada con claridad. Para que vivas tu embarazo sin culpa y atiendas gestantes con seguridad clínica. Selecciona tu área de interés:
+                Nutrición basada en evidencia, explicada con claridad. Si eres gestante, vive tu embarazo sin culpa. Si eres profesional de la salud, atiende con seguridad clínica. Elige tu perfil:
               </p>
 
               {/* Interactive Twin Panels */}
@@ -109,7 +116,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                     <Heart className="w-5 h-5 fill-naranja/10" />
                   </div>
                   <h3 className="font-serif font-bold text-base text-carbon-title flex items-center gap-1">
-                    <span>Área Mamás y Gestantes</span>
+                    <span>Área mamás y gestantes</span>
                     <ArrowRight className="w-3.5 h-3.5 text-naranja group-hover:translate-x-1 transition-transform" />
                   </h3>
                   <p className="text-[12px] text-stone-500 mt-1 lines-clamp-2 leading-relaxed font-light">
@@ -135,7 +142,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                     <Sparkles className="w-5 h-5" />
                   </div>
                   <h3 className="font-serif font-bold text-base text-carbon-title flex items-center gap-1">
-                    <span>Área Nutricionistas</span>
+                    <span>Área nutricionistas</span>
                     <ArrowRight className="w-3.5 h-3.5 text-violeta group-hover:translate-x-1 transition-transform" />
                   </h3>
                   <p className="text-[12px] text-stone-500 mt-1 lines-clamp-2 leading-relaxed font-light">
@@ -205,7 +212,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-verde/10 text-verde text-xs font-bold uppercase tracking-wider font-sans">
-              🛡️ Trayectoria y Respaldo
+              Trayectoria y Respaldo
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl font-semibold text-carbon-title tracking-tight">
               Docencia universitaria certificada en Chile
@@ -243,9 +250,6 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                   <p className="text-[11px] sm:text-[12px] font-bold text-stone-850 font-sans tracking-tight leading-snug line-clamp-2">
                     {uni.name}
                   </p>
-                  <p className="text-[9px] sm:text-[10px] text-stone-400 mt-2 font-mono uppercase tracking-wider">
-                    Docente Universitaria
-                  </p>
                 </div>
               </div>
             ))}
@@ -272,7 +276,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
 
                   <div className="relative z-20 text-white p-6 space-y-1">
                     <span className="text-xs font-mono tracking-wider font-semibold text-naranja uppercase block">
-                      Enfoque en Evidencia Científica
+                      Enfoque en evidencia científica
                     </span>
                     <h4 className="font-serif font-bold text-xl block leading-none">
                       Katherinne Elgueta Mora
@@ -295,7 +299,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                 Quién te acompaña
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl text-carbon-title font-semibold tracking-tight">
-                La profesional tras KEM Nutrition Academy
+                La profesional tras KEM nutrition academy
               </h2>
               
               <p className="text-base text-carbon-body leading-relaxed font-light">
@@ -358,20 +362,22 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left pt-6">
             
-            <div className="p-6 bg-stone-50 rounded-2xl border border-stone-200/50 relative">
-              <div className="absolute top-4 right-4 text-3xl opacity-20 font-serif font-bold text-naranja">01</div>
-              <h4 className="font-serif text-lg font-bold text-carbon-title mb-2 flex items-center gap-2">
-                <Heart className="w-4 h-4 text-naranja" /> La Mamá Confundida
+            <div className="group p-8 bg-gradient-to-br from-white to-stone-50/70 rounded-2xl border border-stone-200/60 border-l-4 border-l-naranja shadow-sm hover:shadow-md hover:to-naranja/[0.02] hover:border-naranja/30 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
+              <div className="absolute top-4 right-6 text-4xl opacity-10 font-mono font-bold text-naranja">01</div>
+              <h4 className="font-serif text-xl font-bold text-carbon-title mb-3 flex items-center gap-2.5">
+                <span className="p-1.5 rounded-lg bg-naranja/10 text-naranja"><Heart className="w-4 h-4 fill-naranja/20" /></span>
+                Mamá en búsqueda de claridad
               </h4>
               <p className="text-sm text-stone-600 leading-relaxed font-light">
                 Recibe comentarios opuestos de su suegra, internet y su ginecólogo. Teme suplementarse incorrectamente, se agobia regulando la glicemia por diabetes gestacional o siente inseguridad ante los síntomas digestivos.
               </p>
             </div>
 
-            <div className="p-6 bg-stone-50 rounded-2xl border border-stone-200/50 relative">
-              <div className="absolute top-4 right-4 text-3xl opacity-20 font-serif font-bold text-violeta">02</div>
-              <h4 className="font-serif text-lg font-bold text-carbon-title mb-2 flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-violeta" /> Nutricionista Amateur
+            <div className="group p-8 bg-gradient-to-br from-white to-stone-50/70 rounded-2xl border border-stone-200/60 border-l-4 border-l-violeta shadow-sm hover:shadow-md hover:to-violeta/[0.02] hover:border-violeta/30 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
+              <div className="absolute top-4 right-6 text-4xl opacity-10 font-mono font-bold text-violeta">02</div>
+              <h4 className="font-serif text-xl font-bold text-carbon-title mb-3 flex items-center gap-2.5">
+                <span className="p-1.5 rounded-lg bg-violeta/10 text-violeta"><Sparkles className="w-4 h-4" /></span>
+                Profesional en sus primeros pasos
               </h4>
               <p className="text-sm text-stone-600 leading-relaxed font-light">
                 Tiene conocimientos sumamente teóricos, pero carece de un protocolo de campo real, plantillas de requerimientos clínicos eficientes o la seguridad técnica para resolver casos ginecológicos complejos.
@@ -405,7 +411,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
           </p>
 
           <h3 className="font-serif text-3xl sm:text-4xl font-semibold tracking-tight leading-tight">
-            Descarga gratis la Guía de Nutrición de los Primeros 1000 Días
+            Descarga gratis la guía de nutrición de los primeros 1000 días
           </h3>
 
           <p className="text-sm text-stone-300 max-w-xl mx-auto font-light leading-relaxed">
@@ -446,7 +452,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
               }}
               className="text-stone-300 hover:text-naranja font-medium transition-colors cursor-pointer"
             >
-              Programa Embarazo con Confianza →
+              Programa Kem Mom (Para madres) →
             </button>
             <span className="text-white/20">|</span>
             <button 
@@ -456,7 +462,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
               }}
               className="text-stone-300 hover:text-violeta font-medium transition-colors cursor-pointer"
             >
-              Programa Consulta Materna →
+              Programa Kem Pro (Para profesionales) →
             </button>
           </div>
 
@@ -480,7 +486,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                 </div>
 
                 <h3 className="font-serif text-3xl sm:text-4xl text-carbon-title font-semibold leading-tight">
-                  Programa: Embarazo con Confianza
+                  Programa Kem Mom (Para madres)
                 </h3>
 
                 <p className="text-base text-stone-600 leading-relaxed font-light">
@@ -490,19 +496,19 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-stone-700">
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-[#6FA987] shrink-0" />
-                    <span>8 módulos completos con videoclases cortas</span>
+                    <span>8 módulos completos con videoclases cortas.</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-[#6FA987] shrink-0" />
-                    <span>Checklists y resúmenes descargables en PDF</span>
+                    <span>Checklists y resúmenes descargables en PDF.</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-[#6FA987] shrink-0" />
-                    <span>Enfoque en síntomas digestivos y suplementos</span>
+                    <span>Enfoque en síntomas digestivos y suplementos.</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-[#6FA987] shrink-0" />
-                    <span>Comunidad de apoyo libre de juicios</span>
+                    <span>Comunidad de apoyo libre de juicios.</span>
                   </div>
                 </div>
 
@@ -515,7 +521,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                     className="px-8 py-4 rounded-full bg-[#2D3142] hover:bg-[#1a1c27] text-white font-bold text-sm tracking-wide shadow-md transition-all flex items-center justify-center sm:inline-flex gap-2 cursor-pointer group"
                     id="mini-nav-mom-btn"
                   >
-                    <span>Ver Programa Embarazo con Confianza</span>
+                    <span>Ver Programa Kem Mom</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
@@ -595,29 +601,29 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                 </div>
 
                 <h3 className="font-serif text-3xl sm:text-4xl text-carbon-title font-semibold leading-tight">
-                  Programa: Consulta Materna desde Cero
+                  Programa Kem Pro (Para profesionales)
                 </h3>
 
                 <p className="text-base text-stone-600 leading-relaxed font-light">
-                  Formación clínica enfocada en la práctica real. Aprende a evaluar embarazadas, interpretar exámenes bioquímicos, hacer diagnóstico preventivo y diseñar estrategias dietoterapéuticas con seguridad.
+                  Formación clínica enfocada en la práctica real. Aprende a evaluar a la mujer en preconcepción, embarazo y lactancia, interpretar exámenes bioquímicos, hacer diagnóstico preventivo y diseñar estrategias dietoterapéuticas con seguridad.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-stone-700">
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-[#6FA987] shrink-0" />
-                    <span>10 módulos estructurados con casos clínicos</span>
+                    <span>10 módulos estructurados con casos clínicos.</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-[#6FA987] shrink-0" />
-                    <span>Calculadoras Excel calibradas de requerimientos</span>
+                    <span>Protocolos clínicos y algoritmos de decisión.</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-[#6FA987] shrink-0" />
-                    <span>Fichas clínicas editables y anamnesis guiada</span>
+                    <span>Fichas clínicas editables y anamnesis guiada.</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-[#6FA987] shrink-0" />
-                    <span>Certificado de egreso oficial para tu consulta</span>
+                    <span>Certificado de egreso oficial para tu consulta.</span>
                   </div>
                 </div>
 
@@ -630,7 +636,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                     className="px-8 py-4 rounded-full bg-violeta hover:bg-violeta-dark text-white font-bold text-sm tracking-wide shadow-md transition-all flex items-center justify-center sm:inline-flex gap-2 cursor-pointer group"
                     id="mini-nav-pro-btn"
                   >
-                    <span>Ver Programa Consulta Materna desde Cero</span>
+                    <span>Ver Programa Kem Pro</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
@@ -692,7 +698,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
             <div className="space-y-6">
               <h4 className="font-serif font-bold text-xl text-carbon-title border-b border-violeta/20 pb-3 flex items-center gap-2">
                 <Sparkles className="w-5 h-5 text-violeta" />
-                Colegas capacitadas con Kem Pro
+                Profesionales capacitadas/os con Kem Pro
               </h4>
 
               <div className="space-y-4">
@@ -726,10 +732,10 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
           
           <div className="text-center space-y-3">
             <span className="text-carbon-title font-mono text-xs uppercase tracking-widest font-bold">
-              FAQS
+              Preguntas frecuentes
             </span>
             <h2 className="font-serif text-3xl font-semibold tracking-tight">
-              Preguntas Frecuentes
+              Preguntas frecuentes
             </h2>
             <p className="text-xs text-stone-500">
               Respuestas rápidas para tus primeras dudas.

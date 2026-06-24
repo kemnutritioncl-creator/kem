@@ -40,6 +40,13 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
   // Setup scroll reveals
   useEffect(() => {
     const elements = document.querySelectorAll('.scroll-reveal');
+    if (typeof window === 'undefined' || !window.IntersectionObserver) {
+      elements.forEach(el => {
+        el.classList.add('visible');
+        el.classList.remove('opacity-0', 'translate-y-8');
+      });
+      return;
+    }
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -85,12 +92,16 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
               </h1>
 
               <p className="text-base sm:text-lg text-carbon-body leading-relaxed max-w-3xl">
-                Formación práctica de excelencia en nutrición materna aplicada. Evalúa, interviene, dosifica y gestiona con una metodología científica estructurada y herramientas clínicas listas para ser implementadas en tu consulta.
+                Formación clínica enfocada en la práctica real. Aprende a evaluar a la mujer en preconcepción, embarazo y lactancia, interpretar exámenes bioquímicos, hacer diagnóstico preventivo y diseñar estrategias dietoterapéuticas con seguridad.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
                 <a
                   href="#planes-precios"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('planes-precios')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
                   className="w-full sm:w-auto text-center px-8 py-4 rounded-full bg-violeta hover:bg-violeta-dark text-white font-bold text-sm tracking-wide shadow-md hover:shadow-lg transition-all"
                   id="pro-hero-cta"
                 >
@@ -132,28 +143,27 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
             <div className="space-y-6 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
-              <span className="text-violeta font-mono text-xs uppercase tracking-widest font-bold">Perfil del Colega</span>
               
               <h2 className="font-serif text-3xl text-carbon-title font-semibold tracking-tight">
                 ¿Este programa es para mí?
               </h2>
 
               <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
-                Esta academia clínica ha sido diseñada minuciosamente para <strong>Nutricionistas tituladas</strong>, licenciadas en nutrición, matronas, o <strong>estudiantes de último año</strong> (internado) que desean posicionarse de manera ética y rentable en la consulta privada materno-infantil.
+                La academia está pensada para nutricionistas, profesionales de obstetricia, médicos y profesionales afines al área clínica materno-infantil, incluyendo estudiantes de último año, que quieren ejercer en consulta privada sin improvisar.
               </p>
 
               <div className="space-y-3 pt-2">
                 <div className="flex gap-3">
                   <div className="w-5 h-5 rounded-full bg-violeta/10 text-violeta flex items-center justify-center shrink-0 mt-0.5">✔</div>
-                  <p className="text-xs sm:text-sm text-stone-600">Buscas ir más allá de las recomendaciones generales y dominar el dosaje bioquímico de micronutrientes ginecológicos.</p>
+                  <p className="text-xs sm:text-sm text-stone-600">Quieres dejar de dar recomendaciones generales y tomar decisiones clínicas con respaldo bioquímico real.</p>
                 </div>
                 <div className="flex gap-3">
                   <div className="w-5 h-5 rounded-full bg-violeta/10 text-violeta flex items-center justify-center shrink-0 mt-0.5">✔</div>
-                  <p className="text-xs sm:text-sm text-stone-600">Deseas optimizar tus tiempos de consulta entregando pautas y calculadoras clínicas automatizadas.</p>
+                  <p className="text-xs sm:text-sm text-stone-600">Necesitas criterios claros para organizar y priorizar tus consultas sin depender de la intuición.</p>
                 </div>
                 <div className="flex gap-3">
                   <div className="w-5 h-5 rounded-full bg-violeta/10 text-violeta flex items-center justify-center shrink-0 mt-0.5">✔</div>
-                  <p className="text-xs sm:text-sm text-stone-600">Sientes inseguridad cuando te consultan gestantes con diabetes gestacional, resistencia a la insulina severa o restricción del crecimiento.</p>
+                  <p className="text-xs sm:text-sm text-stone-600">Cuando llega una gestante con diabetes gestacional, resistencia a la insulina o restricción del crecimiento, algo en ti duda. Y quieres que eso deje de pasar.</p>
                 </div>
               </div>
             </div>
@@ -183,18 +193,18 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
             La brecha entre la universidad y la consulta real
           </h2>
           <p className="text-base text-[#514F5C] font-light max-w-3xl mx-auto">
-            La mayoría de las mallas universitarias dedican apenas 2 clases teóricas al embarazo, concentrándose solo en la pauta de incremento de peso estándar. Al sentar a tu primera paciente, te das cuenta de que no sabes cómo interpretar variaciones marcadas de glucosa basal, definir dosis científicas de hierro no irritante, o estructurar una sesión de asesoramiento clínico que retenga y retribuya la confianza médica.
+            La mayoría de las universidades dedican dos clases al embarazo, y casi todo ese tiempo se va en la curva de incremento de peso. Cuando llega tu primera paciente, te das cuenta de que eso no alcanza. No sabes qué hacer con una glucosa basal que no cuadra, qué hierro recetarle a alguien que ya tuvo mala experiencia con los anteriores, qué hacer con el estreñimiento entre otras sintomatologías ni cómo llevar la consulta para que ella vuelva y el médico tratante confíe en tu criterio.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 text-left">
             <div className="bg-white p-6 rounded-2xl border border-stone-200/50">
               <span className="text-xl font-serif text-violeta font-extrabold block mb-2">01</span>
-              <h4 className="font-serif font-bold text-sm text-carbon-title mb-1">Sin Protocolo Claro</h4>
+              <h4 className="font-serif font-bold text-sm text-carbon-title mb-1">Sin protocolo claro</h4>
               <p className="text-xs text-stone-505 leading-relaxed font-light">Improvisas la anamnesis o inviertes horas transcribiendo fichas rudimentarias por falta de formatos calibrados.</p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-stone-200/50">
               <span className="text-xl font-serif text-[#6FA987] font-extrabold block mb-2">02</span>
-              <h4 className="font-serif font-bold text-sm text-carbon-title mb-1">Miedo a Patologías</h4>
+              <h4 className="font-serif font-bold text-sm text-carbon-title mb-1">Miedo a patologías</h4>
               <p className="text-xs text-stone-505 leading-relaxed font-light">Incertidumbre al formular pautas para diabetes gestacional con curvas alteradas o hipertiroidismo subclínico.</p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-stone-200/50">
@@ -214,7 +224,7 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
           </div>
           <p className="text-stone-400 font-mono text-xs uppercase tracking-widest font-bold">Nuestra Meta</p>
           <h2 className="font-serif text-3xl sm:text-4xl text-carbon-title font-semibold tracking-tight">
-            La Transformación Kem Pro
+            La transformación Kem Pro
           </h2>
           <blockquote className="text-xl sm:text-2xl font-serif italic text-stone-700 max-w-3xl mx-auto leading-relaxed">
             "Al terminar este programa vas a sentirte preparada para atender gestantes con absoluta seguridad clínica, con una metodología clara, herramientas profesionales validadas y recursos de autoría listos para aplicar."
@@ -235,34 +245,26 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
             
             <div className="p-6 bg-white rounded-2xl border border-stone-200/50 space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-violeta/10 text-violeta flex items-center justify-center">
-                <FileSpreadsheet className="w-5 h-5" />
-              </div>
-              <h4 className="font-serif font-bold text-base text-carbon-title">Calculadoras de Requerimiento</h4>
-              <p className="text-xs text-stone-500 leading-relaxed">Excels automatizados para calcular requerimientos energéticos y macronutrientes por trimestre, calibrados según pautas del INTA.</p>
-            </div>
-
-            <div className="p-6 bg-white rounded-2xl border border-stone-200/50 space-y-3">
               <div className="w-10 h-10 rounded-lg bg-[#6FA987]/10 text-[#6FA987] flex items-center justify-center font-bold">📁</div>
-              <h4 className="font-serif font-bold text-base text-carbon-title">Fichas Clínicas y Anamnesis</h4>
+              <h4 className="font-serif font-bold text-base text-carbon-title">Fichas clínicas y anamnesis</h4>
               <p className="text-xs text-[#514F5C] leading-relaxed">Formularios editables estructurados diseñados para guiar la consulta paso a paso, asegurando que no omitas datos metabólicos críticos.</p>
             </div>
 
             <div className="p-6 bg-white rounded-2xl border border-stone-200/50 space-y-3">
               <div className="w-10 h-10 rounded-lg bg-naranja/10 text-naranja flex items-center justify-center font-bold">📊</div>
-              <h4 className="font-serif font-bold text-base text-carbon-title">Algoritmos de Decisión</h4>
+              <h4 className="font-serif font-bold text-base text-carbon-title">Algoritmos de decisión</h4>
               <p className="text-xs text-[#514F5C] leading-relaxed">Flujogramas en PDF que te indican qué dosis suplementar de calcio, hierro o vitamina D según los resultados bioquímicos.</p>
             </div>
 
             <div className="p-6 bg-white rounded-2xl border border-stone-200/50 space-y-3">
               <div className="w-10 h-10 rounded-lg bg-violeta/10 text-violeta flex items-center justify-center font-bold">📑</div>
-              <h4 className="font-serif font-bold text-base text-carbon-title">Material Educativo para Pacientes</h4>
+              <h4 className="font-serif font-bold text-base text-carbon-title">Material educativo para pacientes</h4>
               <p className="text-xs text-stone-500 leading-relaxed">Infografías clínicas limpias de tu autoría para enviar en PDF a tus pacientes sobre mitos, porciones y manejo de acidez.</p>
             </div>
 
             <div className="p-6 bg-white rounded-2xl border border-stone-200/50 space-y-3">
               <div className="w-10 h-10 rounded-lg bg-[#6FA987]/10 text-[#6FA987] flex items-center justify-center font-bold">🔬</div>
-              <h4 className="font-serif font-bold text-base text-carbon-title">Guía de Exámenes Bioquímicos</h4>
+              <h4 className="font-serif font-bold text-base text-carbon-title">Guía de exámenes bioquímicos</h4>
               <p className="text-xs text-[#514F5C] leading-relaxed">Ebook exclusivo para aprender a interpretar valores de ferritina, hemoglobina, TSH y glicemias específicas de trimestre.</p>
             </div>
 
@@ -270,7 +272,7 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
               <div className="w-10 h-10 rounded-lg bg-naranja/10 text-naranja flex items-center justify-center">
                 <FolderOpen className="w-5 h-5 text-naranja" />
               </div>
-              <h4 className="font-serif font-bold text-base text-carbon-title">Casos Clínicos Resueltos</h4>
+              <h4 className="font-serif font-bold text-base text-carbon-title">Casos clínicos resueltos</h4>
               <p className="text-xs text-[#514F5C] leading-relaxed">Análisis paso a paso de resolución dietoterapéutica de gestantes reales con patologías asociadas del mundo clínico.</p>
             </div>
 
@@ -284,10 +286,12 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="text-center space-y-3">
-            <span className="text-violeta font-mono text-xs uppercase tracking-widest font-bold">Formación Técnica Unificadora</span>
             <h2 className="font-serif text-3xl font-semibold text-carbon-title tracking-tight text-center">Plan de Estudios Kem Pro</h2>
-            <p className="text-xs text-stone-500 max-w-sm mx-auto font-light">
-              Un recorrido profundo de 10 módulos creados meticulosamente con base metodológica formal.
+            <p className="text-sm font-medium text-violeta max-w-md mx-auto">
+              Deja de improvisar en consulta.
+            </p>
+            <p className="text-xs text-stone-500 max-w-lg mx-auto font-light">
+              10 módulos para que tengas criterio, estructura y seguridad clínica en el área materno-infantil, desde el primer paciente.
             </p>
           </div>
 
@@ -332,7 +336,7 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
                   <span className="px-3 py-1 rounded-full bg-stone-100 text-stone-600 text-[10px] font-bold uppercase tracking-wider">
                     Plan Esencial (Asíncrono)
                   </span>
-                  <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2">Consulta Materna desde Cero</h3>
+                  <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2">Programa Kem Pro (Para profesionales)</h3>
                   <p className="text-xs text-stone-500 mt-1">Acceso permanente a las herramientas y clases.</p>
                 </div>
 
@@ -347,13 +351,13 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
                     <Check className="w-4 h-4 text-verde shrink-0" /> Acceso permanente a los 10 módulos grabados.
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-verde shrink-0" /> Biblioteca de protocolos, fichas, excels de cálculo.
+                    <Check className="w-4 h-4 text-verde shrink-0" /> Biblioteca de protocolos, fichas y herramientas de cálculo clínico.
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-verde shrink-0" /> Foros y resolución de casos en la comunidad.
+                    <Check className="w-4 h-4 text-verde shrink-0" /> Foros y resolución de casos en comunidad.
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-verde shrink-0" /> Certificado de finalización firmado de KEM Academy.
+                    <Check className="w-4 h-4 text-verde shrink-0" /> Certificado de finalización firmado por KEM Academy.
                   </li>
                 </ul>
               </div>
@@ -382,7 +386,7 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
                   <span className="px-3 py-1 rounded-full bg-violeta/10 text-violeta text-[10px] font-bold uppercase tracking-wider">
                     Plan Completo + Acompañamiento Vivo
                   </span>
-                  <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2">Diferenciación Técnica</h3>
+                  <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2">Diferenciación técnica</h3>
                   <p className="text-xs text-stone-505 mt-1">Con mentoría docente, casos y sesiones personalizadas.</p>
                 </div>
 
@@ -429,28 +433,42 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
                   <span className="px-3 py-1 rounded-full bg-verde/10 text-verde text-[10px] font-bold uppercase tracking-wider">
                     Sesión Individual
                   </span>
-                  <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2">Consulta Clínica 1:1</h3>
-                  <p className="text-xs text-stone-505 mt-1">Sesión individual exclusiva y 100% personalizada.</p>
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-carbon-title mt-2">Mentoría clínica 1:1 para profesionales</h3>
+                  <p className="text-xs text-stone-555 mt-2 leading-relaxed font-light">
+                    Sesiones personalizadas de 45 a 60 minutos diseñadas para acompañar a los profesionales de la salud que quieren atender gestantes con seguridad clínica y sin improvisar.
+                  </p>
                 </div>
 
                 <div className="flex items-baseline gap-1 bg-stone-50 p-4 rounded-xl border border-stone-100">
                   <span className="text-xs font-bold text-stone-400 font-sans">CLP</span>
                   <span className="text-3xl font-serif font-extrabold text-[#2D3142]">${priceConsulta}</span>
-                  <span className="text-xs text-stone-505 font-light">Por Sesión</span>
+                  <span className="text-xs text-stone-555 font-light">Por Sesión</span>
                 </div>
 
                 <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans">
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-[#6FA987] shrink-0" /> <strong>1 sesión clínica personalizada de 45-60 min Obesidad/Embarazo</strong>.
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-[#6FA987] shrink-0 mt-0.5" />
+                    <span>Revisión y análisis de tus casos reales de gestantes.</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-[#6FA987] shrink-0" /> Revisión integral de tus exámenes médicos y laboratorios reales.
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-[#6FA987] shrink-0 mt-0.5" />
+                    <span>Ordenar el razonamiento clínico: qué mirar, qué priorizar y por qué.</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-[#6FA987] shrink-0" /> Diseño, calibración de pauta clínica o mentoría de caso personalizada.
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-[#6FA987] shrink-0 mt-0.5" />
+                    <span>Apoyo en interpretación de exámenes y antecedentes para decidir con seguridad.</span>
                   </li>
-                  <li className="flex items-center gap-2 text-stone-400">
-                    <X className="w-4 h-4 shrink-0" /> No otorga acceso continuo a los 10 módulos de la certificación.
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-[#6FA987] shrink-0 mt-0.5" />
+                    <span>Sugerencias de ajustes en pauta, seguimiento y alertas a considerar.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-[#6FA987] shrink-0 mt-0.5" />
+                    <span>Espacio para resolver dudas puntuales que te generan inseguridad en consulta.</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-stone-400">
+                    <X className="w-4 h-4 shrink-0 mt-0.5" />
+                    <span>No otorga acceso continuo a los 10 módulos de la certificación.</span>
                   </li>
                 </ul>
               </div>
@@ -479,18 +497,14 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
           <div className="bg-stone-100 rounded-2xl p-6 sm:p-8 border border-stone-200 text-sm leading-relaxed text-stone-700 font-sans space-y-4 shadow-2xs">
             <h4 className="font-serif font-bold text-carbon-title text-lg flex items-center gap-2">
               <AlertTriangle className="w-5 h-5 text-amber-500" />
-              Lmites del Programa: Lo que NO incluye este curso profesional
+              Queremos que tomes la mejor decisión, así que te decimos con claridad qué encontrarás aquí y qué no.
             </h4>
-            
-            <p className="text-xs text-[#514F5C] font-light">
-              Fieles a nuestra rigurosidad científica y ética universitaria Chilena, dejamos en claro los límites de esta capacitación docente:
-            </p>
 
-            <ul className="space-y-2 text-xs text-stone-600 pl-4 list-disc font-light">
-              <li><strong>No es un grado académico de postgrado postítulo ni especialización médica oficial</strong> regulada por CONACEM.</li>
-              <li><strong>No entrega certificación ni licencia universitaria estatal directa</strong> (se provee certificación certificada privada de KEM Academy, no vinculante con organismos públicos).</li>
-              <li><strong>No incluye asesorías de supervisión permanente e ilimitada de pacientes</strong> o llamadas fuera de los módulos grupales e individuales previstos.</li>
-              <li><strong>No entrega garantías automáticas de ingresos mensuales fijos</strong> ni captación obligatoria de clientes del consultorio general.</li>
+            <ul className="space-y-3 text-xs text-stone-600 pl-4 list-disc font-light leading-relaxed">
+              <li>No es un postítulo, posgrado ni especialización médica reconocida por CONACEM. Es una formación clínica privada, certificada por KEM Academy.</li>
+              <li>El certificado es emitido por KEM Academy, no por una institución universitaria estatal. No tiene efecto directo ante organismos públicos.</li>
+              <li>No incluye supervisión clínica continua de pacientes ni disponibilidad fuera de las instancias grupales e individuales contempladas en el programa.</li>
+              <li>No garantiza ingresos ni captación automática de pacientes. Lo que sí garantiza es que tendrás las herramientas para construirlo.</li>
             </ul>
           </div>
         </div>
@@ -543,10 +557,10 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
               <div className="absolute -bottom-1 -right-1 bg-[#6FA987] text-white p-1 rounded-full"><Award className="w-3.5 h-3.5" /></div>
             </div>
             <div className="space-y-3 text-center sm:text-left">
-              <span className="px-2 py-0.5 rounded-full bg-violeta/10 text-violeta text-[9px] font-bold uppercase tracking-wider font-mono">Mentoría y Respaldo Experto</span>
-              <h4 className="font-serif text-lg font-bold text-carbon-title">Formación Académica con Katherinne Elgueta Mora</h4>
+              <span className="px-2 py-0.5 rounded-full bg-violeta/10 text-violeta text-[9px] font-bold uppercase tracking-wider font-mono">Docente</span>
+              <h4 className="font-serif text-lg font-bold text-carbon-title">Aprende con Katherinne Elgueta Mora</h4>
               <p className="text-xs text-[#514F5C] leading-relaxed font-light">
-                Especialista con postgrado en el INTA (U. de Chile), brindándote la base científica más avanzada y herramientas prácticas para que lideres tus consultas con total solvencia.
+                Postgrado en el INTA, Universidad de Chile. No es teoría por teoría: cada contenido está pensado para que lo apliques en tu próxima consulta.
               </p>
             </div>
           </div>
@@ -558,8 +572,8 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           
           <div className="text-center space-y-3">
-            <span className="text-verde font-mono text-xs uppercase tracking-widest font-bold">Consultas Técnicas</span>
-            <h2 className="font-serif text-3xl font-semibold text-carbon-title tracking-tight">Preguntas Frecuentes - Kem Pro</h2>
+            <span className="text-verde font-mono text-xs uppercase tracking-widest font-bold">Consultas técnicas</span>
+            <h2 className="font-serif text-3xl font-semibold text-carbon-title tracking-tight">Preguntas frecuentes - Kem Pro</h2>
             <p className="text-xs text-stone-505 font-light">Aclaramos rigurosamente cualquier objeción técnica de nuestro currículo.</p>
           </div>
 
@@ -596,6 +610,10 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
           <div className="pt-2">
             <a
               href="#planes-precios"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('planes-precios')?.scrollIntoView({ behavior: 'smooth' });
+              }}
               className="px-8 py-4 rounded-full bg-violeta hover:bg-violeta-dark text-white font-bold text-sm tracking-wide shadow-md hover:shadow-lg transition-transform inline-flex gap-2 items-center cursor-pointer"
             >
               <span>Elegir mi Plan Pro KEM</span>
@@ -610,7 +628,7 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
           <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full border border-stone-200 shadow-2xl font-sans text-center space-y-4">
             <div className="w-12 h-12 rounded-full bg-violeta/10 text-violeta flex items-center justify-center mx-auto text-xl">💬</div>
-            <h4 className="font-serif font-bold text-carbon-title text-lg leading-tight font-serif">Inscripción y Consultas</h4>
+            <h4 className="font-serif font-bold text-carbon-title text-lg leading-tight font-serif">Inscripción y consultas</h4>
             <p className="text-xs sm:text-sm text-stone-600 font-light leading-relaxed">
               Para inscribirte en el plan <strong>{alertTier}</strong> o recibir asistencia sobre el proceso, puedes conversar directamente con Katherinne por WhatsApp. Te guiará con gusto en el registro.
             </p>

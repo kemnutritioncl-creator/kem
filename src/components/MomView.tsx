@@ -40,6 +40,13 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
   // Setup reveal effects using scroll observers
   useEffect(() => {
     const elements = document.querySelectorAll('.scroll-reveal');
+    if (typeof window === 'undefined' || !window.IntersectionObserver) {
+      elements.forEach(el => {
+        el.classList.add('visible');
+        el.classList.remove('opacity-0', 'translate-y-8');
+      });
+      return;
+    }
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -91,6 +98,10 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
                 <a
                   href="#planes-precios"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('planes-precios')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
                   className="w-full sm:w-auto text-center px-8 py-4 rounded-full bg-naranja hover:bg-orange-500 text-white font-bold text-sm tracking-wide shadow-md hover:shadow-lg transition-all"
                   id="mom-hero-cta"
                 >
@@ -139,7 +150,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
               </h2>
 
               <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
-                Este programa ha sido diseñado exclusivamente para mujeres de entre <strong>25 y 40 años</strong> que desean transitar la preconcepción, fertilidad, embarazo activo, postparto o lactancia libre de agobios.
+                Este programa ha sido diseñado exclusivamente para mujeres y futuras madres que desean transitar la preconcepción, fertilidad, embarazo activo, postparto o lactancia libre de agobios.
               </p>
 
               <div className="space-y-3 pt-2">
@@ -160,7 +171,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
 
             <div className="bg-[#FBF9F6] border border-orange-100/40 rounded-3xl p-6 sm:p-8 space-y-6 text-center">
               <span className="text-[10px] uppercase font-mono tracking-widest text-[#6FA987] font-bold block">
-                Comentarios de las Alumnas
+                Comentarios de las alumnas
               </span>
               <p className="text-base font-serif italic text-carbon-title leading-relaxed">
                 "Este programa eliminó por completo los constantes temores de qué comer cada noche. Encontré seguridad, respuestas sencillas y un grupo humano maravilloso rodeándome."
@@ -180,27 +191,27 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
           <span className="text-naranja font-mono text-xs uppercase tracking-widest font-bold">La realidad actual</span>
           <h2 className="font-serif text-3xl text-carbon-title font-semibold tracking-tight leading-snug">
-            La confusión y ansiedad constante en el embarazo
+            La incertidumbre y sobreinformación constante en el embarazo
           </h2>
           <p className="text-base text-[#514F5C] font-light max-w-3xl mx-auto">
-            Pasas horas buscando en google si puedes comer ciertos alimentos, sintiendo miedo de perjudicar el desarrollo de tu bebé. Te enfrentas a subidas de peso preocupantes, náuseas incontrolables, diabetes gestacional, acidez o dudas sobre la suplementación óptima. Todo esto, acompañado de médicos que te atienden en 10 minutos recomendándote solo folatos sin indagar más.
+            Pasas horas en buscadores de internet sobre si puedes comer tal o cual alimento, con miedo de que algo le haga daño al desarrollo de tu bebé. Subes más peso del que esperabas, las náuseas no se te quitan con nada, te diagnostican diabetes gestacional, la acidez o estreñimiento no te deja ni comer tranquila y nadie te explica cómo suplementarte bien. Para colmo, el médico te recibe en pocos minutos, te manda a tomar vitaminas y ya, sin preguntar más detalles.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 text-left">
             <div className="bg-white p-6 rounded-2xl border border-stone-200/50">
               <span className="text-xl font-serif text-naranja font-extrabold block mb-2">01</span>
-              <h4 className="font-serif font-bold text-sm text-carbon-title mb-1">Incertidumbre Diaria</h4>
-              <p className="text-xs text-stone-500 leading-relaxed font-light">¿Es el sushi seguro? ¿Qué infusiones abortivas existen? Mitos infinitos que limitan tu felicidad diaria.</p>
+              <h4 className="font-serif font-bold text-sm text-carbon-title mb-1">Dudas con cada comida</h4>
+              <p className="text-xs text-stone-500 leading-relaxed font-light">¿Es seguro comer sushi? ¿Puedo tomar infusiones? Un mar de mitos cotidianos que te llenan de dudas antes de sentarte a la mesa.</p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-stone-200/50">
               <span className="text-xl font-serif text-[#6FA987] font-extrabold block mb-2">02</span>
-              <h4 className="font-serif font-bold text-sm text-carbon-title mb-1">Manejo de Síntomas</h4>
-              <p className="text-xs text-stone-500 leading-relaxed font-light">Náuseas severas, reflujo quemante y fatiga de hierro que te dicen que 'es normal en el embarazo' sin darte pautas de alivio.</p>
+              <h4 className="font-serif font-bold text-sm text-carbon-title mb-1">Síntomas sin respuesta</h4>
+              <p className="text-xs text-stone-500 leading-relaxed font-light">Náuseas constantes, reflujo insoportable, acidez y un estreñimiento molesto que te hace sentir pesada y nadie te enseña a aliviar de verdad.</p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-stone-200/50">
               <span className="text-xl font-serif text-violeta font-extrabold block mb-2">03</span>
-              <h4 className="font-serif font-bold text-sm text-carbon-title mb-1">Preocupación Metabólica</h4>
-              <p className="text-xs text-stone-500 leading-relaxed font-light">Exámenes alterados de glucosa y el terror infundado a que nazca con macrosomía fetal por falta de asesoría idónea.</p>
+              <h4 className="font-serif font-bold text-sm text-carbon-title mb-1">Miedo a complicaciones</h4>
+              <p className="text-xs text-stone-500 leading-relaxed font-light">El susto por exámenes de glucosa alterados, temor al diagnóstico de diabetes gestacional o a no saber si estás subiendo más peso de lo normal.</p>
             </div>
           </div>
         </div>
@@ -214,7 +225,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
           </div>
           <p className="text-stone-400 font-mono text-xs uppercase tracking-widest font-bold">Nuestra Promesa</p>
           <h2 className="font-serif text-3xl sm:text-4xl text-carbon-title font-semibold tracking-tight">
-            La Transformación Kem Mom
+            La transformación Kem Mom
           </h2>
           <blockquote className="text-xl sm:text-2xl font-serif italic text-stone-700 max-w-3xl mx-auto leading-relaxed">
             "Al terminar este programa vas a sentirte más segura y confiada para decidir sobre tu alimentación y la de tu bebé, con claridad, paz mental y completamente libre de juicios."
@@ -236,37 +247,37 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
             
             <div className="p-6 bg-white rounded-2xl border border-stone-200/50 space-y-3">
               <div className="w-10 h-10 rounded-lg bg-naranja/10 text-naranja flex items-center justify-center font-bold">▶</div>
-              <h4 className="font-serif font-bold text-base text-carbon-title">Videoclases Cortas</h4>
+              <h4 className="font-serif font-bold text-base text-carbon-title">Videoclases cortas</h4>
               <p className="text-xs text-stone-500 leading-relaxed">Micro-cápsulas directas de 10-15 minutos ideales para ver a tu propio ritmo sin abrumarte del cansancio diario.</p>
             </div>
 
             <div className="p-6 bg-white rounded-2xl border border-stone-200/50 space-y-3">
               <div className="w-10 h-10 rounded-lg bg-[#6FA987]/10 text-[#6FA987] flex items-center justify-center font-bold">📄</div>
-              <h4 className="font-serif font-bold text-base text-carbon-title">Checklists y Resúmenes PDF</h4>
+              <h4 className="font-serif font-bold text-base text-carbon-title">Checklists y resúmenes PDF</h4>
               <p className="text-xs text-stone-500 leading-relaxed">Hojas ágiles visuales por trimestre para monitorear qué comprar, qué suplementos tomar y qué exámenes exigir.</p>
             </div>
 
             <div className="p-6 bg-white rounded-2xl border border-stone-200/50 space-y-3">
               <div className="w-10 h-10 rounded-lg bg-violeta/10 text-violeta flex items-center justify-center font-bold">💊</div>
-              <h4 className="font-serif font-bold text-base text-carbon-title">Guía de Suplementación</h4>
+              <h4 className="font-serif font-bold text-base text-carbon-title">Guía de suplementación</h4>
               <p className="text-xs text-stone-500 leading-relaxed">Dosis exactas sugeridas, compatibilidad (no juntas hierro con calcio) y las mejores marcas comerciales revisadas.</p>
             </div>
 
             <div className="p-6 bg-white rounded-2xl border border-stone-200/50 space-y-3">
               <div className="w-10 h-10 rounded-lg bg-naranja/10 text-naranja flex items-center justify-center font-bold">🍽</div>
-              <h4 className="font-serif font-bold text-base text-carbon-title">Recetarios Anti-síntomas</h4>
-              <p className="text-xs text-stone-500 leading-relaxed">Menús semanales adaptados con preparaciones sumamente digestivas ideales para combatir las náuseas y gastritis.</p>
+              <h4 className="font-serif font-bold text-base text-carbon-title">Recetarios anti-síntomas</h4>
+              <p className="text-xs text-stone-500 leading-relaxed">Menús semanales adaptados con preparaciones sumamente digestivas ideales para combatir las náuseas, acidez y reflujo.</p>
             </div>
 
             <div className="p-6 bg-white rounded-2xl border border-stone-200/50 space-y-3">
               <div className="w-10 h-10 rounded-lg bg-[#6FA987]/10 text-[#6FA987] flex items-center justify-center font-bold">🩸</div>
-              <h4 className="font-serif font-bold text-base text-carbon-title">Protocolo Diabetes Gestacional</h4>
+              <h4 className="font-serif font-bold text-base text-carbon-title">Protocolo diabetes gestacional</h4>
               <p className="text-xs text-stone-500 leading-relaxed">Guía metabólica detallada para modular cargas glucémicas sin pasar hambre, disminuyendo curvas de insulina.</p>
             </div>
 
             <div className="p-6 bg-white rounded-2xl border border-stone-200/50 space-y-3">
               <div className="w-10 h-10 rounded-lg bg-violeta/10 text-violeta flex items-center justify-center font-bold">👥</div>
-              <h4 className="font-serif font-bold text-base text-carbon-title">Comunidad Privada de Sostén</h4>
+              <h4 className="font-serif font-bold text-base text-carbon-title">Comunidad privada de sostén</h4>
               <p className="text-xs text-stone-500 leading-relaxed">Un espacio virtual cerrado con otras mamás gestionado bajo la supervisión docente de Katherinne Elgueta.</p>
             </div>
 
@@ -281,7 +292,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
           
           <div className="text-center space-y-3">
             <span className="text-[#6FA987] font-mono text-xs uppercase tracking-widest font-bold">Cronograma de Contenido</span>
-            <h2 className="font-serif text-3xl font-semibold text-carbon-title tracking-tight text-center">Plan de Estudios Kem Mom</h2>
+            <h2 className="font-serif text-3xl font-semibold text-carbon-title tracking-tight text-center">Plan de estudios Kem Mom</h2>
             <p className="text-xs text-stone-500 max-w-sm mx-auto font-light">
               Explora en detalle el contenido de los 8 módulos estructurales concebidos para tu evolución.
             </p>
@@ -328,7 +339,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                   <span className="px-3 py-1 rounded-full bg-stone-100 text-stone-600 text-[10px] font-bold uppercase tracking-wider">
                     Plan Esencial (Asíncrono)
                   </span>
-                  <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2">Embarazo con Confianza</h3>
+                  <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2">Programa Kem Mom (Para madres)</h3>
                   <p className="text-xs text-stone-505 mt-1">Estudia a tu propio ritmo con la guía oficial.</p>
                 </div>
 
@@ -378,7 +389,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                   <span className="px-3 py-1 rounded-full bg-naranja/10 text-naranja text-[10px] font-bold uppercase tracking-wider">
                     Plan Completo + Acompañamiento
                   </span>
-                  <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2">Seguridad + Cercanía</h3>
+                  <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2">Seguridad + cercanía</h3>
                   <p className="text-xs text-stone-505 mt-1">Con sesiones en vivo y supervisión uno a uno.</p>
                 </div>
 
@@ -425,7 +436,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                   <span className="px-3 py-1 rounded-full bg-verde/10 text-verde text-[10px] font-bold uppercase tracking-wider">
                     Sesión Individual
                   </span>
-                  <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2">Consulta Clínica 1:1</h3>
+                  <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2">Consulta clínica 1:1</h3>
                   <p className="text-xs text-stone-505 mt-1">Sesión individual exclusiva y 100% personalizada.</p>
                 </div>
 
@@ -475,7 +486,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
           <div className="bg-amber-50 rounded-2xl p-6 sm:p-8 border border-amber-200/90 text-sm leading-relaxed text-stone-700 font-sans space-y-4 shadow-2xs">
             <h4 className="font-serif font-bold text-amber-800 text-lg flex items-center gap-2">
               <AlertTriangle className="w-5 h-5 text-amber-605" />
-              Gestión de Expectativas: Lo que NO incluye este programa
+              Gestión de expectativas: lo que NO incluye este programa
             </h4>
             
             <p className="text-xs text-stone-600 font-light">
@@ -554,8 +565,8 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           
           <div className="text-center space-y-3">
-            <span className="text-[#6FA987] font-mono text-xs uppercase tracking-widest font-bold font-sans">Derribando Objeciones</span>
-            <h2 className="font-serif text-3xl font-semibold text-carbon-title tracking-tight">Preguntas Frecuentes - Kem Mom</h2>
+            <span className="text-[#6FA987] font-mono text-xs uppercase tracking-widest font-bold font-sans">Derribando objeciones</span>
+            <h2 className="font-serif text-3xl font-semibold text-carbon-title tracking-tight">Preguntas frecuentes - Kem Mom</h2>
             <p className="text-xs text-stone-505 font-light">Resolvemos con total transparencia tus principales dudas iniciales.</p>
           </div>
 
@@ -592,6 +603,10 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
           <div className="pt-2">
             <a
               href="#planes-precios"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('planes-precios')?.scrollIntoView({ behavior: 'smooth' });
+              }}
               className="px-8 py-4 rounded-full bg-naranja hover:bg-orange-500 text-white font-bold text-sm tracking-wide shadow-md hover:shadow-lg transition-transform inline-flex gap-2 items-center cursor-pointer"
             >
               <span>Elegir mi Plan & Registrarme</span>
@@ -606,7 +621,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
           <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full border border-stone-200 shadow-2xl font-sans text-center space-y-4">
             <div className="w-12 h-12 rounded-full bg-naranja/10 text-naranja flex items-center justify-center mx-auto text-xl">💬</div>
-            <h4 className="font-serif font-bold text-carbon-title text-lg leading-tight">Inscripción y Consultas</h4>
+            <h4 className="font-serif font-bold text-carbon-title text-lg leading-tight">Inscripción y consultas</h4>
             <p className="text-xs sm:text-sm text-stone-600 font-light leading-relaxed">
               Para inscribirte en el plan <strong>{alertTier}</strong> o recibir asistencia sobre el proceso, puedes conversar directamente con Katherinne por WhatsApp. Te guiará con gusto en el registro.
             </p>

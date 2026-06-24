@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import { PageId } from '../types';
-import { Heart, Sparkles, Instagram, Mail, ShieldAlert, Globe } from 'lucide-react';
+import { Heart, Sparkles, Instagram, Mail, ShieldAlert, Globe, Phone } from 'lucide-react';
 
 interface FooterProps {
   setCurrentPage: (page: PageId) => void;
@@ -79,7 +79,7 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
                 className="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center text-stone-300 hover:text-[#6FA987] hover:bg-stone-700 transition-colors"
                 id="footer-wa-link"
               >
-                <Mail className="w-5 h-5" />
+                <Phone className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -95,7 +95,7 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
                   id="footer-shortcut-mom"
                 >
                   <Heart className="w-3.5 h-3.5 text-naranja fill-naranja/10" />
-                  Kem Mom (Para Madres)
+                  Kem Mom (Para madres)
                 </button>
               </li>
               <li>
@@ -105,7 +105,7 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
                   id="footer-shortcut-pro"
                 >
                   <Sparkles className="w-3.5 h-3.5 text-[#8C6CE6]" />
-                  Kem Pro (Nutricionistas)
+                  Kem Pro (Para profesionales)
                 </button>
               </li>
               <li>
@@ -131,9 +131,11 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
                 <Mail className="w-4 h-4 text-[#6FA987]" />
                 <span>contacto@kemnutrition.cl</span>
               </li>
-              <li className="text-[12px] text-stone-500 pt-1">
-                Santiago de Chile · Envío nacional e internacional
+              <li className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-[#6FA987]" />
+                <a href="tel:+56985489624" className="hover:underline hover:text-white transition-colors">+56 9 8548 9624</a>
               </li>
+
             </ul>
           </div>
 
@@ -145,7 +147,7 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
             <ShieldAlert className="w-5 h-5 text-naranja shrink-0 mt-0.5" />
             <div>
               <span className="font-semibold text-[#F2994A] block mb-1 uppercase tracking-wider text-[10px]">
-                Aviso Importante de Responsabilidad Médica
+                Aviso importante de responsabilidad médica
               </span>
               Todo el contenido educativo provisto en las academias Kem Mom y Kem Pro, guías descargables, checklists, recetarios y charlas, es estrictamente informativo y docente. No sustituye de ninguna forma la consulta clínica individualizada, controles ginecobstétricos, de matonería o pediátricos, ni constituye asesoría clínica vinculante.
             </div>

@@ -52,7 +52,7 @@ export const momModules: CourseModule[] = [
   {
     num: 4,
     title: "Situaciones frecuentes durante el embarazo",
-    desc: "Manejo práctico del estreñimiento, gastritis, reflujo y antojos desde un enfoque nutricional seguro y basado en evidencia."
+    desc: "Manejo práctico del estreñimiento, náuseas, acidez, reflujo y antojos desde un enfoque nutricional seguro y basado en evidencia."
   },
   {
     num: 5,
@@ -80,52 +80,52 @@ export const proModules: CourseModule[] = [
   {
     num: 1,
     title: "Fundamentos de la nutrición materna",
-    desc: "Bases fisiológicas de la gestación, epigenetic programming y el impacto a largo plazo de la nutrición en el binomio madre-hijo."
+    desc: "Entiende qué pasa fisiológicamente en el embarazo, cómo la programación epigenética moldea la salud del bebé a largo plazo y por qué la nutrición en esta etapa importa más de lo que te enseñaron."
   },
   {
     num: 2,
     title: "Evaluación nutricional de la mujer gestante",
-    desc: "Medición antropométrica técnica, curvas de incremento de peso (Atalah y OMS) y correcta determinación diagnóstica integral."
+    desc: "Domina la antropometría materna y el uso práctico de las curvas de incremento de peso, peso recomendado a subir por semana y al término del embarazo para dejar de intuir y comenzar a tomar decisiones nutricionales sólidas y defendibles en cada control."
   },
   {
     num: 3,
     title: "Interpretación de exámenes y suplementación",
-    desc: "Parámetros bioquímicos gestacionales clave, diagnóstico de déficit nutricional y dosificación científica de vitaminas y minerales."
+    desc: "Lee un examen de laboratorio con criterio, identifica déficits antes de que se vuelvan problema y prescribe micronutrientes con respaldo real, no por costumbre."
   },
   {
     num: 4,
     title: "Requerimientos y planificación alimentaria",
-    desc: "Cálculo preciso de energía y macronutrientes por trimestre, diseño de pautas alimentarias realistas e individualizadas."
+    desc: "Calcula energía y macronutrientes por trimestre y diseña planes que tu paciente realmente pueda seguir, adaptados a su contexto y cultura."
   },
   {
     num: 5,
     title: "Diabetes gestacional y resistencia a la insulina",
-    desc: "Criterios diagnósticos actuales, monitoreo de glicemia, estructura de carbohidratos y manejo terapéutico no farmacológico integral."
+    desc: "Criterios diagnósticos actualizados, monitoreo glicémico, distribución de carbohidratos y manejo nutricional no farmacológico para los casos que más te complican en consulta."
   },
   {
     num: 6,
-    title: "Situaciones clínicas de alta consulta",
-    desc: "Estrategias para náuseas y vómitos severos, trastornos gastrointestinales, restricción del crecimiento fetal (RCF) e hipertensión."
+    title: "Situaciones clínicas frecuentes",
+    desc: "Náuseas severas, trastornos gastrointestinales, restricción del crecimiento fetal e hipertensión gestacional. Los casos que llegan todo el tiempo y para los que nadie te preparó bien."
   },
   {
     num: 7,
-    title: "Nutrición en postparto y lactancia clínica",
-    desc: "Requerimientos en la lactancia, pérdida de peso postparto segura y acompañamiento clínico en alimentación y suplementos."
+    title: "Postparto y lactancia",
+    desc: "Requerimientos en lactancia, pérdida de peso postparto sin comprometer la producción de leche y acompañamiento clínico en suplementación."
   },
   {
     num: 8,
-    title: "Herramientas para la consulta práctica",
-    desc: "Protocolos estructurados de atención, formatos para el examen físico sutil, checklists y estructuración de la sesión clínica."
+    title: "Herramientas para la práctica clínica",
+    desc: "Protocolos de atención, formatos de evaluación y una estructura de consulta que te ahorra tiempo y le da al paciente una experiencia profesional desde el primer día."
   },
   {
     num: 9,
-    title: "Casos clínicos aplicados reales",
-    desc: "Análisis técnico y resolución grupal de casos reales de gestantes con patologías asociadas, vegetarianismo y embarazos múltiples."
+    title: "Casos clínicos reales",
+    desc: "Resolución guiada de casos con patologías asociadas, alimentación vegetariana y embarazos múltiples. Practicas la toma de decisiones antes de enfrentarla sola."
   },
   {
     num: 10,
-    title: "Implementación profesional y desarrollo",
-    desc: "Estrategias éticas para captar pacientes, valorizar tu consulta, y posicionarte con autoridad científica en el área materno-infantil."
+    title: "Implementación y desarrollo profesional",
+    desc: "Cómo valorizar tu consulta, captar pacientes de forma ética y construir un ejercicio profesional sostenible en el área materno-infantil."
   }
 ];
 
@@ -134,7 +134,7 @@ export const momTestimonials: Testimonial[] = [
     id: "m1",
     name: "Lucía Valenzuela",
     role: "Mamá de Joaquín (3 meses)",
-    text: "Llegué con mucha gastritis y pánico de qué comer en el primer trimestre. El programa me dio la tranquilidad exacta que necesitaba, con recetas prácticas que calmaron mis síntomas de forma amigable.",
+    text: "Llegué con muchas náuseas, acidez y pánico de qué comer en el primer trimestre. El programa me dio la tranquilidad exacta que necesitaba, con recetas prácticas que calmaron mis síntomas de forma amigable.",
     rating: 5
   },
   {
@@ -192,7 +192,7 @@ export const generalFaqs: FaqItem[] = [
   },
   {
     question: "¿Qué métodos de pago están disponibles?",
-    answer: "Puedes pagar de forma segura vía Webpay (Tarjetas de Débito y Crédito), transferencia bancaria directa o PayPal si te encuentras fuera de Chile."
+    answer: "Puedes pagar de forma segura vía Webpay (Tarjetas de Débito y Crédito) o PayPal si te encuentras fuera de Chile."
   }
 ];
 
