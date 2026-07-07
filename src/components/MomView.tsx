@@ -88,7 +88,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
               </div>
 
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-carbon-title font-semibold tracking-tight">
-                Vive tu embarazo con <span className="text-naranja font-bold">confianza</span>, no con dudas.
+                Vive tu embarazo con <span className="text-naranja font-bold">confianza</span>, no con dudas
               </h1>
 
               <p className="text-base sm:text-lg text-[#514F5C] leading-relaxed max-w-3xl">

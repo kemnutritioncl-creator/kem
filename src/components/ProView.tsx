@@ -88,7 +88,7 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
               </div>
 
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-carbon-title font-semibold tracking-tight">
-                Aprende a atender gestantes con <span className="text-violeta font-bold">seguridad</span> desde la primera consulta.
+                Aprende a atender gestantes con <span className="text-violeta font-bold">seguridad</span> desde la primera consulta
               </h1>
 
               <p className="text-base sm:text-lg text-carbon-body leading-relaxed max-w-3xl">

@@ -72,15 +72,6 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
               >
                 <Instagram className="w-5 h-5" />
               </a>
-              <a 
-                href={whatsappUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center text-stone-300 hover:text-[#6FA987] hover:bg-stone-700 transition-colors"
-                id="footer-wa-link"
-              >
-                <Phone className="w-5 h-5" />
-              </a>
             </div>
           </div>
 
@@ -122,20 +113,19 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
           {/* Navigation Links */}
           <div className="space-y-4">
             <h4 className="font-serif text-white font-medium text-base tracking-wide">Contacto</h4>
-            <ul className="space-y-2 text-sm text-stone-400">
-              <li className="flex items-center gap-2">
-                <Globe className="w-4 h-4 text-[#6FA987]" />
-                <span>kemnutrition.cl</span>
-              </li>
+            <ul className="space-y-2.5 text-sm text-stone-400">
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#6FA987]" />
-                <span>contacto@kemnutrition.cl</span>
+                <a href="mailto:kemnutricioncl@gmail.com" className="hover:underline hover:text-white transition-colors">
+                  kemnutricioncl@gmail.com
+                </a>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-[#6FA987]" />
-                <a href="tel:+56985489624" className="hover:underline hover:text-white transition-colors">+56 9 8548 9624</a>
+                <Instagram className="w-4 h-4 text-[#6FA987]" />
+                <a href="https://instagram.com/kemnutrition" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-white transition-colors">
+                  @kemnutrition
+                </a>
               </li>
-
             </ul>
           </div>
 
