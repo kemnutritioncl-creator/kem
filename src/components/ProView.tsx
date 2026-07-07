@@ -124,7 +124,7 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
                 <div className="absolute inset-0 bg-gradient-to-tr from-violeta/20 to-verde/10 rounded-full rotate-6 scale-105" />
                 <div className="absolute inset-0 bg-white rounded-full overflow-hidden border-2 border-stone-100 shadow-md">
                   <img 
-                    src="https://lh3.googleusercontent.com/d/1pJM1vAda6tpbRYFYERLJA5aHFFDq5yxu"
+                    src="https://lh3.googleusercontent.com/d/1RZZi3r4gItFgftOk3WG67g7RYtoBNxfN"
                     alt="KEM Pro Academy Hero" 
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover"
@@ -281,36 +281,307 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
         </div>
       </section>
 
-      {/* 6. Plan de estudios / Currículo (10 módulos) */}
-      <section className="py-12 sm:py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      {/* 6. De los fundamentos a tu consulta funcionando */}
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           <div className="text-center space-y-3">
-            <h2 className="font-serif text-3xl font-semibold text-carbon-title tracking-tight text-center">Plan de Estudios Kem Pro</h2>
-            <p className="text-sm font-medium text-violeta max-w-md mx-auto">
-              Deja de improvisar en consulta.
-            </p>
-            <p className="text-xs text-stone-500 max-w-lg mx-auto font-light">
-              10 módulos para que tengas criterio, estructura y seguridad clínica en el área materno-infantil, desde el primer paciente.
+            <span className="text-violeta font-mono text-xs uppercase tracking-widest font-bold">Plan de estudios</span>
+            <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-carbon-title tracking-tight text-center">
+              De los fundamentos a tu consulta funcionando
+            </h2>
+            <p className="text-sm text-stone-500 max-w-xl mx-auto font-light">
+              10 módulos que terminan en implementación real, no en teoría.
             </p>
           </div>
 
-          <div className="relative border-l-2 border-violeta/15 pl-6 sm:pl-8 ml-4 sm:ml-6 space-y-8 pt-2">
-            {proModules.map((m) => (
-              <div key={m.num} className="relative group">
-                <div className="absolute -left-[37px] sm:-left-[45px] top-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-violeta flex items-center justify-center text-white text-xs font-bold font-serif shadow-xs">
-                  {m.num}
+          {/* Numbered Progression Timeline */}
+          <div className="relative border-l-2 border-violeta/20 pl-6 sm:pl-10 ml-4 sm:ml-8 space-y-12">
+            
+            {/* Módulo 1 */}
+            <div className="relative scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+              <div className="absolute -left-[37px] sm:-left-[53px] top-0.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-violeta flex items-center justify-center text-white text-xs sm:text-sm font-bold font-serif shadow-sm">
+                1
+              </div>
+              <div className="space-y-3">
+                <h3 className="font-serif font-bold text-lg sm:text-xl text-carbon-title">
+                  Fundamentos de la nutrición materna
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 md:gap-4">
+                  <div className="md:col-span-6 flex items-start gap-2 bg-violeta/5 p-3 rounded-xl border border-violeta/10">
+                    <span className="text-xs font-bold text-violeta uppercase tracking-wider shrink-0 mt-0.5">Dominas:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">las bases fisiológicas y de evidencia.</span>
+                  </div>
+                  <div className="md:col-span-6 flex items-start gap-2 bg-[#6FA987]/10 p-3 rounded-xl border border-[#6FA987]/10">
+                    <span className="text-xs font-bold text-[#4B7D60] uppercase tracking-wider shrink-0 mt-0.5">En consulta:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">entiendes el porqué de cada requerimiento.</span>
+                  </div>
                 </div>
-                <div className="space-y-1.5 hover:p-1.5 hover:bg-stone-50 rounded-xl transition-all">
-                  <h4 className="font-serif font-bold text-base sm:text-lg text-carbon-title">
-                    {m.title}
-                  </h4>
-                  <p className="text-xs sm:text-sm text-stone-505 leading-relaxed font-light">
-                    {m.desc}
+              </div>
+            </div>
+
+            {/* Módulo 2 */}
+            <div className="relative scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+              <div className="absolute -left-[37px] sm:-left-[53px] top-0.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-violeta flex items-center justify-center text-white text-xs sm:text-sm font-bold font-serif shadow-sm">
+                2
+              </div>
+              <div className="space-y-3">
+                <h3 className="font-serif font-bold text-lg sm:text-xl text-carbon-title">
+                  Evaluación nutricional de la gestante
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 md:gap-4">
+                  <div className="md:col-span-6 flex items-start gap-2 bg-violeta/5 p-3 rounded-xl border border-violeta/10">
+                    <span className="text-xs font-bold text-violeta uppercase tracking-wider shrink-0 mt-0.5">Dominas:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">la evaluación antropométrica, clínica y dietética.</span>
+                  </div>
+                  <div className="md:col-span-6 flex items-start gap-2 bg-[#6FA987]/10 p-3 rounded-xl border border-[#6FA987]/10">
+                    <span className="text-xs font-bold text-[#4B7D60] uppercase tracking-wider shrink-0 mt-0.5">En consulta:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">sabes qué medir y cómo dejar el diagnóstico registrado.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Módulo 3 */}
+            <div className="relative scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+              <div className="absolute -left-[37px] sm:-left-[53px] top-0.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-violeta flex items-center justify-center text-white text-xs sm:text-sm font-bold font-serif shadow-sm">
+                3
+              </div>
+              <div className="space-y-3">
+                <h3 className="font-serif font-bold text-lg sm:text-xl text-carbon-title">
+                  Interpretación de exámenes y suplementación
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 md:gap-4">
+                  <div className="md:col-span-6 flex items-start gap-2 bg-violeta/5 p-3 rounded-xl border border-violeta/10">
+                    <span className="text-xs font-bold text-violeta uppercase tracking-wider shrink-0 mt-0.5">Dominas:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">la lectura de exámenes.</span>
+                  </div>
+                  <div className="md:col-span-6 flex items-start gap-2 bg-[#6FA987]/10 p-3 rounded-xl border border-[#6FA987]/10">
+                    <span className="text-xs font-bold text-[#4B7D60] uppercase tracking-wider shrink-0 mt-0.5">En consulta:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">interpretas hierro, vitamina D, glicemia y perfil, e indicas suplementos con seguridad.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Módulo 4 */}
+            <div className="relative scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+              <div className="absolute -left-[37px] sm:-left-[53px] top-0.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-violeta flex items-center justify-center text-white text-xs sm:text-sm font-bold font-serif shadow-sm">
+                4
+              </div>
+              <div className="space-y-3">
+                <h3 className="font-serif font-bold text-lg sm:text-xl text-carbon-title">
+                  Requerimientos y planificación alimentaria
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 md:gap-4">
+                  <div className="md:col-span-6 flex items-start gap-2 bg-violeta/5 p-3 rounded-xl border border-violeta/10">
+                    <span className="text-xs font-bold text-violeta uppercase tracking-wider shrink-0 mt-0.5">Dominas:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">el cálculo y el diseño de planes.</span>
+                  </div>
+                  <div className="md:col-span-6 flex items-start gap-2 bg-[#6FA987]/10 p-3 rounded-xl border border-[#6FA987]/10">
+                    <span className="text-xs font-bold text-[#4B7D60] uppercase tracking-wider shrink-0 mt-0.5">En consulta:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">construyes planes realistas que la paciente sigue.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Módulo 5 */}
+            <div className="relative scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+              <div className="absolute -left-[37px] sm:-left-[53px] top-0.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-violeta flex items-center justify-center text-white text-xs sm:text-sm font-bold font-serif shadow-sm">
+                5
+              </div>
+              <div className="space-y-3">
+                <h3 className="font-serif font-bold text-lg sm:text-xl text-carbon-title">
+                  Diabetes gestacional y resistencia a la insulina
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 md:gap-4">
+                  <div className="md:col-span-6 flex items-start gap-2 bg-violeta/5 p-3 rounded-xl border border-violeta/10">
+                    <span className="text-xs font-bold text-violeta uppercase tracking-wider shrink-0 mt-0.5">Dominas:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">el manejo metabólico.</span>
+                  </div>
+                  <div className="md:col-span-6 flex items-start gap-2 bg-[#6FA987]/10 p-3 rounded-xl border border-[#6FA987]/10">
+                    <span className="text-xs font-bold text-[#4B7D60] uppercase tracking-wider shrink-0 mt-0.5">En consulta:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">manejas la condición más temida sin derivar por inseguridad.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Módulo 6 */}
+            <div className="relative scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+              <div className="absolute -left-[37px] sm:-left-[53px] top-0.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-violeta flex items-center justify-center text-white text-xs sm:text-sm font-bold font-serif shadow-sm">
+                6
+              </div>
+              <div className="space-y-3">
+                <h3 className="font-serif font-bold text-lg sm:text-xl text-carbon-title">
+                  Situaciones clínicas frecuentes
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 md:gap-4">
+                  <div className="md:col-span-6 flex items-start gap-2 bg-violeta/5 p-3 rounded-xl border border-violeta/10">
+                    <span className="text-xs font-bold text-violeta uppercase tracking-wider shrink-0 mt-0.5">Dominas:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">las molestias del embarazo y los criterios de derivación.</span>
+                  </div>
+                  <div className="md:col-span-6 flex items-start gap-2 bg-[#6FA987]/10 p-3 rounded-xl border border-[#6FA987]/10">
+                    <span className="text-xs font-bold text-[#4B7D60] uppercase tracking-wider shrink-0 mt-0.5">En consulta:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">resuelves lo cotidiano y sabes cuándo derivar.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Módulo 7 */}
+            <div className="relative scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+              <div className="absolute -left-[37px] sm:-left-[53px] top-0.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-violeta flex items-center justify-center text-white text-xs sm:text-sm font-bold font-serif shadow-sm">
+                7
+              </div>
+              <div className="space-y-3">
+                <h3 className="font-serif font-bold text-lg sm:text-xl text-carbon-title">
+                  Postparto y lactancia
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 md:gap-4">
+                  <div className="md:col-span-6 flex items-start gap-2 bg-violeta/5 p-3 rounded-xl border border-violeta/10">
+                    <span className="text-xs font-bold text-violeta uppercase tracking-wider shrink-0 mt-0.5">Dominas:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">el acompañamiento del puerperio y la lactancia.</span>
+                  </div>
+                  <div className="md:col-span-6 flex items-start gap-2 bg-[#6FA987]/10 p-3 rounded-xl border border-[#6FA987]/10">
+                    <span className="text-xs font-bold text-[#4B7D60] uppercase tracking-wider shrink-0 mt-0.5">En consulta:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">extiendes la atención más allá del parto y fidelizas.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Módulo 8 */}
+            <div className="relative scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+              <div className="absolute -left-[37px] sm:-left-[53px] top-0.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-violeta flex items-center justify-center text-white text-xs sm:text-sm font-bold font-serif shadow-sm">
+                8
+              </div>
+              <div className="space-y-3">
+                <h3 className="font-serif font-bold text-lg sm:text-xl text-carbon-title">
+                  Herramientas para la práctica clínica
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 md:gap-4">
+                  <div className="md:col-span-6 flex items-start gap-2 bg-violeta/5 p-3 rounded-xl border border-violeta/10">
+                    <span className="text-xs font-bold text-violeta uppercase tracking-wider shrink-0 mt-0.5">Dominas:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">formatos y registros listos.</span>
+                  </div>
+                  <div className="md:col-span-6 flex items-start gap-2 bg-[#6FA987]/10 p-3 rounded-xl border border-[#6FA987]/10">
+                    <span className="text-xs font-bold text-[#4B7D60] uppercase tracking-wider shrink-0 mt-0.5">En consulta:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">dejas de armar todo desde cero.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Módulo 9 */}
+            <div className="relative scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+              <div className="absolute -left-[37px] sm:-left-[53px] top-0.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-violeta flex items-center justify-center text-white text-xs sm:text-sm font-bold font-serif shadow-sm">
+                9
+              </div>
+              <div className="space-y-3">
+                <h3 className="font-serif font-bold text-lg sm:text-xl text-carbon-title">
+                  Casos clínicos reales
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 md:gap-4">
+                  <div className="md:col-span-6 flex items-start gap-2 bg-violeta/5 p-3 rounded-xl border border-violeta/10">
+                    <span className="text-xs font-bold text-violeta uppercase tracking-wider shrink-0 mt-0.5">Dominas:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">el razonamiento clínico aplicado.</span>
+                  </div>
+                  <div className="md:col-span-6 flex items-start gap-2 bg-[#6FA987]/10 p-3 rounded-xl border border-[#6FA987]/10">
+                    <span className="text-xs font-bold text-[#4B7D60] uppercase tracking-wider shrink-0 mt-0.5">En consulta:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">ya practicaste con casos antes de tener a la paciente al frente.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Módulo 10 */}
+            <div className="relative scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+              <div className="absolute -left-[37px] sm:-left-[53px] top-0.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-violeta flex items-center justify-center text-white text-xs sm:text-sm font-bold font-serif shadow-sm">
+                10
+              </div>
+              <div className="space-y-3">
+                <h3 className="font-serif font-bold text-lg sm:text-xl text-carbon-title">
+                  Implementación y desarrollo profesional
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 md:gap-4">
+                  <div className="md:col-span-6 flex items-start gap-2 bg-violeta/5 p-3 rounded-xl border border-violeta/10">
+                    <span className="text-xs font-bold text-violeta uppercase tracking-wider shrink-0 mt-0.5">Dominas:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">cómo montar tu atención materna.</span>
+                  </div>
+                  <div className="md:col-span-6 flex items-start gap-2 bg-[#6FA987]/10 p-3 rounded-xl border border-[#6FA987]/10">
+                    <span className="text-xs font-bold text-[#4B7D60] uppercase tracking-wider shrink-0 mt-0.5">En consulta:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">sales con un plan de implementación. Este módulo convierte la formación en un servicio que ofreces.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Franja "Por qué este programa sí se aplica" */}
+          <div className="bg-stone-900 text-stone-100 rounded-3xl p-8 sm:p-12 shadow-xl border border-stone-800 space-y-8 mt-12 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+            <div className="text-center space-y-2">
+              <span className="text-violeta font-mono text-xs uppercase tracking-widest font-bold">Acompañamiento Práctico</span>
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                Por qué este programa sí se aplica
+              </h3>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 pt-4">
+              <div className="space-y-2.5">
+                <div className="w-8 h-8 rounded-full bg-violeta/20 text-violeta flex items-center justify-center font-bold text-sm">1</div>
+                <h4 className="font-serif font-bold text-white text-base">Clínico, no divulgación</h4>
+                <p className="text-xs text-stone-300 leading-relaxed font-light">
+                  Es clínico, no divulgación. Interpretas exámenes, calculas requerimientos y resuelves casos reales.
+                </p>
+              </div>
+              
+              <div className="space-y-2.5">
+                <div className="w-8 h-8 rounded-full bg-[#6FA987]/20 text-[#6FA987] flex items-center justify-center font-bold text-sm">2</div>
+                <h4 className="font-serif font-bold text-white text-base">Enfoque en acción</h4>
+                <p className="text-xs text-stone-300 leading-relaxed font-light">
+                  La diferencia es el módulo 10. Terminas con tu consulta estructurada, no con apuntes.
+                </p>
+              </div>
+              
+              <div className="space-y-2.5">
+                <div className="w-8 h-8 rounded-full bg-orange-500/20 text-naranja flex items-center justify-center font-bold text-sm">3</div>
+                <h4 className="font-serif font-bold text-white text-base">Asíncrono total</h4>
+                <p className="text-xs text-stone-300 leading-relaxed font-light">
+                  Es asíncrono. Avanzas a tu ritmo.
+                </p>
+              </div>
+            </div>
+
+            {/* Editable closing block of the certificate */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-4 justify-between mt-6">
+              <div className="flex items-center gap-3">
+                <div className="p-2.5 rounded-xl bg-violeta/20 text-violeta shrink-0">
+                  <Award className="w-6 h-6" />
+                </div>
+                <div className="text-left">
+                  <h4 className="text-sm font-bold text-white font-serif">Certificación Oficial</h4>
+                  <p className="text-xs text-stone-400 font-light leading-relaxed">
+                    [Al finalizar recibes: certificado de KEM Nutrition Academy — confirmar horas y acreditación]
                   </p>
                 </div>
               </div>
-            ))}
+            </div>
+
+            <div className="flex justify-center pt-4">
+              <a
+                href="#planes-precios"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('planes-precios')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-violeta hover:bg-violet-600 text-white font-bold text-sm tracking-wide shadow-md hover:shadow-lg transition-all"
+              >
+                Ver los planes <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
           </div>
 
         </div>

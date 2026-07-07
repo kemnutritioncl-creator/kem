@@ -124,7 +124,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                 <div className="absolute inset-0 bg-gradient-to-tr from-naranja/20 to-verde/10 rounded-full rotate-6 scale-105" />
                 <div className="absolute inset-0 bg-white rounded-full overflow-hidden border-2 border-stone-100 shadow-md">
                   <img 
-                    src="https://lh3.googleusercontent.com/d/1AKWh181CV8t6qqVM01szMhVBUrLdDlr8"
+                    src="https://lh3.googleusercontent.com/d/1pBHcfrQ4Uf0MIzL3Fb-JsqAOaEyjK1m3"
                     alt="KEM Mom Academy Hero" 
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover"
@@ -286,34 +286,248 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
         </div>
       </section>
 
-      {/* 6. Plan de estudios / Currículo (8 módulos) */}
-      <section className="py-12 sm:py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      {/* 6. Tu recorrido, etapa por etapa */}
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           <div className="text-center space-y-3">
-            <span className="text-[#6FA987] font-mono text-xs uppercase tracking-widest font-bold">Cronograma de Contenido</span>
-            <h2 className="font-serif text-3xl font-semibold text-carbon-title tracking-tight text-center">Plan de estudios Kem Mom</h2>
-            <p className="text-xs text-stone-500 max-w-sm mx-auto font-light">
-              Explora en detalle el contenido de los 8 módulos estructurales concebidos para tu evolución.
+            <span className="text-[#6FA987] font-mono text-xs uppercase tracking-widest font-bold">Tu recorrido, etapa por etapa</span>
+            <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-carbon-title tracking-tight text-center">
+              8 etapas, un mismo acompañamiento
+            </h2>
+            <p className="text-sm text-stone-500 max-w-xl mx-auto font-light">
+              Entra en el momento en el que estás hoy.
             </p>
           </div>
 
-          <div className="relative border-l-2 border-orange-100 pl-6 sm:pl-8 ml-4 sm:ml-6 space-y-8 pt-2">
-            {momModules.map((m) => (
-              <div key={m.num} className="relative group">
-                <div className="absolute -left-[37px] sm:-left-[45px] top-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-naranja flex items-center justify-center text-white text-xs font-bold font-serif shadow-xs">
-                  {m.num}
-                </div>
-                <div className="space-y-1.5 hover:p-1.5 hover:bg-stone-50 rounded-xl transition-all">
-                  <h4 className="font-serif font-bold text-base sm:text-lg text-carbon-title">
-                    {m.title}
-                  </h4>
-                  <p className="text-xs sm:text-sm text-stone-505 leading-relaxed font-light">
-                    {m.desc}
-                  </p>
+          {/* Timeline */}
+          <div className="relative border-l-2 border-orange-100 pl-6 sm:pl-10 ml-4 sm:ml-8 space-y-12">
+            
+            {/* Etapa 1 */}
+            <div className="relative scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+              <div className="absolute -left-[37px] sm:-left-[53px] top-0.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-naranja flex items-center justify-center text-white text-xs sm:text-sm font-bold font-serif shadow-sm">
+                1
+              </div>
+              <div className="space-y-3">
+                <h3 className="font-serif font-bold text-lg sm:text-xl text-carbon-title">
+                  Prepara tu cuerpo antes de buscar el embarazo
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 md:gap-4">
+                  <div className="md:col-span-4 flex items-start gap-2 bg-orange-50/60 p-3 rounded-xl border border-orange-100/40">
+                    <span className="text-xs font-bold text-orange-700 uppercase tracking-wider shrink-0 mt-0.5">Resuelve:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed font-medium">llegar sin déficits.</span>
+                  </div>
+                  <div className="md:col-span-8 flex items-start gap-2 bg-[#6FA987]/10 p-3 rounded-xl border border-[#6FA987]/10">
+                    <span className="text-xs font-bold text-[#4B7D60] uppercase tracking-wider shrink-0 mt-0.5">Logras:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">priorizar ácido fólico, hierro, yodo, vitamina D y zinc, cuidar tu microbiota y ajustar hábitos de fertilidad.</span>
+                  </div>
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* Etapa 2 */}
+            <div className="relative scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+              <div className="absolute -left-[37px] sm:-left-[53px] top-0.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-naranja flex items-center justify-center text-white text-xs sm:text-sm font-bold font-serif shadow-sm">
+                2
+              </div>
+              <div className="space-y-3">
+                <h3 className="font-serif font-bold text-lg sm:text-xl text-carbon-title">
+                  Sobrevive al primer trimestre sin dejar de nutrir a tu bebé
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 md:gap-4">
+                  <div className="md:col-span-4 flex items-start gap-2 bg-orange-50/60 p-3 rounded-xl border border-orange-100/40">
+                    <span className="text-xs font-bold text-orange-700 uppercase tracking-wider shrink-0 mt-0.5">Resuelve:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed font-medium">náuseas y cansancio.</span>
+                  </div>
+                  <div className="md:col-span-8 flex items-start gap-2 bg-[#6FA987]/10 p-3 rounded-xl border border-[#6FA987]/10">
+                    <span className="text-xs font-bold text-[#4B7D60] uppercase tracking-wider shrink-0 mt-0.5">Logras:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">aliviar las náuseas con seguridad y sostener tu energía cuando baja el apetito.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Etapa 3 */}
+            <div className="relative scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+              <div className="absolute -left-[37px] sm:-left-[53px] top-0.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-naranja flex items-center justify-center text-white text-xs sm:text-sm font-bold font-serif shadow-sm">
+                3
+              </div>
+              <div className="space-y-3">
+                <h3 className="font-serif font-bold text-lg sm:text-xl text-carbon-title">
+                  Deja de preguntarte si comes bien
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 md:gap-4">
+                  <div className="md:col-span-4 flex items-start gap-2 bg-orange-50/60 p-3 rounded-xl border border-orange-100/40">
+                    <span className="text-xs font-bold text-orange-700 uppercase tracking-wider shrink-0 mt-0.5">Resuelve:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed font-medium">la duda constante.</span>
+                  </div>
+                  <div className="md:col-span-8 flex items-start gap-2 bg-[#6FA987]/10 p-3 rounded-xl border border-[#6FA987]/10">
+                    <span className="text-xs font-bold text-[#4B7D60] uppercase tracking-wider shrink-0 mt-0.5">Logras:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">armar comidas que cubren hierro, calcio, DHA, colina y fibra, y ordenar tu semana.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Etapa 4 */}
+            <div className="relative scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+              <div className="absolute -left-[37px] sm:-left-[53px] top-0.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-naranja flex items-center justify-center text-white text-xs sm:text-sm font-bold font-serif shadow-sm">
+                4
+              </div>
+              <div className="space-y-3">
+                <h3 className="font-serif font-bold text-lg sm:text-xl text-carbon-title">
+                  Maneja las molestias del embarazo con comida
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 md:gap-4">
+                  <div className="md:col-span-4 flex items-start gap-2 bg-orange-50/60 p-3 rounded-xl border border-orange-100/40">
+                    <span className="text-xs font-bold text-orange-700 uppercase tracking-wider shrink-0 mt-0.5">Resuelve:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed font-medium">estreñimiento, acidez, reflujo y antojos.</span>
+                  </div>
+                  <div className="md:col-span-8 flex items-start gap-2 bg-[#6FA987]/10 p-3 rounded-xl border border-[#6FA987]/10">
+                    <span className="text-xs font-bold text-[#4B7D60] uppercase tracking-wider shrink-0 mt-0.5">Logras:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">aliviarlos de forma natural y sin culpa.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Etapa 5 */}
+            <div className="relative scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+              <div className="absolute -left-[37px] sm:-left-[53px] top-0.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-naranja flex items-center justify-center text-white text-xs sm:text-sm font-bold font-serif shadow-sm">
+                5
+              </div>
+              <div className="space-y-3">
+                <h3 className="font-serif font-bold text-lg sm:text-xl text-carbon-title">
+                  Enfrenta la diabetes gestacional sin miedo
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 md:gap-4">
+                  <div className="md:col-span-4 flex items-start gap-2 bg-orange-50/60 p-3 rounded-xl border border-orange-100/40">
+                    <span className="text-xs font-bold text-orange-700 uppercase tracking-wider shrink-0 mt-0.5">Resuelve:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed font-medium">el susto del diagnóstico.</span>
+                  </div>
+                  <div className="md:col-span-8 flex items-start gap-2 bg-[#6FA987]/10 p-3 rounded-xl border border-[#6FA987]/10">
+                    <span className="text-xs font-bold text-[#4B7D60] uppercase tracking-wider shrink-0 mt-0.5">Logras:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">entenderla, distribuir tus carbohidratos y acompañar tu monitoreo con calma.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Etapa 6 */}
+            <div className="relative scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+              <div className="absolute -left-[37px] sm:-left-[53px] top-0.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-naranja flex items-center justify-center text-white text-xs sm:text-sm font-bold font-serif shadow-sm">
+                6
+              </div>
+              <div className="space-y-3">
+                <h3 className="font-serif font-bold text-lg sm:text-xl text-carbon-title">
+                  Llega al parto preparada para lo que viene
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 md:gap-4">
+                  <div className="md:col-span-4 flex items-start gap-2 bg-orange-50/60 p-3 rounded-xl border border-orange-100/40">
+                    <span className="text-xs font-bold text-orange-700 uppercase tracking-wider shrink-0 mt-0.5">Resuelve:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed font-medium">la recta final a ciegas.</span>
+                  </div>
+                  <div className="md:col-span-8 flex items-start gap-2 bg-[#6FA987]/10 p-3 rounded-xl border border-[#6FA987]/10">
+                    <span className="text-xs font-bold text-[#4B7D60] uppercase tracking-wider shrink-0 mt-0.5">Logras:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">ajustar tu alimentación, entender la extracción prenatal de calostro y prepararte para la lactancia.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Etapa 7 */}
+            <div className="relative scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+              <div className="absolute -left-[37px] sm:-left-[53px] top-0.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-naranja flex items-center justify-center text-white text-xs sm:text-sm font-bold font-serif shadow-sm">
+                7
+              </div>
+              <div className="space-y-3">
+                <h3 className="font-serif font-bold text-lg sm:text-xl text-carbon-title">
+                  Recupérate en el postparto sin olvidarte de ti
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 md:gap-4">
+                  <div className="md:col-span-4 flex items-start gap-2 bg-orange-50/60 p-3 rounded-xl border border-orange-100/40">
+                    <span className="text-xs font-bold text-orange-700 uppercase tracking-wider shrink-0 mt-0.5">Resuelve:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed font-medium">el puerperio en que la madre queda al final.</span>
+                  </div>
+                  <div className="md:col-span-8 flex items-start gap-2 bg-[#6FA987]/10 p-3 rounded-xl border border-[#6FA987]/10">
+                    <span className="text-xs font-bold text-[#4B7D60] uppercase tracking-wider shrink-0 mt-0.5">Logras:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">reponer reservas, recuperar energía y cuidar tu bienestar físico y emocional.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Etapa 8 */}
+            <div className="relative scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+              <div className="absolute -left-[37px] sm:-left-[53px] top-0.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-naranja flex items-center justify-center text-white text-xs sm:text-sm font-bold font-serif shadow-sm">
+                8
+              </div>
+              <div className="space-y-3">
+                <h3 className="font-serif font-bold text-lg sm:text-xl text-carbon-title">
+                  Alimenta tu lactancia sin caer en los mitos
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-2.5 md:gap-4">
+                  <div className="md:col-span-4 flex items-start gap-2 bg-orange-50/60 p-3 rounded-xl border border-orange-100/40">
+                    <span className="text-xs font-bold text-orange-700 uppercase tracking-wider shrink-0 mt-0.5">Resuelve:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed font-medium">las mil versiones sobre qué comer.</span>
+                  </div>
+                  <div className="md:col-span-8 flex items-start gap-2 bg-[#6FA987]/10 p-3 rounded-xl border border-[#6FA987]/10">
+                    <span className="text-xs font-bold text-[#4B7D60] uppercase tracking-wider shrink-0 mt-0.5">Logras:</span>
+                    <span className="text-xs text-stone-700 leading-relaxed">alimentarte bien, separar mitos de evidencia y sostener tu energía.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Franja "Por qué esto no es más información de internet" */}
+          <div className="bg-stone-900 text-stone-100 rounded-3xl p-8 sm:p-12 shadow-xl border border-stone-800 space-y-8 mt-12 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+            <div className="text-center space-y-2">
+              <span className="text-naranja font-mono text-xs uppercase tracking-widest font-bold">Diferenciación Clave</span>
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                Por qué esto no es más información de internet
+              </h3>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 pt-4">
+              <div className="space-y-2.5">
+                <div className="w-8 h-8 rounded-full bg-naranja/20 text-naranja flex items-center justify-center font-bold text-sm">1</div>
+                <h4 className="font-serif font-bold text-white text-base">Ordenada y Validada</h4>
+                <p className="text-xs text-stone-300 leading-relaxed font-light">
+                  No necesitas más información, la necesitas ordenada por tu etapa y validada por una nutricionista clínica.
+                </p>
+              </div>
+              
+              <div className="space-y-2.5">
+                <div className="w-8 h-8 rounded-full bg-[#6FA987]/20 text-[#6FA987] flex items-center justify-center font-bold text-sm">2</div>
+                <h4 className="font-serif font-bold text-white text-base">Clases al grano</h4>
+                <p className="text-xs text-stone-300 leading-relaxed font-light">
+                  Clases de 8 a 15 minutos. Ves solo lo de tu momento.
+                </p>
+              </div>
+              
+              <div className="space-y-2.5">
+                <div className="w-8 h-8 rounded-full bg-violeta/20 text-violeta flex items-center justify-center font-bold text-sm">3</div>
+                <h4 className="font-serif font-bold text-white text-base">Cobertura completa</h4>
+                <p className="text-xs text-stone-300 leading-relaxed font-light">
+                  Cubre de la preconcepción a la lactancia y situaciones como diabetes gestacional. Tu etapa siempre está.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex justify-center pt-4">
+              <a
+                href="#planes-precios"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('planes-precios')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-naranja hover:bg-orange-500 text-white font-bold text-sm tracking-wide shadow-md hover:shadow-lg transition-all"
+              >
+                Ver los planes <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
           </div>
 
         </div>

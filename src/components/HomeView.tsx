@@ -178,7 +178,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                 {/* Image Wrap */}
                 <div className="absolute inset-2 bg-stone-100 rounded-[36px] overflow-hidden border-4 border-white shadow-xl flex flex-col justify-end">
                   <img 
-                    src="https://lh3.googleusercontent.com/d/1toiIEgGroES39InEcNVkgpKrEYjwrybk" 
+                    src="https://lh3.googleusercontent.com/d/1iUpZgXRYoC2DVXyacp42xhxEFgqahxuC" 
                     alt="Katherinne Elgueta Mora - KEM Nutrition Academy" 
                     className="w-full h-full object-cover object-center scale-102 hover:scale-105 transition-transform duration-700"
                     referrerPolicy="no-referrer"
@@ -267,7 +267,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
               <div className="relative w-full max-w-sm aspect-4/5">
                 <div className="absolute inset-0 bg-stone-100 rounded-3xl overflow-hidden border-8 border-white shadow-xl flex flex-col justify-end">
                   <img 
-                    src="https://lh3.googleusercontent.com/d/1lGi39UAN2MrpyJZG49nVpO9I7uz6cadq"
+                    src="https://lh3.googleusercontent.com/d/1e_di3AMU0E7zMi907OMXM30fa5vMdVbG"
                     alt="Katherinne Elgueta Mora"
                     className="w-full h-full object-cover object-center"
                     referrerPolicy="no-referrer"
