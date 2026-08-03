@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import { PageId } from '../types';
-import { Heart, Sparkles, Instagram, Mail, ShieldAlert, Globe, Phone } from 'lucide-react';
+import { Heart, Sparkles, Instagram, Mail, ShieldAlert, Share2, Check } from 'lucide-react';
 
 interface FooterProps {
   setCurrentPage: (page: PageId) => void;
@@ -15,11 +15,30 @@ interface FooterProps {
 
 export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl }: FooterProps) {
   const [logoError, setLogoError] = useState(false);
+  const [copied, setCopied] = useState(false);
   const logoUrl = "https://lh3.googleusercontent.com/d/1p0asa7stCkGKjn1gVpgUglAdt6qzDYG0";
 
   const handleNavClick = (pageId: PageId) => {
     setCurrentPage(pageId);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleShareLink = () => {
+    const shareUrl = "https://kemnutritionacademy.com/";
+    const shareTitle = "KEM Nutrition Academy | Nutrición en Maternidad y Formación Profesional";
+    const shareText = "Descubre KEM Nutrition Academy dirigida por Katherinne Elgueta Mora: programas para futuras mamás (KEM Mom) y capacitación profesional (KEM Pro).";
+
+    if (navigator.share) {
+      navigator.share({
+        title: shareTitle,
+        text: shareText,
+        url: shareUrl,
+      }).catch(() => {});
+    } else {
+      navigator.clipboard.writeText(shareUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    }
   };
 
   return (
@@ -61,17 +80,36 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
               Nutrición clínica materna de excelencia. Acompañamiento empático basado en evidencia científica para madres y capacitación de primer nivel para profesionales de la salud.
             </p>
 
-            {/* Social Link */}
-            <div className="flex items-center gap-4 pt-2">
+            {/* Social Link & Share */}
+            <div className="flex items-center gap-3 pt-2">
               <a 
                 href="https://instagram.com/kemnutrition" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center text-stone-300 hover:text-naranja hover:bg-stone-700 transition-colors"
                 id="footer-ig-link"
+                title="Siguenos en Instagram @kemnutrition"
               >
                 <Instagram className="w-5 h-5" />
               </a>
+              <button
+                onClick={handleShareLink}
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-stone-800 hover:bg-stone-700 text-stone-300 hover:text-white text-xs font-medium transition-all cursor-pointer"
+                id="footer-share-link"
+                title="Compartir enlace https://kemnutritionacademy.com/"
+              >
+                {copied ? (
+                  <>
+                    <Check className="w-4 h-4 text-verde" />
+                    <span className="text-verde font-semibold">¡Enlace copiado!</span>
+                  </>
+                ) : (
+                  <>
+                    <Share2 className="w-4 h-4 text-[#6FA987]" />
+                    <span>Compartir web</span>
+                  </>
+                )}
+              </button>
             </div>
           </div>
 

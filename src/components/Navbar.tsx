@@ -123,29 +123,27 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
 
           {/* Contact CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase border border-stone-200 text-carbon-title hover:border-violeta hover:text-violeta transition-all bg-stone-50 hover:bg-white"
-              id="nav-contact-whatsapp"
-            >
-              WhatsApp
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </a>
-            <button
-              onClick={() => {
-                if (currentPage === 'home') {
-                  handleNavClick('kem-mom');
-                } else {
+            {currentPage === 'home' ? (
+              <a
+                href="https://aulavirtualkemnutrition.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white bg-violeta hover:bg-violeta-dark transition-all shadow-sm cursor-pointer"
+                id="nav-cta-btn"
+              >
+                Ver Academias
+              </a>
+            ) : (
+              <button
+                onClick={() => {
                   document.getElementById('planes-precios')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }}
-              className="px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white bg-violeta hover:bg-violeta-dark transition-all shadow-sm cursor-pointer"
-              id="nav-cta-btn"
-            >
-              {currentPage === 'home' ? 'Ver Academias' : 'Inscribirme'}
-            </button>
+                }}
+                className="px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white bg-violeta hover:bg-violeta-dark transition-all shadow-sm cursor-pointer"
+                id="nav-cta-btn"
+              >
+                Inscribirme
+              </button>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -201,31 +199,30 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
           </button>
 
           <div className="pt-4 border-t border-stone-100 flex flex-col gap-3 px-4">
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full text-center py-3 rounded-xl text-sm font-semibold tracking-wider uppercase border border-stone-200 text-carbon-title"
-              id="mobile-nav-whatsapp"
-            >
-              Conversar por WhatsApp
-            </a>
-            <button
-              onClick={() => {
-                if (currentPage === 'home') {
-                  handleNavClick('kem-mom');
-                } else {
+            {currentPage === 'home' ? (
+              <a
+                href="https://aulavirtualkemnutrition.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full text-center py-3 rounded-xl text-sm font-semibold tracking-wider uppercase text-white bg-violeta block"
+                id="mobile-nav-cta"
+              >
+                Ver Academias
+              </a>
+            ) : (
+              <button
+                onClick={() => {
                   setIsOpen(false);
                   setTimeout(() => {
                     document.getElementById('planes-precios')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }, 100);
-                }
-              }}
-              className="w-full text-center py-3 rounded-xl text-sm font-semibold tracking-wider uppercase text-white bg-violeta"
-              id="mobile-nav-cta"
-            >
-              {currentPage === 'home' ? 'Ver Academias' : 'Inscribirse al Programa'}
-            </button>
+                }}
+                className="w-full text-center py-3 rounded-xl text-sm font-semibold tracking-wider uppercase text-white bg-violeta"
+                id="mobile-nav-cta"
+              >
+                Inscribirse al Programa
+              </button>
+            )}
           </div>
         </div>
       )}

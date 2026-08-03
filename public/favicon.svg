@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="kem-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5B2E83"/>
+      <stop offset="50%" stop-color="#6FA987"/>
+      <stop offset="100%" stop-color="#F2994A"/>
+    </linearGradient>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF8F5"/>
+      <stop offset="100%" stop-color="#F3EFEA"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Base Background -->
+  <rect width="512" height="512" rx="128" fill="url(#bg-grad)"/>
+  
+  <!-- Subtle Outer Accent Ring -->
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="none" stroke="url(#kem-grad)" stroke-width="12" opacity="0.85"/>
+  
+  <!-- Central Icon Mark: Stylized K + Leaf + Maternal Arc -->
+  <g transform="translate(256, 256)">
+    <!-- Main K Stem -->
+    <path d="M -80 -120 L -80 120 C -80 132 -70 140 -56 140 C -42 140 -32 132 -32 120 L -32 -120 C -32 -132 -42 -140 -56 -140 C -70 -140 -80 -132 -80 -120 Z" fill="#5B2E83" />
+    
+    <!-- Top Arc / Branch (K upper arm + Leaf) -->
+    <path d="M -32 -20 C 0 -60 50 -110 110 -110 C 122 -110 130 -100 126 -88 C 110 -40 60 10 -32 20 Z" fill="#6FA987" />
+    
+    <!-- Bottom Gentle Arc (K lower arm + Maternal curve) -->
+    <path d="M -32 10 C 40 10 100 60 115 110 C 118 122 108 132 96 130 C 50 120 0 80 -32 30 Z" fill="#F2994A" />
+    
+    <!-- Center Soft Heart/Dot -->
+    <circle cx="35" cy="-10" r="18" fill="#E86A58" opacity="0.9"/>
+  </g>
+</svg>

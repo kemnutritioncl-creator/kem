@@ -108,13 +108,11 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
                   Ver Planes de Inscripción
                 </a>
                 <a
-                  href={urls.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="mailto:kemnutricioncl@gmail.com"
                   className="w-full sm:w-auto text-center px-8 py-4 rounded-full bg-white border border-stone-200 text-carbon-title font-semibold text-sm hover:bg-stone-50 transition-colors"
-                  id="pro-hero-whatsapp"
+                  id="pro-hero-contact-email"
                 >
-                  Dudas con Katherinne
+                  Consultar por correo
                 </a>
               </div>
             </div>
@@ -898,10 +896,10 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
       {showConfigAlert && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
           <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full border border-stone-200 shadow-2xl font-sans text-center space-y-4">
-            <div className="w-12 h-12 rounded-full bg-violeta/10 text-violeta flex items-center justify-center mx-auto text-xl">💬</div>
+            <div className="w-12 h-12 rounded-full bg-violeta/10 text-violeta flex items-center justify-center mx-auto text-xl">✉</div>
             <h4 className="font-serif font-bold text-carbon-title text-lg leading-tight font-serif">Inscripción y consultas</h4>
             <p className="text-xs sm:text-sm text-stone-600 font-light leading-relaxed">
-              Para inscribirte en el plan <strong>{alertTier}</strong> o recibir asistencia sobre el proceso, puedes conversar directamente con Katherinne por WhatsApp. Te guiará con gusto en el registro.
+              Para inscribirte en el plan <strong>{alertTier}</strong> o recibir asistencia sobre el proceso, puedes enviarnos un correo directamente a <strong>kemnutricioncl@gmail.com</strong>.
             </p>
             <div className="pt-2 flex gap-3">
               <button
@@ -911,13 +909,11 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
                 Volver
               </button>
               <a
-                href={urls.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:kemnutricioncl@gmail.com"
                 onClick={() => setShowConfigAlert(false)}
-                className="flex-1 py-2.5 rounded-lg bg-verde hover:bg-opacity-90 text-white font-semibold text-xs transition-colors flex items-center justify-center"
+                className="flex-1 py-2.5 rounded-lg bg-violeta hover:bg-opacity-90 text-white font-semibold text-xs transition-colors flex items-center justify-center animate-pulse-slow"
               >
-                Preguntar por WhatsApp →
+                Enviar correo →
               </a>
             </div>
           </div>
