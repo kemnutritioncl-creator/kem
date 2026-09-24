@@ -6,3 +6,10 @@ coverage/
 *.log
 .env*
 !.env.example
+.env.local
+.env.*.local
+*.pem
+*.key
+*.cert
+.vscode/
+.idea/

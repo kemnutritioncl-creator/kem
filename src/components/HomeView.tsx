@@ -6,6 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import { PageId, CheckoutUrls } from '../types';
 import { universities, momTestimonials, proTestimonials, generalFaqs } from '../data';
+import GuideModal from './GuideModal';
 import { 
   Heart, 
   Sparkles, 
@@ -28,8 +29,7 @@ interface HomeViewProps {
 
 export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
-  const [emailInput, setEmailInput] = useState('');
-  const [leadSuccess, setLeadSuccess] = useState(false);
+  const [showGuideModal, setShowGuideModal] = useState(false);
 
   // Setup Scroll Reveal animations behavior using custom IntersectionObserver
   useEffect(() => {
@@ -53,15 +53,6 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
     elements.forEach(el => observer.observe(el));
     return () => observer.disconnect();
   }, []);
-
-  const handleLeadSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (emailInput.trim()) {
-      setLeadSuccess(true);
-      setEmailInput('');
-      setTimeout(() => setLeadSuccess(false), 5000);
-    }
-  };
 
   return (
     <div className="pt-24 font-sans overflow-x-hidden">
@@ -395,54 +386,75 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
         </div>
       </section>
 
-      {/* 10. CTA Final con captura de leads */}
-      <section className="py-12 sm:py-20 bg-gradient-to-tr from-[#2D3142] to-[#1F212E] text-white overflow-hidden relative">
+      {/* 10. Sección Guía Suplementos en los primeros 1.000 días (Acceso directo sin correo) */}
+      <section className="py-12 sm:py-20 bg-gradient-to-tr from-[#2D3142] to-[#1F212E] text-white overflow-hidden relative" id="guia-1000-dias">
         <div className="absolute top-1/2 left-1/4 w-[30vw] h-[30vw] bg-naranja/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-1/4 right-1/4 w-[30vw] h-[30vw] bg-violeta/15 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 relative z-10">
           
-          <div className="w-12 h-12 rounded-full bg-naranja/15 text-naranja flex items-center justify-center mx-auto">
-            <Inbox className="w-5 h-5 text-naranja" />
+          <div className="w-14 h-14 rounded-2xl bg-naranja/20 text-naranja flex items-center justify-center mx-auto border border-naranja/30 shadow-inner">
+            <BookOpen className="w-7 h-7 text-naranja" />
           </div>
 
-          <p className="text-xs font-mono font-bold tracking-widest text-[#6FA987] uppercase">
-            Guía de Inicio Gratuita
-          </p>
+          <div className="space-y-3">
+            <span className="text-xs font-mono font-bold tracking-widest text-[#6FA987] uppercase inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10">
+              <Sparkles className="w-3.5 h-3.5 text-[#6FA987]" />
+              Guía de Inicio · Descarga y Consulta Gratuita
+            </span>
 
-          <h3 className="font-serif text-3xl sm:text-4xl font-semibold tracking-tight leading-tight">
-            Descarga gratis la guía de nutrición de los primeros 1000 días
-          </h3>
+            <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
+              Suplementos en los primeros 1.000 días
+            </h3>
 
-          <p className="text-sm text-stone-300 max-w-xl mx-auto font-light leading-relaxed">
-            Déjame tu correo y te envío la guía con la dosificación y cronología de suplementos recomendados para preconcepción, embarazo y lactancia. Sin relleno, solo lo que necesitas saber.
-          </p>
+            <p className="text-sm sm:text-base text-stone-300 max-w-2xl mx-auto font-light leading-relaxed">
+              Dosis y cronología para preconcepción, embarazo y lactancia, con los valores que usa el sistema de salud chileno. Sin relleno, solo lo que necesitas saber.
+            </p>
+          </div>
 
-          {/* Form */}
-          <form onSubmit={handleLeadSubmit} className="max-w-md mx-auto flex flex-col sm:flex-row gap-3 pt-2">
-            <input
-              type="email"
-              required
-              value={emailInput}
-              onChange={(e) => setEmailInput(e.target.value)}
-              placeholder="Tu mejor correo electrónico"
-              className="flex-1 px-5 py-3.5 rounded-full bg-white/10 border border-white/20 text-white placeholder-stone-400 text-sm focus:outline-hidden focus:ring-2 focus:ring-naranja"
-              id="lead-input-email"
-            />
-            <button
-              type="submit"
-              className="px-6 py-3.5 rounded-full bg-naranja hover:bg-orange-500 font-semibold text-xs tracking-wider uppercase text-white transition-all cursor-pointer shadow-md text-nowrap"
-              id="lead-submit-btn"
-            >
-              Recibir Guía PDF
-            </button>
-          </form>
-
-          {leadSuccess && (
-            <div className="p-4 bg-verde/20 border border-verde/30 rounded-xl max-w-md mx-auto text-xs text-stone-200 animate-fade-in">
-              ✔ ¡Felicidades! Te hemos enviado la guía técnica directo a tu bandeja. Revisa también tu carpeta de spam.
+          {/* Highlights card badges */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto">
+            <div className="bg-white/5 border border-white/10 p-3.5 rounded-xl backdrop-blur-xs">
+              <span className="block font-serif text-2xl font-bold text-naranja">12</span>
+              <span className="text-[11px] text-stone-400 font-medium">Páginas de contenido</span>
             </div>
-          )}
+            <div className="bg-white/5 border border-white/10 p-3.5 rounded-xl backdrop-blur-xs">
+              <span className="block font-serif text-2xl font-bold text-[#6FA987]">9</span>
+              <span className="text-[11px] text-stone-400 font-medium">Nutrientes analizados</span>
+            </div>
+            <div className="bg-white/5 border border-white/10 p-3.5 rounded-xl backdrop-blur-xs">
+              <span className="block font-serif text-2xl font-bold text-violet-400">1</span>
+              <span className="text-[11px] text-stone-400 font-medium">Tabla maestra de dosis</span>
+            </div>
+            <div className="bg-white/5 border border-white/10 p-3.5 rounded-xl backdrop-blur-xs">
+              <span className="block font-serif text-2xl font-bold text-amber-300">2026</span>
+              <span className="text-[11px] text-stone-400 font-medium">Edición actualizada</span>
+            </div>
+          </div>
+
+          {/* Action CTAs: Direct access without email */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+            <button
+              onClick={() => setShowGuideModal(true)}
+              className="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-naranja to-orange-500 hover:from-orange-500 hover:to-orange-600 font-bold text-sm tracking-wider uppercase text-white transition-all cursor-pointer shadow-xl hover:shadow-orange-500/40 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 group"
+              id="open-guide-btn"
+            >
+              <BookOpen className="w-4 h-4 text-amber-100 group-hover:rotate-12 transition-transform" />
+              <span>Leer Guía Completa Online</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+            <button
+              onClick={() => setShowGuideModal(true)}
+              className="w-full sm:w-auto px-6 py-4 rounded-full bg-white/10 hover:bg-white/15 border border-white/20 text-white font-semibold text-xs tracking-wider uppercase transition-all cursor-pointer flex items-center justify-center gap-2"
+              id="open-guide-table-btn"
+            >
+              <span>Ver Tabla de Dosis</span>
+            </button>
+          </div>
+
+          <p className="text-[11px] text-stone-400 font-light">
+            ✔ Acceso 100% libre y gratuito sin suscripción de correo · Basada en Guía Perinatal MINSAL y revisiones sistemáticas
+          </p>
 
           <div className="pt-8 border-t border-white/10 flex flex-wrap justify-center gap-6 text-xs text-stone-400">
             <button 
@@ -508,7 +520,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-[#6FA987] shrink-0" />
-                    <span>Comunidad de apoyo libre de juicios.</span>
+                    <span>Acompañamiento seguro, claro y basado en evidencia.</span>
                   </div>
                 </div>
 
@@ -768,6 +780,12 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
 
         </div>
       </section>
+
+      {/* Modal Guía Suplementos Primeros 1.000 Días */}
+      <GuideModal 
+        isOpen={showGuideModal} 
+        onClose={() => setShowGuideModal(false)} 
+      />
 
     </div>
   );

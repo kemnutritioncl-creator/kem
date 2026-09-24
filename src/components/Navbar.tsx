@@ -119,19 +119,30 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
             >
               Sobre Katherinne
             </button>
+            <a
+              href="https://classroom.kemnutritionacademy.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-sans text-sm font-medium tracking-wide text-carbon-body hover:text-violeta cursor-pointer py-2 inline-flex items-center gap-1"
+              id="nav-link-classroom"
+            >
+              <span>Aula Virtual</span>
+              <ArrowUpRight className="w-3.5 h-3.5 text-stone-400" />
+            </a>
           </div>
 
           {/* Contact CTA */}
           <div className="hidden md:flex items-center gap-4">
             {currentPage === 'home' ? (
               <a
-                href="https://aulavirtualkemnutrition.netlify.app"
+                href="https://classroom.kemnutritionacademy.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white bg-violeta hover:bg-violeta-dark transition-all shadow-sm cursor-pointer"
+                className="px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white bg-violeta hover:bg-violeta-dark transition-all shadow-sm cursor-pointer inline-flex items-center gap-1.5"
                 id="nav-cta-btn"
               >
-                Ver Academias
+                <span>Aula Virtual</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
             ) : (
               <button
@@ -197,17 +208,29 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
           >
             Sobre Katherinne
           </button>
+          <a
+            href="https://classroom.kemnutritionacademy.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsOpen(false)}
+            className="w-full text-left px-4 py-3 rounded-xl font-sans text-base font-medium text-carbon-body hover:bg-stone-50 transition-colors flex items-center justify-between"
+            id="mobile-nav-classroom"
+          >
+            <span>Aula Virtual (Acceso alumnos)</span>
+            <ArrowUpRight className="w-4 h-4 text-stone-400" />
+          </a>
 
           <div className="pt-4 border-t border-stone-100 flex flex-col gap-3 px-4">
             {currentPage === 'home' ? (
               <a
-                href="https://aulavirtualkemnutrition.netlify.app"
+                href="https://classroom.kemnutritionacademy.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full text-center py-3 rounded-xl text-sm font-semibold tracking-wider uppercase text-white bg-violeta block"
+                className="w-full text-center py-3 rounded-xl text-sm font-semibold tracking-wider uppercase text-white bg-violeta flex items-center justify-center gap-1.5"
                 id="mobile-nav-cta"
               >
-                Ver Academias
+                <span>Ingresar al Aula Virtual</span>
+                <ArrowUpRight className="w-4 h-4" />
               </a>
             ) : (
               <button

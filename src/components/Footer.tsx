@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import { PageId } from '../types';
-import { Heart, Sparkles, Instagram, Mail, ShieldAlert, Share2, Check } from 'lucide-react';
+import { Heart, Sparkles, Instagram, Mail, ShieldAlert, Share2, Check, GraduationCap, BookOpen } from 'lucide-react';
 
 interface FooterProps {
   setCurrentPage: (page: PageId) => void;
@@ -25,17 +25,24 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
 
   const handleShareLink = () => {
     const shareUrl = "https://kemnutritionacademy.com/";
-    const shareTitle = "KEM Nutrition Academy | Nutrición en Maternidad y Formación Profesional";
-    const shareText = "Descubre KEM Nutrition Academy dirigida por Katherinne Elgueta Mora: programas para futuras mamás (KEM Mom) y capacitación profesional (KEM Pro).";
+    const shareTitle = "🌸 KEM Nutrition Academy | Maternidad & Nutrición Clínica 🥑";
+    const shareMessage = `🌸 KEM Nutrition Academy · Nutrición en Maternidad 🤰 & Formación Profesional 👩‍⚕️
+🥑 Dirigida por Katherinne Elgueta Mora (Nutricionista Clínica · Magíster INTA U. de Chile)
+
+🤰 Kem Mom: Nutrición para preconcepción, embarazo y lactancia sin mitos
+👩‍⚕️ Kem Pro: Formación clínica avanzada y prescripción para profesionales
+📚 Guía Gratuita: Suplementos en los primeros 1.000 días
+
+🌐 Visítanos en: https://kemnutritionacademy.com/`;
 
     if (navigator.share) {
       navigator.share({
         title: shareTitle,
-        text: shareText,
+        text: shareMessage,
         url: shareUrl,
       }).catch(() => {});
     } else {
-      navigator.clipboard.writeText(shareUrl);
+      navigator.clipboard.writeText(shareMessage);
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
     }
@@ -144,6 +151,33 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
                 >
                   Sobre la Directora
                 </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => {
+                    handleNavClick('home');
+                    setTimeout(() => {
+                      document.getElementById('guia-1000-dias')?.scrollIntoView({ behavior: 'smooth' });
+                    }, 150);
+                  }}
+                  className="flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer text-stone-400 text-left"
+                  id="footer-shortcut-guia"
+                >
+                  <BookOpen className="w-3.5 h-3.5 text-naranja" />
+                  Guía Suplementos 1.000 días (Gratis)
+                </button>
+              </li>
+              <li className="pt-1 border-t border-stone-800">
+                <a 
+                  href="https://classroom.kemnutritionacademy.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer text-stone-300 text-left font-medium"
+                  id="footer-shortcut-classroom"
+                >
+                  <GraduationCap className="w-3.5 h-3.5 text-[#6FA987]" />
+                  Aula Virtual (Acceso alumnos)
+                </a>
               </li>
             </ul>
           </div>
