@@ -215,7 +215,7 @@ export const momFaqs: FaqItem[] = [
   },
   {
     question: "Prefiero consultar directo cuando tenga una duda particular, ¿cómo me ayuda el programa?",
-    answer: "El programa te enseña las bases esenciales para prevenir complicaciones antes de que aparezcan. Te brinda autonomía. Y si tienes inquietudes, cuentas con la comunidad de mamás de Kem Mom y las sesiones de preguntas directas."
+    answer: "El programa te enseña las bases esenciales para prevenir complicaciones antes de que aparezcan. Te brinda autonomía. Y si tienes inquietudes, cuentas con las sesiones de mentoría y consultas personalizadas del programa."
   }
 ];
 

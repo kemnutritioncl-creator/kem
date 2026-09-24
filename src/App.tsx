@@ -44,33 +44,43 @@ export default function App() {
     }
   });
 
-  // Unique Webpay and WhatsApp links
+  // Unique Flow, Calendly and WhatsApp links
+  const defaultCheckoutUrls: CheckoutUrls = {
+    momEsencial: "https://www.flow.cl/btn.php?token=md684de16d889abef823b66ec6fddbe277647f6c",
+    momAcompañamiento: "https://www.flow.cl/btn.php?token=l6eca65398973d28641a3de344ef16e6c008cd77",
+    momConsulta: "https://calendly.com/kemnutritioncl/30min",
+    proEsencial: "https://www.flow.cl/btn.php?token=md684de16d889abef823b66ec6fddbe277647f6c",
+    proAcompañamiento: "https://www.flow.cl/btn.php?token=l6eca65398973d28641a3de344ef16e6c008cd77",
+    proConsulta: "https://calendly.com/kemnutritioncl/30min",
+    whatsapp: "https://wa.me/56985489624?text=Hola%20Katherinne%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20KEM%20Nutrition%20Academy"
+  };
+
   const [urls, setUrls] = useState<CheckoutUrls>(() => {
     try {
       const cached = localStorage.getItem('kem_checkout_urls');
       if (cached) {
         const parsed = JSON.parse(cached);
-        // Ensure new fields are backward compatible in cached structures
+        // Replace old transbank placeholders with active production links
         return {
-          momEsencial: parsed.momEsencial || "https://webpay.transbank.cl/KEM-Mom-Esencial",
-          momAcompañamiento: parsed.momAcompañamiento || "https://webpay.transbank.cl/KEM-Mom-Acompanamiento",
-          momConsulta: parsed.momConsulta || "https://webpay.transbank.cl/KEM-Mom-Consulta",
-          proEsencial: parsed.proEsencial || "https://webpay.transbank.cl/KEM-Pro-Esencial",
-          proAcompañamiento: parsed.proAcompañamiento || "https://webpay.transbank.cl/KEM-Pro-Acompanamiento",
-          proConsulta: parsed.proConsulta || "https://webpay.transbank.cl/KEM-Pro-Consulta",
-          whatsapp: "https://wa.me/56985489624?text=Hola%20Katherinne%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20KEM%20Nutrition%20Academy"
+          momEsencial: parsed.momEsencial && !parsed.momEsencial.includes('transbank.cl')
+            ? parsed.momEsencial
+            : defaultCheckoutUrls.momEsencial,
+          momAcompañamiento: parsed.momAcompañamiento && !parsed.momAcompañamiento.includes('transbank.cl')
+            ? parsed.momAcompañamiento
+            : defaultCheckoutUrls.momAcompañamiento,
+          momConsulta: defaultCheckoutUrls.momConsulta,
+          proEsencial: parsed.proEsencial && !parsed.proEsencial.includes('transbank.cl')
+            ? parsed.proEsencial
+            : defaultCheckoutUrls.proEsencial,
+          proAcompañamiento: parsed.proAcompañamiento && !parsed.proAcompañamiento.includes('transbank.cl')
+            ? parsed.proAcompañamiento
+            : defaultCheckoutUrls.proAcompañamiento,
+          proConsulta: defaultCheckoutUrls.proConsulta,
+          whatsapp: parsed.whatsapp || defaultCheckoutUrls.whatsapp
         };
       }
     } catch (e) {}
-    return {
-      momEsencial: "https://webpay.transbank.cl/KEM-Mom-Esencial",
-      momAcompañamiento: "https://webpay.transbank.cl/KEM-Mom-Acompanamiento",
-      momConsulta: "https://webpay.transbank.cl/KEM-Mom-Consulta",
-      proEsencial: "https://webpay.transbank.cl/KEM-Pro-Esencial",
-      proAcompañamiento: "https://webpay.transbank.cl/KEM-Pro-Acompanamiento",
-      proConsulta: "https://webpay.transbank.cl/KEM-Pro-Consulta",
-      whatsapp: "https://wa.me/56985489624?text=Hola%20Katherinne%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20KEM%20Nutrition%20Academy"
-    };
+    return defaultCheckoutUrls;
   });
 
   // Sync state modifications to LocalStorage automatically

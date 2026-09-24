@@ -634,6 +634,8 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
               <div className="pt-8">
                 <a
                   href={urls.proEsencial}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={(e) => handleCheckoutClick(e, 'Kem Pro Esencial', urls.proEsencial)}
                   className="block text-center w-full py-3.5 rounded-full bg-stone-900 text-white font-bold text-xs tracking-wider uppercase hover:bg-stone-800 transition-colors cursor-pointer"
                   id="pro-checkout-esencial"
@@ -684,6 +686,8 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
               <div className="pt-8">
                 <a
                   href={urls.proAcompañamiento}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={(e) => handleCheckoutClick(e, 'Kem Pro Acompañamiento', urls.proAcompañamiento)}
                   className="block text-center w-full py-4 rounded-full bg-violeta text-white font-bold text-xs tracking-wider uppercase hover:bg-violeta-dark shadow-md transition-all cursor-pointer animate-pulse-slow"
                   id="pro-checkout-acompanamiento"
@@ -745,6 +749,8 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
               <div className="pt-8">
                 <a
                   href={urls.proConsulta}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={(e) => handleCheckoutClick(e, 'Kem Pro Consulta Individual', urls.proConsulta)}
                   className="block text-center w-full py-3.5 rounded-full bg-[#2D3142] text-white font-bold text-xs tracking-wider uppercase hover:bg-stone-850 transition-colors cursor-pointer"
                   id="pro-checkout-consulta"

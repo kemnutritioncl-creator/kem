@@ -552,13 +552,13 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                     Plan Esencial (Asíncrono)
                   </span>
                   <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2">Programa Kem Mom (Para madres)</h3>
-                  <p className="text-xs text-stone-505 mt-1">Estudia a tu propio ritmo con la guía oficial.</p>
+                  <p className="text-xs text-stone-500 mt-1">Estudia a tu propio ritmo con la guía oficial.</p>
                 </div>
 
                 <div className="flex items-baseline gap-1 bg-stone-50 p-4 rounded-xl border border-stone-100">
                   <span className="text-xs font-bold text-stone-400 font-sans">CLP</span>
                   <span className="text-3xl font-serif font-extrabold text-[#2D3142]">${priceEsencial}</span>
-                  <span className="text-xs text-stone-505 font-light">Pago Único</span>
+                  <span className="text-xs text-stone-500 font-light">Pago Único</span>
                 </div>
 
                 <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans">
@@ -567,9 +567,6 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                   </li>
                   <li className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-verde shrink-0" /> Guías descargables en PDF, recetarios y checklists.
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-verde shrink-0" /> Comunidad interactiva de apoyo.
                   </li>
                   <li className="flex items-center gap-2 text-stone-400">
                     <X className="w-4 h-4 shrink-0" /> No incluye sesiones grupales en vivo ni consultas uno a uno.
@@ -580,6 +577,8 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
               <div className="pt-8">
                 <a
                   href={urls.momEsencial}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={(e) => handleCheckoutClick(e, 'Kem Mom Esencial', urls.momEsencial)}
                   className="block text-center w-full py-3.5 rounded-full bg-stone-900 text-white font-bold text-xs tracking-wider uppercase hover:bg-stone-800 transition-colors cursor-pointer"
                   id="mom-checkout-esencial"
@@ -591,24 +590,24 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
             </div>
 
             {/* Card 2: Plan Acompañamiento - DESTACADO */}
-            <div className="bg-white rounded-3xl border-2 border-naranja p-8 flex flex-col justify-between shadow-lg relative transform md:scale-102">
-              <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-naranja text-white font-mono text-[9px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-sm whitespace-nowrap">
+            <div className="bg-white rounded-3xl border-2 border-naranja p-8 flex flex-col justify-between shadow-xl relative transform md:scale-102 ring-2 ring-naranja/20">
+              <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-naranja text-white font-mono text-[9px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md whitespace-nowrap">
                 Altamente Recomendado
               </div>
 
               <div className="space-y-6">
                 <div>
                   <span className="px-3 py-1 rounded-full bg-naranja/10 text-naranja text-[10px] font-bold uppercase tracking-wider">
-                    Plan Completo + Acompañamiento
+                    Plan Completo + Acompañamiento (Para madres)
                   </span>
-                  <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2">Seguridad + cercanía</h3>
-                  <p className="text-xs text-stone-505 mt-1">Con sesiones en vivo y supervisión uno a uno.</p>
+                  <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2">Programa Kem Mom (Para madres)</h3>
+                  <p className="text-xs text-stone-500 mt-1">Seguridad + cercanía con sesiones en vivo y supervisión uno a uno.</p>
                 </div>
 
                 <div className="flex items-baseline gap-1 bg-gradient-to-tr from-naranja/5 to-naranja/15 p-4 rounded-xl border border-naranja/10">
                   <span className="text-xs font-bold text-naranja font-sans">CLP</span>
                   <span className="text-3xl font-serif font-extrabold text-[#2D3142]">${priceAcompañamiento}</span>
-                  <span className="text-xs text-stone-505 font-light">Pago Único</span>
+                  <span className="text-xs text-stone-500 font-light">Pago Único</span>
                 </div>
 
                 <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans">
@@ -630,11 +629,15 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
               <div className="pt-8">
                 <a
                   href={urls.momAcompañamiento}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={(e) => handleCheckoutClick(e, 'Kem Mom Acompañamiento', urls.momAcompañamiento)}
-                  className="block text-center w-full py-4 rounded-full bg-naranja text-white font-bold text-xs tracking-wider uppercase hover:bg-orange-600 shadow-md transition-all cursor-pointer animate-pulse-slow"
+                  className="w-full py-4.5 px-6 rounded-full bg-gradient-to-r from-[#F2994A] via-orange-500 to-[#E86A58] text-white font-extrabold text-sm tracking-wider uppercase shadow-xl hover:shadow-2xl hover:shadow-orange-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 ring-4 ring-orange-300/60 flex items-center justify-center gap-2 cursor-pointer group"
                   id="mom-checkout-acompanamiento"
                 >
-                  Inscribirme al Plan Acompañamiento
+                  <Sparkles className="w-4 h-4 text-amber-100 group-hover:rotate-12 transition-transform" />
+                  <span>Inscribirme al Plan Acompañamiento</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
 
@@ -646,42 +649,54 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
               <div className="space-y-6">
                 <div>
                   <span className="px-3 py-1 rounded-full bg-verde/10 text-verde text-[10px] font-bold uppercase tracking-wider">
-                    Sesión Individual
+                    Sesión Individual Online
                   </span>
                   <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2">Consulta clínica 1:1</h3>
-                  <p className="text-xs text-stone-505 mt-1">Sesión individual exclusiva y 100% personalizada.</p>
+                  <p className="text-xs text-stone-600 mt-2 leading-relaxed">
+                    Sesión individual personalizada online de 60 min. Evaluación clínica completa, análisis de tus exámenes y generación de indicaciones nutricionales según tus objetivos.
+                  </p>
                 </div>
 
-                <div className="flex items-baseline gap-1 bg-stone-50 p-4 rounded-xl border border-stone-100">
-                  <span className="text-xs font-bold text-stone-400 font-sans">CLP</span>
-                  <span className="text-3xl font-serif font-extrabold text-[#2D3142]">${priceConsulta}</span>
-                  <span className="text-xs text-stone-505 font-light">Por Sesión</span>
+                <div className="space-y-1 bg-stone-50 p-4 rounded-xl border border-stone-100">
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-xs font-bold text-stone-400 font-sans">CLP</span>
+                    <span className="text-3xl font-serif font-extrabold text-[#2D3142]">${priceConsulta}</span>
+                    <span className="text-xs text-stone-500 font-light">Por Sesión</span>
+                  </div>
+                  <div className="inline-block text-[11px] font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200/60">
+                    Valor preferencial Fonasa disponible
+                  </div>
                 </div>
 
                 <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans">
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-verde shrink-0" /> <strong>1 sesión clínica personalizada de 45-60 min Obesidad/Embarazo</strong>.
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-verde shrink-0 mt-0.5" />
+                    <span><strong>Sesión 1:1 online de 60 min</strong> por videollamada.</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-verde shrink-0" /> Revisión profunda de exámenes médicos y laboratorios reales.
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-verde shrink-0 mt-0.5" />
+                    <span>Evaluación clínica completa y análisis exhaustivo de exámenes.</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-verde shrink-0" /> Diseño y calibración de tu pauta y suplementación a medida.
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-verde shrink-0 mt-0.5" />
+                    <span>Pauta alimentaria e indicaciones nutricionales adaptadas a tus metas.</span>
                   </li>
-                  <li className="flex items-center gap-2 text-stone-400">
-                    <X className="w-4 h-4 shrink-0" /> No otorga acceso continuo a los 8 módulos de la academia grabada.
+                  <li className="flex items-start gap-2 text-stone-400">
+                    <X className="w-4 h-4 shrink-0 mt-0.5" />
+                    <span>No otorga acceso continuo a los 8 módulos de la academia grabada.</span>
                   </li>
                 </ul>
               </div>
 
               <div className="pt-8">
                 <a
-                  href={urls.momConsulta}
-                  onClick={(e) => handleCheckoutClick(e, 'Kem Mom Consulta Individual', urls.momConsulta)}
-                  className="block text-center w-full py-3.5 rounded-full bg-[#2D3142] text-white font-bold text-xs tracking-wider uppercase hover:bg-stone-850 transition-colors cursor-pointer"
+                  href="https://calendly.com/kemnutritioncl/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-center w-full py-3.5 px-4 rounded-full bg-[#2D3142] hover:bg-[#1E212D] text-white font-bold text-xs tracking-wider uppercase transition-colors shadow-sm hover:shadow-md cursor-pointer"
                   id="mom-checkout-consulta"
                 >
-                  Agendar Consulta Individual
+                  Agenda tu consulta online aquí
                 </a>
               </div>
 
