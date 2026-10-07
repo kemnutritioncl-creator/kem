@@ -609,10 +609,10 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
                   <p className="text-xs text-stone-500 mt-1">Acceso permanente a las herramientas y clases.</p>
                 </div>
 
-                <div className="flex items-baseline gap-1 bg-stone-50 p-4 rounded-xl border border-stone-100">
+                <div className="flex items-baseline gap-1.5 bg-stone-50 p-4.5 rounded-2xl border border-stone-200">
                   <span className="text-xs font-bold text-stone-400 font-sans">CLP</span>
                   <span className="text-3xl sm:text-4xl font-serif font-extrabold text-[#2D3142]">${priceEsencial}</span>
-                  <span className="text-xs text-stone-500 font-light">Pago Único</span>
+                  <span className="text-xs text-stone-500 font-light ml-auto">Pago Único</span>
                 </div>
 
                 <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans">
@@ -661,10 +661,10 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
                   <p className="text-xs text-stone-505 mt-1">Con mentoría docente, casos y sesiones personalizadas.</p>
                 </div>
 
-                <div className="flex items-baseline gap-1 bg-gradient-to-tr from-violeta/5 to-violeta/15 p-4 rounded-xl border border-violeta/10">
-                  <span className="text-xs font-bold text-violeta font-sans">CLP</span>
-                  <span className="text-3xl sm:text-4xl font-serif font-extrabold text-[#2D3142]">${priceAcompañamiento}</span>
-                  <span className="text-xs text-stone-505 font-light">Pago Único</span>
+                <div className="flex items-baseline gap-1.5 bg-gradient-to-br from-violet-50 via-purple-50 to-amber-50/40 p-4.5 rounded-2xl border-2 border-violeta/25 shadow-xs">
+                  <span className="text-xs font-extrabold text-violeta font-sans">CLP</span>
+                  <span className="text-3xl sm:text-4xl font-serif font-black text-violet-950">${priceAcompañamiento}</span>
+                  <span className="text-xs font-medium text-stone-500 font-light ml-auto">Pago Único</span>
                 </div>
 
                 <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans">
@@ -689,10 +689,12 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => handleCheckoutClick(e, 'Kem Pro Acompañamiento', urls.proAcompañamiento)}
-                  className="block text-center w-full py-4 rounded-full bg-violeta text-white font-bold text-xs tracking-wider uppercase hover:bg-violeta-dark shadow-md transition-all cursor-pointer animate-pulse-slow"
+                  className="w-full py-4.5 px-6 rounded-full bg-gradient-to-r from-[#F2994A] via-orange-500 to-[#E86A58] hover:from-orange-500 hover:via-amber-500 hover:to-orange-600 text-white font-extrabold text-sm tracking-wider uppercase shadow-xl hover:shadow-2xl hover:shadow-orange-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 ring-4 ring-orange-300/60 flex items-center justify-center gap-2 cursor-pointer group"
                   id="pro-checkout-acompanamiento"
                 >
-                  Inscribirme al Plan Acompañamiento
+                  <Sparkles className="w-4 h-4 text-amber-100 group-hover:rotate-12 transition-transform" />
+                  <span>Inscribirme al Plan Acompañamiento</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
 
@@ -712,10 +714,10 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
                   </p>
                 </div>
 
-                <div className="flex items-baseline gap-1 bg-stone-50 p-4 rounded-xl border border-stone-100">
+                <div className="flex items-baseline gap-1.5 bg-stone-50 p-4.5 rounded-2xl border border-stone-200">
                   <span className="text-xs font-bold text-stone-400 font-sans">CLP</span>
                   <span className="text-3xl font-serif font-extrabold text-[#2D3142]">${priceConsulta}</span>
-                  <span className="text-xs text-stone-555 font-light">Por Sesión</span>
+                  <span className="text-xs text-stone-500 font-light ml-auto">Por Sesión</span>
                 </div>
 
                 <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans">

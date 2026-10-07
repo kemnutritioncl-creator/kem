@@ -38,9 +38,14 @@ export default function App() {
 
   const [priceConsulta, setPriceConsulta] = useState<string>(() => {
     try {
-      return localStorage.getItem('kem_price_consulta') || '47.000';
+      const cached = localStorage.getItem('kem_price_consulta');
+      if (!cached || cached === '47.000') {
+        localStorage.setItem('kem_price_consulta', '35.000');
+        return '35.000';
+      }
+      return cached;
     } catch (e) {
-      return '47.000';
+      return '35.000';
     }
   });
 
@@ -48,10 +53,10 @@ export default function App() {
   const defaultCheckoutUrls: CheckoutUrls = {
     momEsencial: "https://www.flow.cl/btn.php?token=md684de16d889abef823b66ec6fddbe277647f6c",
     momAcompañamiento: "https://www.flow.cl/btn.php?token=l6eca65398973d28641a3de344ef16e6c008cd77",
-    momConsulta: "https://calendly.com/kemnutritioncl/30min",
+    momConsulta: "https://calendly.com/kemnutritioncl/30min?month=2026-10",
     proEsencial: "https://www.flow.cl/btn.php?token=md684de16d889abef823b66ec6fddbe277647f6c",
     proAcompañamiento: "https://www.flow.cl/btn.php?token=l6eca65398973d28641a3de344ef16e6c008cd77",
-    proConsulta: "https://calendly.com/kemnutritioncl/30min",
+    proConsulta: "https://calendly.com/kemnutritioncl/30min?month=2026-10",
     whatsapp: "https://wa.me/56985489624?text=Hola%20Katherinne%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20KEM%20Nutrition%20Academy"
   };
 

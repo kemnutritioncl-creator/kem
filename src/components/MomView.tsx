@@ -657,14 +657,15 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                   </p>
                 </div>
 
-                <div className="space-y-1 bg-stone-50 p-4 rounded-xl border border-stone-100">
+                <div className="space-y-2 bg-stone-50 p-4 rounded-xl border border-stone-100">
                   <div className="flex items-baseline gap-1">
                     <span className="text-xs font-bold text-stone-400 font-sans">CLP</span>
                     <span className="text-3xl font-serif font-extrabold text-[#2D3142]">${priceConsulta}</span>
                     <span className="text-xs text-stone-500 font-light">Por Sesión</span>
                   </div>
-                  <div className="inline-block text-[11px] font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200/60">
-                    Valor preferencial Fonasa disponible
+                  <div className="text-[11px] font-medium text-emerald-800 bg-emerald-50 px-2.5 py-1.5 rounded-lg border border-emerald-200/70 flex items-start gap-1.5 leading-snug">
+                    <Sparkles className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                    <span><strong>Pacientes FONASA:</strong> Descuento especial previo envío del certificado de afiliación.</span>
                   </div>
                 </div>
 
@@ -681,6 +682,10 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                     <Check className="w-4 h-4 text-verde shrink-0 mt-0.5" />
                     <span>Pauta alimentaria e indicaciones nutricionales adaptadas a tus metas.</span>
                   </li>
+                  <li className="flex items-start gap-2 text-emerald-800 bg-emerald-50/70 p-2 rounded-lg border border-emerald-100">
+                    <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <span><strong>Descuento FONASA:</strong> Arancel especial disponible previo envío de tu certificado de afiliación al agendar.</span>
+                  </li>
                   <li className="flex items-start gap-2 text-stone-400">
                     <X className="w-4 h-4 shrink-0 mt-0.5" />
                     <span>No otorga acceso continuo a los 8 módulos de la academia grabada.</span>
@@ -690,7 +695,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
 
               <div className="pt-8">
                 <a
-                  href="https://calendly.com/kemnutritioncl/30min"
+                  href={urls.momConsulta}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block text-center w-full py-3.5 px-4 rounded-full bg-[#2D3142] hover:bg-[#1E212D] text-white font-bold text-xs tracking-wider uppercase transition-colors shadow-sm hover:shadow-md cursor-pointer"

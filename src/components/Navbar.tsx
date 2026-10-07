@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import { PageId } from '../types';
-import { Menu, X, ArrowUpRight, Heart, Sparkles } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Heart, Sparkles, Calendar } from 'lucide-react';
 
 interface NavbarProps {
   currentPage: PageId;
@@ -132,13 +132,24 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
           </div>
 
           {/* Contact CTA */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3">
+            <a
+              href="https://calendly.com/kemnutritioncl/30min?month=2026-10"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 transition-all shadow-xs cursor-pointer inline-flex items-center gap-1.5 hover:scale-[1.02] active:scale-[0.98]"
+              id="nav-agenda-btn"
+            >
+              <Calendar className="w-3.5 h-3.5 text-emerald-600" />
+              <span>Agenda aquí</span>
+            </a>
+
             {currentPage === 'home' ? (
               <a
                 href="https://classroom.kemnutritionacademy.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white bg-violeta hover:bg-violeta-dark transition-all shadow-sm cursor-pointer inline-flex items-center gap-1.5"
+                className="px-4 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white bg-violeta hover:bg-violeta-dark transition-all shadow-xs cursor-pointer inline-flex items-center gap-1.5"
                 id="nav-cta-btn"
               >
                 <span>Aula Virtual</span>
@@ -149,7 +160,7 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
                 onClick={() => {
                   document.getElementById('planes-precios')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }}
-                className="px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white bg-violeta hover:bg-violeta-dark transition-all shadow-sm cursor-pointer"
+                className="px-4 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white bg-violeta hover:bg-violeta-dark transition-all shadow-xs cursor-pointer"
                 id="nav-cta-btn"
               >
                 Inscribirme
@@ -220,7 +231,18 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
             <ArrowUpRight className="w-4 h-4 text-stone-400" />
           </a>
 
-          <div className="pt-4 border-t border-stone-100 flex flex-col gap-3 px-4">
+          <div className="pt-4 border-t border-stone-100 flex flex-col gap-2.5 px-4">
+            <a
+              href="https://calendly.com/kemnutritioncl/30min?month=2026-10"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full text-center py-3 rounded-xl text-xs font-bold tracking-wider uppercase text-emerald-800 bg-emerald-50 border border-emerald-300 flex items-center justify-center gap-2 hover:bg-emerald-100 transition-colors"
+              id="mobile-nav-agenda"
+            >
+              <Calendar className="w-4 h-4 text-emerald-600" />
+              <span>Agenda tu Consulta aquí</span>
+            </a>
+
             {currentPage === 'home' ? (
               <a
                 href="https://classroom.kemnutritionacademy.com/"

@@ -19,7 +19,8 @@ import {
   Inbox, 
   UserCheck, 
   FileText, 
-  BookOpen 
+  BookOpen,
+  Calendar
 } from 'lucide-react';
 
 interface HomeViewProps {
@@ -72,12 +73,25 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
             {/* Left Column Content */}
             <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
               
-              {/* Taglet */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-stone-200/85 shadow-xs">
-                <span className="w-2.5 h-2.5 rounded-full bg-verde" />
-                <span className="text-xs font-bold tracking-wider text-carbon-title uppercase font-sans">
-                  Para mamás y profesionales de la nutrición
-                </span>
+              {/* Taglet & Quick Booking */}
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-stone-200/85 shadow-xs">
+                  <span className="w-2.5 h-2.5 rounded-full bg-verde" />
+                  <span className="text-xs font-bold tracking-wider text-carbon-title uppercase font-sans">
+                    Para mamás y profesionales de la nutrición
+                  </span>
+                </div>
+                <a
+                  href="https://calendly.com/kemnutritioncl/30min?month=2026-10"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 text-emerald-800 text-xs font-bold uppercase tracking-wider shadow-xs hover:shadow-sm transition-all group"
+                  id="hero-banner-quick-agenda"
+                >
+                  <Calendar className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>Agenda aquí tu consulta</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-emerald-600 group-hover:translate-x-0.5 transition-transform" />
+                </a>
               </div>
 
               {/* Main Heading */}
@@ -423,8 +437,8 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
               <span className="text-[11px] text-stone-400 font-medium">Nutrientes analizados</span>
             </div>
             <div className="bg-white/5 border border-white/10 p-3.5 rounded-xl backdrop-blur-xs">
-              <span className="block font-serif text-2xl font-bold text-violet-400">1</span>
-              <span className="text-[11px] text-stone-400 font-medium">Tabla maestra de dosis</span>
+              <span className="block font-serif text-2xl font-bold text-violet-400">4</span>
+              <span className="text-[11px] text-stone-400 font-medium">Etapas y trimestres</span>
             </div>
             <div className="bg-white/5 border border-white/10 p-3.5 rounded-xl backdrop-blur-xs">
               <span className="block font-serif text-2xl font-bold text-amber-300">2026</span>
@@ -433,7 +447,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
           </div>
 
           {/* Action CTAs: Direct access without email */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+          <div className="flex justify-center pt-2">
             <button
               onClick={() => setShowGuideModal(true)}
               className="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-naranja to-orange-500 hover:from-orange-500 hover:to-orange-600 font-bold text-sm tracking-wider uppercase text-white transition-all cursor-pointer shadow-xl hover:shadow-orange-500/40 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 group"
@@ -442,13 +456,6 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
               <BookOpen className="w-4 h-4 text-amber-100 group-hover:rotate-12 transition-transform" />
               <span>Leer Guía Completa Online</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button
-              onClick={() => setShowGuideModal(true)}
-              className="w-full sm:w-auto px-6 py-4 rounded-full bg-white/10 hover:bg-white/15 border border-white/20 text-white font-semibold text-xs tracking-wider uppercase transition-all cursor-pointer flex items-center justify-center gap-2"
-              id="open-guide-table-btn"
-            >
-              <span>Ver Tabla de Dosis</span>
             </button>
           </div>
 
