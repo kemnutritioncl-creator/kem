@@ -30,7 +30,6 @@ const ALLOWED_SECURE_DOMAINS = [
   'calendly.com',
   'wa.me',
   'api.whatsapp.com',
-  'classroom.kemnutritionacademy.com',
   'kemnutritionacademy.com'
 ];
 

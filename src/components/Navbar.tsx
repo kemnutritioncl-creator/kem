@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import { PageId } from '../types';
-import { Menu, X, ArrowUpRight, Heart, Sparkles, Calendar } from 'lucide-react';
+import { Menu, X, Heart, Sparkles, Calendar } from 'lucide-react';
 
 interface NavbarProps {
   currentPage: PageId;
@@ -119,16 +119,6 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
             >
               Sobre Katherinne
             </button>
-            <a
-              href="https://classroom.kemnutritionacademy.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-sans text-sm font-medium tracking-wide text-carbon-body hover:text-violeta cursor-pointer py-2 inline-flex items-center gap-1"
-              id="nav-link-classroom"
-            >
-              <span>Aula Virtual</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-stone-400" />
-            </a>
           </div>
 
           {/* Contact CTA */}
@@ -145,16 +135,15 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
             </a>
 
             {currentPage === 'home' ? (
-              <a
-                href="https://classroom.kemnutritionacademy.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white bg-violeta hover:bg-violeta-dark transition-all shadow-xs cursor-pointer inline-flex items-center gap-1.5"
+              <button
+                onClick={() => {
+                  document.getElementById('programas')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
+                className="px-4 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white bg-violeta hover:bg-violeta-dark transition-all shadow-xs cursor-pointer"
                 id="nav-cta-btn"
               >
-                <span>Aula Virtual</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
+                Ver Programas
+              </button>
             ) : (
               <button
                 onClick={() => {
@@ -219,17 +208,6 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
           >
             Sobre Katherinne
           </button>
-          <a
-            href="https://classroom.kemnutritionacademy.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setIsOpen(false)}
-            className="w-full text-left px-4 py-3 rounded-xl font-sans text-base font-medium text-carbon-body hover:bg-stone-50 transition-colors flex items-center justify-between"
-            id="mobile-nav-classroom"
-          >
-            <span>Aula Virtual (Acceso alumnos)</span>
-            <ArrowUpRight className="w-4 h-4 text-stone-400" />
-          </a>
 
           <div className="pt-4 border-t border-stone-100 flex flex-col gap-2.5 px-4">
             <a
@@ -245,17 +223,18 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
             </a>
 
             {currentPage === 'home' ? (
-              <a
-                href="https://classroom.kemnutritionacademy.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsOpen(false)}
-                className="w-full text-center py-3 rounded-xl text-sm font-semibold tracking-wider uppercase text-white bg-violeta flex items-center justify-center gap-1.5"
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                  setTimeout(() => {
+                    document.getElementById('programas')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }, 100);
+                }}
+                className="w-full text-center py-3 rounded-xl text-sm font-semibold tracking-wider uppercase text-white bg-violeta"
                 id="mobile-nav-cta"
               >
-                <span>Ingresar al Aula Virtual</span>
-                <ArrowUpRight className="w-4 h-4" />
-              </a>
+                Ver Programas
+              </button>
             ) : (
               <button
                 onClick={() => {

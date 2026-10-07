@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import { PageId } from '../types';
-import { Heart, Sparkles, Instagram, Mail, ShieldAlert, Share2, Check, GraduationCap, BookOpen } from 'lucide-react';
+import { Heart, Sparkles, Instagram, Mail, ShieldAlert, Share2, Check, BookOpen } from 'lucide-react';
 
 interface FooterProps {
   setCurrentPage: (page: PageId) => void;
@@ -167,18 +167,6 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
                   <BookOpen className="w-3.5 h-3.5 text-naranja" />
                   Guía Suplementos 1.000 días (Gratis)
                 </button>
-              </li>
-              <li className="pt-1 border-t border-stone-800">
-                <a 
-                  href="https://classroom.kemnutritionacademy.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer text-stone-300 text-left font-medium"
-                  id="footer-shortcut-classroom"
-                >
-                  <GraduationCap className="w-3.5 h-3.5 text-[#6FA987]" />
-                  Aula Virtual (Acceso alumnos)
-                </a>
               </li>
             </ul>
           </div>
