@@ -236,6 +236,7 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
               href="https://calendly.com/kemnutritioncl/30min?month=2026-10"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
               className="w-full text-center py-3 rounded-xl text-xs font-bold tracking-wider uppercase text-emerald-800 bg-emerald-50 border border-emerald-300 flex items-center justify-center gap-2 hover:bg-emerald-100 transition-colors"
               id="mobile-nav-agenda"
             >
@@ -248,6 +249,7 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
                 href="https://classroom.kemnutritionacademy.com/"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
                 className="w-full text-center py-3 rounded-xl text-sm font-semibold tracking-wider uppercase text-white bg-violeta flex items-center justify-center gap-1.5"
                 id="mobile-nav-cta"
               >

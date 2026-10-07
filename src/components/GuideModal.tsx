@@ -54,10 +54,11 @@ Por Katherinne Elgueta Mora · KEM Nutrition Academy 🥑
         text: guideShareMessage,
         url: 'https://kemnutritionacademy.com/',
       }).catch(() => {});
-    } else {
-      navigator.clipboard.writeText(guideShareMessage);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2500);
+    } else if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(guideShareMessage).then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2500);
+      }).catch(() => {});
     }
   };
 

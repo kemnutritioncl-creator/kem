@@ -41,10 +41,11 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
         text: shareMessage,
         url: shareUrl,
       }).catch(() => {});
-    } else {
-      navigator.clipboard.writeText(shareMessage);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2500);
+    } else if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(shareMessage).then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2500);
+      }).catch(() => {});
     }
   };
 
@@ -188,8 +189,8 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
             <ul className="space-y-2.5 text-sm text-stone-400">
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#6FA987]" />
-                <a href="mailto:kemnutricioncl@gmail.com" className="hover:underline hover:text-white transition-colors">
-                  kemnutricioncl@gmail.com
+                <a href="mailto:kemnutritioncl@gmail.com" className="hover:underline hover:text-white transition-colors">
+                  kemnutritioncl@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-2">

@@ -108,7 +108,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                   Ver Planes de Inscripción
                 </a>
                 <a
-                  href="mailto:kemnutricioncl@gmail.com"
+                  href="mailto:kemnutritioncl@gmail.com"
                   className="w-full sm:w-auto text-center px-8 py-4 rounded-full bg-white border border-stone-200 text-carbon-title font-semibold text-sm hover:bg-stone-50 transition-colors"
                   id="mom-hero-contact-email"
                 >
@@ -855,7 +855,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
             <div className="w-12 h-12 rounded-full bg-naranja/10 text-naranja flex items-center justify-center mx-auto text-xl">✉</div>
             <h4 className="font-serif font-bold text-carbon-title text-lg leading-tight">Inscripción y consultas</h4>
             <p className="text-xs sm:text-sm text-stone-600 font-light leading-relaxed">
-              Para inscribirte en el plan <strong>{alertTier}</strong> o recibir asistencia sobre el proceso, puedes enviarnos un correo directamente a <strong>kemnutricioncl@gmail.com</strong>.
+              Para inscribirte en el plan <strong>{alertTier}</strong> o recibir asistencia sobre el proceso, puedes enviarnos un correo directamente a <strong>kemnutritioncl@gmail.com</strong>.
             </p>
             <div className="pt-2 flex gap-3">
               <button
@@ -865,7 +865,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                 Volver
               </button>
               <a
-                href="mailto:kemnutricioncl@gmail.com"
+                href="mailto:kemnutritioncl@gmail.com"
                 onClick={() => setShowConfigAlert(false)}
                 className="flex-1 py-2.5 rounded-lg bg-naranja hover:bg-opacity-90 text-white font-semibold text-xs transition-colors flex items-center justify-center animate-pulse-slow"
               >

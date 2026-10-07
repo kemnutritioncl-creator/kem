@@ -16,13 +16,46 @@ import HomeView from './components/HomeView';
 import MomView from './components/MomView';
 import ProView from './components/ProView';
 
+// Strict input validator for price strings (format: 35.000 or digits)
+const sanitizePrice = (raw: unknown, fallback: string): string => {
+  if (typeof raw !== 'string') return fallback;
+  const trimmed = raw.trim();
+  return /^[0-9]+(\.[0-9]{3})*$/.test(trimmed) ? trimmed : fallback;
+};
+
+// Strict URL validator to prevent Open Redirects and DOM XSS (javascript:, data: schemes)
+const ALLOWED_SECURE_DOMAINS = [
+  'flow.cl',
+  'www.flow.cl',
+  'calendly.com',
+  'wa.me',
+  'api.whatsapp.com',
+  'classroom.kemnutritionacademy.com',
+  'kemnutritionacademy.com'
+];
+
+const sanitizeSecureUrl = (raw: unknown, fallback: string): string => {
+  if (typeof raw !== 'string') return fallback;
+  try {
+    const parsed = new URL(raw.trim());
+    if (parsed.protocol !== 'https:') return fallback;
+    const isDomainAllowed = ALLOWED_SECURE_DOMAINS.some(domain => 
+      parsed.hostname === domain || parsed.hostname.endsWith('.' + domain)
+    );
+    return isDomainAllowed ? parsed.toString() : fallback;
+  } catch {
+    return fallback;
+  }
+};
+
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageId>('home');
   
-  // Pricing state synced with local storage for high-fidelity persistence
+  // Pricing state synced with local storage with strict validation
   const [priceEsencial, setPriceEsencial] = useState<string>(() => {
     try {
-      return localStorage.getItem('kem_price_esencial') || '97.000';
+      const cached = localStorage.getItem('kem_price_esencial');
+      return sanitizePrice(cached, '97.000');
     } catch (e) {
       return '97.000';
     }
@@ -30,7 +63,8 @@ export default function App() {
   
   const [priceAcompañamiento, setPriceAcompañamiento] = useState<string>(() => {
     try {
-      return localStorage.getItem('kem_price_acompañamiento') || '217.000';
+      const cached = localStorage.getItem('kem_price_acompañamiento');
+      return sanitizePrice(cached, '217.000');
     } catch (e) {
       return '217.000';
     }
@@ -43,7 +77,7 @@ export default function App() {
         localStorage.setItem('kem_price_consulta', '35.000');
         return '35.000';
       }
-      return cached;
+      return sanitizePrice(cached, '35.000');
     } catch (e) {
       return '35.000';
     }
@@ -65,23 +99,14 @@ export default function App() {
       const cached = localStorage.getItem('kem_checkout_urls');
       if (cached) {
         const parsed = JSON.parse(cached);
-        // Replace old transbank placeholders with active production links
         return {
-          momEsencial: parsed.momEsencial && !parsed.momEsencial.includes('transbank.cl')
-            ? parsed.momEsencial
-            : defaultCheckoutUrls.momEsencial,
-          momAcompañamiento: parsed.momAcompañamiento && !parsed.momAcompañamiento.includes('transbank.cl')
-            ? parsed.momAcompañamiento
-            : defaultCheckoutUrls.momAcompañamiento,
+          momEsencial: sanitizeSecureUrl(parsed.momEsencial, defaultCheckoutUrls.momEsencial),
+          momAcompañamiento: sanitizeSecureUrl(parsed.momAcompañamiento, defaultCheckoutUrls.momAcompañamiento),
           momConsulta: defaultCheckoutUrls.momConsulta,
-          proEsencial: parsed.proEsencial && !parsed.proEsencial.includes('transbank.cl')
-            ? parsed.proEsencial
-            : defaultCheckoutUrls.proEsencial,
-          proAcompañamiento: parsed.proAcompañamiento && !parsed.proAcompañamiento.includes('transbank.cl')
-            ? parsed.proAcompañamiento
-            : defaultCheckoutUrls.proAcompañamiento,
+          proEsencial: sanitizeSecureUrl(parsed.proEsencial, defaultCheckoutUrls.proEsencial),
+          proAcompañamiento: sanitizeSecureUrl(parsed.proAcompañamiento, defaultCheckoutUrls.proAcompañamiento),
           proConsulta: defaultCheckoutUrls.proConsulta,
-          whatsapp: parsed.whatsapp || defaultCheckoutUrls.whatsapp
+          whatsapp: sanitizeSecureUrl(parsed.whatsapp, defaultCheckoutUrls.whatsapp)
         };
       }
     } catch (e) {}
@@ -149,6 +174,44 @@ export default function App() {
 
     return () => window.removeEventListener('hashchange', handleHash);
   }, []);
+
+  // Sync dynamic SEO metadata and document title for Google Search & social cards
+  useEffect(() => {
+    let title = "KEM Nutrition Academy | Nutrición en Maternidad y Formación Clínica";
+    let desc = "Academia de nutrición materna y salud por Katherinne Elgueta Mora. Consulta y acompañamiento en Kem Mom, formación clínica en Kem Pro y guía gratuita.";
+    let canonicalUrl = "https://kemnutritionacademy.com/";
+
+    if (currentPage === 'kem-mom') {
+      title = "KEM Mom | Nutrición y Acompañamiento en Embarazo y Maternidad";
+      desc = "Programas y consulta de nutrición personalizada para embarazo, preconcepción y postparto con Katherinne Elgueta Mora en KEM Nutrition Academy.";
+      canonicalUrl = "https://kemnutritionacademy.com/#kem-mom";
+    } else if (currentPage === 'kem-pro') {
+      title = "KEM Pro | Formación Clínica Avanzada para Nutricionistas";
+      desc = "Formación profesional especializada y mentoría clínica en nutrición materno-infantil impartida por Katherinne Elgueta Mora en KEM Nutrition Academy.";
+      canonicalUrl = "https://kemnutritionacademy.com/#kem-pro";
+    }
+
+    document.title = title;
+
+    // Update meta description
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', desc);
+
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', title);
+
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute('content', desc);
+
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twitterTitle) twitterTitle.setAttribute('content', title);
+
+    const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+    if (twitterDesc) twitterDesc.setAttribute('content', desc);
+
+    const canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (canonicalLink) canonicalLink.setAttribute('href', canonicalUrl);
+  }, [currentPage]);
 
   const handlePageChange = (page: PageId) => {
     setCurrentPage(page);
