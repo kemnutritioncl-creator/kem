@@ -91,7 +91,7 @@ Por Katherinne Elgueta Mora · KEM Nutrition Academy 🥑
             <button
               onClick={handlePrint}
               className="p-2 rounded-full hover:bg-stone-800 text-stone-300 hover:text-white transition-colors cursor-pointer hidden sm:inline-flex"
-              title="Imprimir / Guardar en PDF"
+              title="Imprimir / Guardar guía"
             >
               <Printer className="w-4 h-4" />
             </button>
@@ -186,7 +186,7 @@ Por Katherinne Elgueta Mora · KEM Nutrition Academy 🥑
               {/* Header Hero of Guide */}
               <div className="bg-gradient-to-br from-bg-warm to-stone-100 rounded-2xl p-6 sm:p-8 border border-stone-200 text-center space-y-4">
                 <span className="text-xs font-mono font-bold tracking-widest text-[#6FA987] uppercase">
-                  Guía de Inicio · Descarga y Consulta Libre
+                  Guía de Inicio · Consulta Gratuita
                 </span>
                 <h2 className="font-serif text-2xl sm:text-4xl text-stone-900 font-bold tracking-tight">
                   Suplementos en los primeros 1.000 días
@@ -718,7 +718,7 @@ Por Katherinne Elgueta Mora · KEM Nutrition Academy 🥑
               className="flex-1 sm:flex-initial px-4 py-2.5 rounded-full border border-stone-300 hover:bg-stone-200 text-stone-700 font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
             >
               <Printer className="w-4 h-4" />
-              <span>Imprimir / Guardar PDF</span>
+              <span>Imprimir / Guardar guía</span>
             </button>
             <button
               onClick={onClose}

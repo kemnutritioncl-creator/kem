@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import { PageId } from '../types';
-import { Heart, Sparkles, Instagram, Mail, ShieldAlert, Share2, Check, BookOpen } from 'lucide-react';
+import { Heart, Sparkles, Instagram, Linkedin, Mail, ShieldAlert, Share2, Check, BookOpen } from 'lucide-react';
 
 interface FooterProps {
   setCurrentPage: (page: PageId) => void;
@@ -96,9 +96,19 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center text-stone-300 hover:text-naranja hover:bg-stone-700 transition-colors"
                 id="footer-ig-link"
-                title="Siguenos en Instagram @kemnutrition"
+                title="Síguenos en Instagram @kemnutrition"
               >
                 <Instagram className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/katherinne-elgueta-mora-b48631260/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center text-stone-300 hover:text-[#0A66C2] hover:bg-stone-700 transition-colors"
+                id="footer-linkedin-link"
+                title="Conéctate en LinkedIn con Katherinne Elgueta Mora"
+              >
+                <Linkedin className="w-5 h-5" />
               </a>
               <button
                 onClick={handleShareLink}
@@ -132,7 +142,7 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
                   id="footer-shortcut-mom"
                 >
                   <Heart className="w-3.5 h-3.5 text-naranja fill-naranja/10" />
-                  Kem Mom (Para madres)
+                  Kem Mom (Para gestantes y familias)
                 </button>
               </li>
               <li>
@@ -200,7 +210,7 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
               <span className="font-semibold text-[#F2994A] block mb-1 uppercase tracking-wider text-[10px]">
                 Aviso importante de responsabilidad médica
               </span>
-              Todo el contenido educativo provisto en las academias Kem Mom y Kem Pro, guías descargables, checklists, recetarios y charlas, es estrictamente informativo y docente. No sustituye de ninguna forma la consulta clínica individualizada, controles ginecobstétricos, de matonería o pediátricos, ni constituye asesoría clínica vinculante.
+              El contenido educativo de Kem Mom y Kem Pro (videos, guías, checklists, recetarios y sesiones grupales) es informativo y general. No reemplaza la consulta clínica individualizada ni los controles ginecológicos, obstétricos, de matronería o pediátricos. Las indicaciones personalizadas se entregan solo en las consultas clínicas individuales con Katherinne Elgueta Mora, nutricionista. Ante cualquier síntoma o urgencia, acude a tu centro de salud.
             </div>
           </div>
         </div>

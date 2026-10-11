@@ -1,6 +1,6 @@
 {
   "name": "KEM Nutrition Academy",
-  "description": "🌸 Academia de nutrición materna y salud con Katherinne Elgueta Mora. 🤰 Programas para futuras mamás (Kem Mom) y 👩‍⚕️ formación profesional (Kem Pro). 🥑 Guía de 1.000 días.",
+  "description": "Acompañamiento nutricional en embarazo, postparto y lactancia por Katherinne Elgueta Mora, nutricionista clínica. Consulta 1:1, programa Kem Mom, Kem Pro (próximamente) y guía gratuita.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

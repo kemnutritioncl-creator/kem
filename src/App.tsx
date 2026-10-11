@@ -72,7 +72,7 @@ export default function App() {
   const [priceConsulta, setPriceConsulta] = useState<string>(() => {
     try {
       const cached = localStorage.getItem('kem_price_consulta');
-      if (!cached || cached === '47.000') {
+      if (!cached || cached === '[PRECIO]' || cached === '47.000') {
         localStorage.setItem('kem_price_consulta', '35.000');
         return '35.000';
       }
@@ -176,8 +176,8 @@ export default function App() {
 
   // Sync dynamic SEO metadata and document title for Google Search & social cards
   useEffect(() => {
-    let title = "KEM Nutrition Academy | Nutrición en Maternidad y Formación Clínica";
-    let desc = "Academia de nutrición materna y salud por Katherinne Elgueta Mora. Consulta y acompañamiento en Kem Mom, formación clínica en Kem Pro y guía gratuita.";
+    let title = "KEM Nutrition Academy | Nutrición en la Maternidad y Consulta Clínica";
+    let desc = "Acompañamiento nutricional en embarazo, postparto y lactancia por Katherinne Elgueta Mora, nutricionista clínica. Consulta 1:1, programa Kem Mom, Kem Pro (próximamente) y guía gratuita.";
     let canonicalUrl = "https://kemnutritionacademy.com/";
 
     if (currentPage === 'kem-mom') {

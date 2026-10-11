@@ -2,10 +2,9 @@
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
-
 import React, { useState, useEffect } from 'react';
 import { PageId, CheckoutUrls } from '../types';
-import { universities, momTestimonials, proTestimonials, generalFaqs } from '../data';
+import { generalFaqs } from '../data';
 import GuideModal from './GuideModal';
 import { 
   Heart, 
@@ -166,7 +165,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                 <p className="text-xs sm:text-sm text-carbon-title font-medium leading-relaxed max-w-xl mx-auto lg:mx-0 flex flex-col sm:flex-row items-center gap-2.5 justify-center lg:justify-start text-stone-600">
                   <span className="inline-flex shrink-0 w-7 h-7 rounded-full bg-verde/10 text-verde items-center justify-center font-bold text-xs">✔</span>
                   <span>
-                    Dirigida por <strong>Katherinne Elgueta Mora</strong> · Nutricionista clínica. Magíster INTA. Docente universitaria
+                    Dirigida por <strong>Katherinne Elgueta Mora</strong> · Nutricionista clínica · Magíster INTA, U. de Chile
                   </span>
                 </p>
               </div>
@@ -185,7 +184,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                   <img 
                     src="https://lh3.googleusercontent.com/d/1iUpZgXRYoC2DVXyacp42xhxEFgqahxuC" 
                     alt="Katherinne Elgueta Mora - KEM Nutrition Academy" 
-                    className="w-full h-full object-cover object-center scale-102 hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover object-center scale-102 hover:scale-105 transition-transform duration-700" 
                     referrerPolicy="no-referrer"
                   />
                   
@@ -196,7 +195,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                         <h4 className="font-serif font-bold text-sm sm:text-base text-stone-900 leading-tight">
                           Katherinne Elgueta Mora
                         </h4>
-                        <p className="text-[10px] sm:text-[11px] text-stone-500 font-medium">Tu guía y mentora experta en el proceso</p>
+                        <p className="text-[10px] sm:text-[11px] text-stone-500 font-medium">Tu nutricionista</p>
                       </div>
                       <div className="w-8 h-8 rounded-full bg-verde/10 text-verde flex items-center justify-center font-bold text-xs border border-verde/20 shrink-0">
                         🎓
@@ -212,53 +211,15 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
         </div>
       </section>
 
-      {/* 2. Barra de respaldo universitario (Sello de credibilidad) */}
-      <section className="bg-gradient-to-b from-stone-50 to-white py-16 border-y border-stone-150/70" id="sello-docente-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-verde/10 text-verde text-xs font-bold uppercase tracking-wider font-sans">
-              Trayectoria y Respaldo
-            </span>
-            <h2 className="font-serif text-2xl sm:text-3xl font-semibold text-carbon-title tracking-tight">
-              Docencia universitaria certificada en Chile
-            </h2>
-            <p className="text-sm text-stone-500 leading-relaxed font-light">
-              Formación avalada por más de 14 años de docencia y dirección académica en las principales escuelas de salud del país.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 justify-center items-stretch">
-            {universities.map((uni, i) => (
-              <div 
-                key={i} 
-                className="group bg-white hover:bg-stone-50/30 rounded-2xl border border-stone-200/50 p-6 shadow-2xs hover:shadow-md hover:border-verde/20 transition-all duration-300 flex flex-col justify-between items-center text-center relative overflow-hidden"
-                title={`Docente en ${uni.name}`}
-              >
-                {/* Logo Image */}
-                <div className="w-full h-16 sm:h-20 flex items-center justify-center mb-4 bg-stone-50/50 rounded-xl p-2 group-hover:bg-white transition-colors duration-300">
-                  {('logoUrl' in uni && uni.logoUrl) ? (
-                    <img 
-                      src={uni.logoUrl as string} 
-                      alt={`Logo ${uni.name}`}
-                      className="max-h-full max-w-full object-contain filter grayscale-0 group-hover:grayscale opacity-100 group-hover:opacity-75 transition-all duration-300"
-                      referrerPolicy="no-referrer"
-                    />
-                  ) : (
-                    <div className="w-10 h-10 rounded-xl bg-violeta/10 flex items-center justify-center text-violeta font-bold text-sm">
-                      {uni.logo}
-                    </div>
-                  )}
-                </div>
-                
-                {/* University Name */}
-                <div className="w-full">
-                  <p className="text-[11px] sm:text-[12px] font-bold text-stone-850 font-sans tracking-tight leading-snug line-clamp-2">
-                    {uni.name}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+      {/* 2. Barra de respaldo (Sello de credibilidad) */}
+      <section className="bg-gradient-to-b from-stone-50 to-white py-12 border-y border-stone-150/70" id="sello-docente-section">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-verde/10 text-verde text-xs font-bold uppercase tracking-wider font-sans">
+            Trayectoria y Respaldo
+          </span>
+          <h2 className="font-serif text-2xl sm:text-3xl font-semibold text-carbon-title tracking-tight">
+            Más de 14 años de experiencia clínica y docente en nutrición materna e infantil
+          </h2>
         </div>
       </section>
 
@@ -287,7 +248,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                       Katherinne Elgueta Mora
                     </h4>
                     <p className="text-xs opacity-85 block font-light">
-                      Tu mentora experta para una maternidad tranquila
+                      Tu nutricionista para una maternidad tranquila
                     </p>
                   </div>
                 </div>
@@ -308,7 +269,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
               </h2>
               
               <p className="text-base text-carbon-body leading-relaxed font-light">
-                Mi trabajo combina tres cosas que rara vez van juntas: la práctica clínica directa, la docencia universitaria actualizada y la experiencia propia de la maternidad. Eso define cómo enseño y cómo acompaño.
+                Mi trabajo combina tres cosas que rara vez van juntas: la práctica clínica directa, la actualización científica constante y la experiencia propia de la maternidad. Eso define cómo explico y cómo acompaño.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4">
@@ -321,8 +282,8 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                   <p className="text-xs text-stone-500">Respaldo científico avanzado para darte total seguridad en la nutrición de tu bebé.</p>
                 </div>
                 <div className="space-y-2 bg-white p-4 rounded-xl border border-stone-100 shadow-2xs">
-                  <span className="text-violeta font-serif text-2xl font-bold">Académica</span>
-                  <p className="text-xs text-stone-500">Explicaciones claras y pedagógicas para aplicar de forma sencilla y práctica desde el primer día.</p>
+                  <span className="text-violeta font-serif text-2xl font-bold">Clara</span>
+                  <p className="text-xs text-stone-500">Explicaciones simples para aplicar desde el primer día.</p>
                 </div>
               </div>
 
@@ -336,10 +297,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                     <span className="text-verde">✔</span> Respaldo con postgrado INTA (U. de Chile) para brindarte absoluta seguridad.
                   </li>
                   <li className="flex items-center gap-1.5">
-                    <span className="text-verde">✔</span> Coordinadora de Simulación Clínica en Salud.
-                  </li>
-                  <li className="flex items-center gap-1.5">
-                    <span className="text-verde">✔</span> Enfoque pedagógico estructurado para facilitar tu aprendizaje práctico de inmediato.
+                    <span className="text-verde">✔</span> Información ordenada y práctica para tu día a día.
                   </li>
                 </ul>
               </div>
@@ -414,7 +372,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
           <div className="space-y-3">
             <span className="text-xs font-mono font-bold tracking-widest text-[#6FA987] uppercase inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10">
               <Sparkles className="w-3.5 h-3.5 text-[#6FA987]" />
-              Guía de Inicio · Descarga y Consulta Gratuita
+              Guía de Inicio · Consulta Gratuita
             </span>
 
             <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
@@ -471,7 +429,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
               }}
               className="text-stone-300 hover:text-naranja font-medium transition-colors cursor-pointer"
             >
-              Programa Kem Mom (Para madres) →
+              Programa Kem Mom (Para gestantes y familias) →
             </button>
             <span className="text-white/20">|</span>
             <button 
@@ -489,7 +447,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
       </section>
 
       {/* 5. Mini presentación KEM Mom (Tarjeta integrada con gradiente) */}
-      <section className="py-12 sm:py-20 bg-gradient-to-br from-bg-warm to-white">
+      <section className="py-12 sm:py-20 bg-gradient-to-br from-bg-warm to-white" id="programas">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="bg-white rounded-[32px] border border-stone-200/60 p-8 sm:p-12 lg:p-16 shadow-lg relative overflow-hidden">
@@ -505,7 +463,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                 </div>
 
                 <h3 className="font-serif text-3xl sm:text-4xl text-carbon-title font-semibold leading-tight">
-                  Programa Kem Mom (Para madres)
+                  Programa Kem Mom (Para gestantes y familias)
                 </h3>
 
                 <p className="text-base text-stone-600 leading-relaxed font-light">
@@ -515,11 +473,11 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-stone-700">
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-[#6FA987] shrink-0" />
-                    <span>8 módulos completos con videoclases cortas.</span>
+                    <span>8 módulos completos con videos cortos.</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-[#6FA987] shrink-0" />
-                    <span>Checklists y resúmenes descargables en PDF.</span>
+                    <span>Checklists y resúmenes.</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-[#6FA987] shrink-0" />
@@ -595,20 +553,20 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                 </span>
                 
                 <p className="text-sm font-serif italic text-carbon-title leading-relaxed">
-                  "Para nutricionistas y estudiantes de último año que buscan capacitarse a nivel clínico avanzado para tratar gestantes con patologías, con seguridad desde el primer día."
+                  "Para nutricionistas titulados que buscan capacitarse a nivel clínico avanzado para tratar gestantes con patologías, con seguridad desde el primer día."
                 </p>
 
                 <div className="h-0.5 bg-violeta/20 my-2" />
 
-                <div className="flex justify-around text-xs text-carbon-body font-medium">
-                  <div>
-                    <span className="block font-bold text-carbon-title text-base">97.000 CLP</span>
-                    <span>Plan Esencial</span>
+                <div className="flex justify-around items-center text-xs text-carbon-body font-medium">
+                  <div className="text-center px-2">
+                    <span className="block font-serif font-bold text-carbon-title text-xs sm:text-sm tracking-wide">Próximamente</span>
+                    <span className="text-[11px] text-stone-500 font-light">Plan Esencial</span>
                   </div>
-                  <div className="w-px bg-violeta/10" />
-                  <div>
-                    <span className="block font-bold text-carbon-title text-base">217.000 CLP</span>
-                    <span>Acompañamiento</span>
+                  <div className="w-px h-8 bg-violeta/15" />
+                  <div className="text-center px-2">
+                    <span className="block font-serif font-bold text-carbon-title text-xs sm:text-sm tracking-wide">Próximamente</span>
+                    <span className="text-[11px] text-stone-500 font-light">Acompañamiento</span>
                   </div>
                 </div>
               </div>
@@ -642,7 +600,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-[#6FA987] shrink-0" />
-                    <span>Certificado de egreso oficial para tu consulta.</span>
+                    <span>Constancia de participación KEM Nutrition Academy.</span>
                   </div>
                 </div>
 
@@ -668,80 +626,15 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
         </div>
       </section>
 
-      {/* 7. Prueba social segmentada (dos columnas) */}
-      <section className="py-12 sm:py-20 bg-bg-warm/60 border-t border-stone-200/55" id="testimonios">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
-          <div className="text-center space-y-4 max-w-2xl mx-auto">
-            <span className="text-[#6FA987] font-mono text-xs uppercase tracking-widest font-bold">
-              Ambas Perspectivas
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl text-carbon-title font-semibold tracking-tight">
-              La tranquilidad de quienes ya transformaron su bienestar y consulta
-            </h2>
-            <p className="text-sm text-stone-500 font-light">
-              Lee las historias y testimonios de las mamás que vivieron su embarazo con paz, y las colegas que elevaron su calidad de consulta.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            
-            {/* Column 1: KEM MOM Testimonials */}
-            <div className="space-y-6">
-              <h4 className="font-serif font-bold text-xl text-carbon-title border-b border-naranja/20 pb-3 flex items-center gap-2">
-                <Heart className="w-5 h-5 text-naranja fill-naranja/10" />
-                Mamás preparadas con Kem Mom
-              </h4>
-
-              <div className="space-y-4">
-                {momTestimonials.map((t) => (
-                  <div key={t.id} className="bg-white p-6 rounded-2xl border border-stone-200/60 shadow-2xs hover:-translate-y-1 transition-all">
-                    <p className="text-sm text-stone-600 leading-relaxed font-light italic mb-4">
-                      "{t.text}"
-                    </p>
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-naranja/10 text-naranja font-serif font-semibold text-sm flex items-center justify-center">
-                        {t.name[0]}
-                      </div>
-                      <div>
-                        <h5 className="text-xs font-bold text-carbon-title tracking-tight">{t.name}</h5>
-                        <p className="text-[10px] text-stone-500">{t.role}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Column 2: KEM PRO Testimonials */}
-            <div className="space-y-6">
-              <h4 className="font-serif font-bold text-xl text-carbon-title border-b border-violeta/20 pb-3 flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-violeta" />
-                Profesionales capacitadas/os con Kem Pro
-              </h4>
-
-              <div className="space-y-4">
-                {proTestimonials.map((t) => (
-                  <div key={t.id} className="bg-white p-6 rounded-2xl border border-stone-200/60 shadow-2xs hover:-translate-y-1 transition-all">
-                    <p className="text-sm text-stone-600 leading-relaxed font-light italic mb-4">
-                      "{t.text}"
-                    </p>
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-violeta/10 text-violeta font-serif font-semibold text-sm flex items-center justify-center">
-                        {t.name[0]}
-                      </div>
-                      <div>
-                        <h5 className="text-xs font-bold text-carbon-title tracking-tight">{t.name}</h5>
-                        <p className="text-[10px] text-stone-500">{t.role}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-          </div>
-
+      {/* 7. Primeras colegas en KEM Pro */}
+      <section className="py-12 sm:py-16 bg-bg-warm/60 border-t border-stone-200/55" id="testimonios">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
+          <h2 className="font-serif text-2xl sm:text-3xl font-semibold text-carbon-title tracking-tight">
+            Primeras colegas en KEM Pro
+          </h2>
+          <p className="text-stone-500 font-light text-base">
+            (Próximamente)
+          </p>
         </div>
       </section>
 

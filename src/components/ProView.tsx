@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { PageId, CheckoutUrls } from '../types';
-import { proModules, proTestimonials, proFaqs } from '../data';
+import { proModules, proFaqs } from '../data';
 import { 
   Sparkles, 
   ArrowRight, 
@@ -105,7 +105,7 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
                   className="w-full sm:w-auto text-center px-8 py-4 rounded-full bg-violeta hover:bg-violeta-dark text-white font-bold text-sm tracking-wide shadow-md hover:shadow-lg transition-all"
                   id="pro-hero-cta"
                 >
-                  Ver Planes de Inscripción
+                  Ver planes
                 </a>
                 <a
                   href="mailto:kemnutritioncl@gmail.com"
@@ -137,48 +137,31 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
 
       {/* 2. Para quién es */}
       <section className="py-12 sm:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
             
-            <div className="space-y-6 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
-              
-              <h2 className="font-serif text-3xl text-carbon-title font-semibold tracking-tight">
-                ¿Este programa es para mí?
-              </h2>
+            <h2 className="font-serif text-3xl text-carbon-title font-semibold tracking-tight">
+              ¿Este programa es para mí?
+            </h2>
 
-              <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
-                La academia está pensada para nutricionistas, profesionales de obstetricia, médicos y profesionales afines al área clínica materno-infantil, incluyendo estudiantes de último año, que quieren ejercer en consulta privada sin improvisar.
-              </p>
+            <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
+              La academia está pensada para nutricionistas titulados, profesionales de obstetricia, médicos y profesionales afines al área clínica materno-infantil que quieren ejercer en consulta privada sin improvisar.
+            </p>
 
-              <div className="space-y-3 pt-2">
-                <div className="flex gap-3">
-                  <div className="w-5 h-5 rounded-full bg-violeta/10 text-violeta flex items-center justify-center shrink-0 mt-0.5">✔</div>
-                  <p className="text-xs sm:text-sm text-stone-600">Quieres dejar de dar recomendaciones generales y tomar decisiones clínicas con respaldo bioquímico real.</p>
-                </div>
-                <div className="flex gap-3">
-                  <div className="w-5 h-5 rounded-full bg-violeta/10 text-violeta flex items-center justify-center shrink-0 mt-0.5">✔</div>
-                  <p className="text-xs sm:text-sm text-stone-600">Necesitas criterios claros para organizar y priorizar tus consultas sin depender de la intuición.</p>
-                </div>
-                <div className="flex gap-3">
-                  <div className="w-5 h-5 rounded-full bg-violeta/10 text-violeta flex items-center justify-center shrink-0 mt-0.5">✔</div>
-                  <p className="text-xs sm:text-sm text-stone-600">Cuando llega una gestante con diabetes gestacional, resistencia a la insulina o restricción del crecimiento, algo en ti duda. Y quieres que eso deje de pasar.</p>
-                </div>
+            <div className="space-y-3 pt-2">
+              <div className="flex gap-3">
+                <div className="w-5 h-5 rounded-full bg-violeta/10 text-violeta flex items-center justify-center shrink-0 mt-0.5">✔</div>
+                <p className="text-xs sm:text-sm text-stone-600">Quieres dejar de dar recomendaciones generales y tomar decisiones clínicas con respaldo bioquímico real.</p>
+              </div>
+              <div className="flex gap-3">
+                <div className="w-5 h-5 rounded-full bg-violeta/10 text-violeta flex items-center justify-center shrink-0 mt-0.5">✔</div>
+                <p className="text-xs sm:text-sm text-stone-600">Necesitas criterios claros para organizar y priorizar tus consultas sin depender de la intuición.</p>
+              </div>
+              <div className="flex gap-3">
+                <div className="w-5 h-5 rounded-full bg-violeta/10 text-violeta flex items-center justify-center shrink-0 mt-0.5">✔</div>
+                <p className="text-xs sm:text-sm text-stone-600">Cuando llega una gestante con diabetes gestacional, resistencia a la insulina o restricción del crecimiento, algo en ti duda. Y quieres que eso deje de pasar.</p>
               </div>
             </div>
-
-            <div className="bg-[#F6F5FB] border border-violeta/10 rounded-3xl p-6 sm:p-8 space-y-6 text-center">
-              <span className="text-[10px] uppercase font-mono tracking-widest text-[#6C4BB6] font-bold block">
-                Comentarios de las Colegas
-              </span>
-              <p className="text-base font-serif italic text-carbon-title leading-relaxed">
-                "Haber tomado este curso me dio la seguridad clínica para no derivar más embarazadas. Las herramientas de cálculo del requerimiento energético calzan perfecto y facilitan el diseño dietético en minutos."
-              </p>
-              <div className="flex justify-center gap-3 items-center">
-                <div className="w-8 h-8 rounded-full bg-violeta/15 text-violeta font-bold text-xs flex items-center justify-center">N</div>
-                <span className="text-xs font-bold text-stone-600">Nut. Natalia Ruiz, Atención Privada</span>
-              </div>
-            </div>
-
           </div>
         </div>
       </section>
@@ -188,11 +171,8 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
           <span className="text-violeta font-mono text-xs uppercase tracking-widest font-bold">El desafío del egresado</span>
           <h2 className="font-serif text-3xl text-carbon-title font-semibold tracking-tight leading-snug">
-            La brecha entre la universidad y la consulta real
+            Del conocimiento a la consulta real
           </h2>
-          <p className="text-base text-[#514F5C] font-light max-w-3xl mx-auto">
-            La mayoría de las universidades dedican dos clases al embarazo, y casi todo ese tiempo se va en la curva de incremento de peso. Cuando llega tu primera paciente, te das cuenta de que eso no alcanza. No sabes qué hacer con una glucosa basal que no cuadra, qué hierro recetarle a alguien que ya tuvo mala experiencia con los anteriores, qué hacer con el estreñimiento entre otras sintomatologías ni cómo llevar la consulta para que ella vuelva y el médico tratante confíe en tu criterio.
-          </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 text-left">
             <div className="bg-white p-6 rounded-2xl border border-stone-200/50">
@@ -236,7 +216,7 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
           
           <div className="text-center space-y-3">
             <span className="text-violeta font-mono text-xs uppercase tracking-widest font-bold">Herramientas Profesionales</span>
-            <h2 className="font-serif text-3xl text-carbon-title font-semibold tracking-tight">Un arsenal clínico listo para descargar</h2>
+            <h2 className="font-serif text-3xl text-carbon-title font-semibold tracking-tight">Un arsenal clínico listo para usar</h2>
             <p className="text-sm text-stone-500 font-light">Garantizamos recursos de primer nivel que dinamizan tu productividad.</p>
           </div>
 
@@ -251,13 +231,13 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
             <div className="p-6 bg-white rounded-2xl border border-stone-200/50 space-y-3">
               <div className="w-10 h-10 rounded-lg bg-naranja/10 text-naranja flex items-center justify-center font-bold">📊</div>
               <h4 className="font-serif font-bold text-base text-carbon-title">Algoritmos de decisión</h4>
-              <p className="text-xs text-[#514F5C] leading-relaxed">Flujogramas en PDF que te indican qué dosis suplementar de calcio, hierro o vitamina D según los resultados bioquímicos.</p>
+              <p className="text-xs text-[#514F5C] leading-relaxed">Flujogramas que te indican qué dosis suplementar de calcio, hierro o vitamina D según los resultados bioquímicos.</p>
             </div>
 
             <div className="p-6 bg-white rounded-2xl border border-stone-200/50 space-y-3">
               <div className="w-10 h-10 rounded-lg bg-violeta/10 text-violeta flex items-center justify-center font-bold">📑</div>
               <h4 className="font-serif font-bold text-base text-carbon-title">Material educativo para pacientes</h4>
-              <p className="text-xs text-stone-500 leading-relaxed">Infografías clínicas limpias de tu autoría para enviar en PDF a tus pacientes sobre mitos, porciones y manejo de acidez.</p>
+              <p className="text-xs text-stone-500 leading-relaxed">Infografías clínicas limpias de tu autoría para enviar a tus pacientes sobre mitos, porciones y manejo de acidez.</p>
             </div>
 
             <div className="p-6 bg-white rounded-2xl border border-stone-200/50 space-y-3">
@@ -560,9 +540,9 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
                   <Award className="w-6 h-6" />
                 </div>
                 <div className="text-left">
-                  <h4 className="text-sm font-bold text-white font-serif">Certificación Oficial</h4>
+                  <h4 className="text-sm font-bold text-white font-serif">Constancia de participación</h4>
                   <p className="text-xs text-stone-400 font-light leading-relaxed">
-                    [Al finalizar recibes: certificado de KEM Nutrition Academy — confirmar horas y acreditación]
+                    Constancia de participación KEM Nutrition Academy.
                   </p>
                 </div>
               </div>
@@ -592,7 +572,6 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
           <div className="text-center space-y-3">
             <span className="text-violeta font-mono text-xs uppercase tracking-widest font-bold">Inversión Profesional</span>
             <h2 className="font-serif text-3xl sm:text-4xl text-carbon-title font-semibold tracking-tight">Elige el nivel de formación</h2>
-            <p className="text-sm text-stone-500 max-w-md mx-auto font-light">Opciones de financiamiento rápido con reembolso directo y Webpay de Chile.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
@@ -609,10 +588,8 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
                   <p className="text-xs text-stone-500 mt-1">Acceso permanente a las herramientas y clases.</p>
                 </div>
 
-                <div className="flex items-baseline gap-1.5 bg-stone-50 p-4.5 rounded-2xl border border-stone-200">
-                  <span className="text-xs font-bold text-stone-400 font-sans">CLP</span>
-                  <span className="text-3xl sm:text-4xl font-serif font-extrabold text-[#2D3142]">${priceEsencial}</span>
-                  <span className="text-xs text-stone-500 font-light ml-auto">Pago Único</span>
+                <div className="flex items-center justify-center bg-stone-50 py-3.5 px-4 rounded-2xl border border-stone-200">
+                  <span className="text-sm sm:text-base font-serif font-bold text-[#2D3142] text-center tracking-wide">Próximamente</span>
                 </div>
 
                 <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans">
@@ -626,22 +603,18 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
                     <Check className="w-4 h-4 text-verde shrink-0" /> Foros y resolución de casos en comunidad.
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-verde shrink-0" /> Certificado de finalización firmado por KEM Academy.
+                    <Check className="w-4 h-4 text-verde shrink-0" /> Constancia de participación KEM Nutrition Academy.
                   </li>
                 </ul>
               </div>
 
               <div className="pt-8">
-                <a
-                  href={urls.proEsencial}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => handleCheckoutClick(e, 'Kem Pro Esencial', urls.proEsencial)}
-                  className="block text-center w-full py-3.5 rounded-full bg-stone-900 text-white font-bold text-xs tracking-wider uppercase hover:bg-stone-800 transition-colors cursor-pointer"
+                <span
+                  className="block text-center w-full py-3.5 rounded-full bg-stone-200 text-stone-500 font-bold text-xs tracking-wider uppercase cursor-not-allowed select-none"
                   id="pro-checkout-esencial"
                 >
-                  Inscribirme al Plan Esencial
-                </a>
+                  Próximamente
+                </span>
               </div>
 
             </div>
@@ -655,47 +628,38 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
               <div className="space-y-6">
                 <div>
                   <span className="px-3 py-1 rounded-full bg-violeta/10 text-violeta text-[10px] font-bold uppercase tracking-wider">
-                    Plan Completo + Acompañamiento Vivo
+                    Plan Completo + Acompañamiento
                   </span>
                   <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2">Diferenciación técnica</h3>
-                  <p className="text-xs text-stone-505 mt-1">Con mentoría docente, casos y sesiones personalizadas.</p>
+                  <p className="text-xs text-stone-505 mt-1">Con acompañamiento, casos y sesiones personalizadas.</p>
                 </div>
 
-                <div className="flex items-baseline gap-1.5 bg-gradient-to-br from-violet-50 via-purple-50 to-amber-50/40 p-4.5 rounded-2xl border-2 border-violeta/25 shadow-xs">
-                  <span className="text-xs font-extrabold text-violeta font-sans">CLP</span>
-                  <span className="text-3xl sm:text-4xl font-serif font-black text-violet-950">${priceAcompañamiento}</span>
-                  <span className="text-xs font-medium text-stone-500 font-light ml-auto">Pago Único</span>
+                <div className="flex items-center justify-center bg-gradient-to-br from-violet-50 via-purple-50 to-amber-50/40 py-3.5 px-4 rounded-2xl border-2 border-violeta/25 shadow-xs">
+                  <span className="text-sm sm:text-base font-serif font-bold text-violet-950 text-center tracking-wide">Próximamente</span>
                 </div>
 
                 <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans">
                   <li className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-violeta shrink-0 font-bold" /> Acceso de por vida a los 10 módulos grabados y herramientas.
                   </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-violeta shrink-0 font-bold" /> <strong>2 mentorías grupales al mes en vivo</strong> con Katherinne.
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-violeta shrink-0 font-bold mt-0.5" />
+                    <span className="leading-normal"><strong>2 mentorías grupales al mes en vivo con Katherinne</strong></span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-violeta shrink-0 font-bold" /> <strong>1 sesión de consultoría técnica individual al mes</strong> para analizar tus propios pacientes.
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-violeta shrink-0 font-bold" /> Pauta preferencial para derivación directa de pacientes ginecológicos de Kem Mom.
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-violeta shrink-0 font-bold mt-0.5" />
+                    <span className="leading-normal"><strong>1 sesión de consultoría técnica individual al mes</strong> para analizar tus propios pacientes.</span>
                   </li>
                 </ul>
               </div>
 
               <div className="pt-8">
-                <a
-                  href={urls.proAcompañamiento}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => handleCheckoutClick(e, 'Kem Pro Acompañamiento', urls.proAcompañamiento)}
-                  className="w-full py-4.5 px-6 rounded-full bg-gradient-to-r from-[#F2994A] via-orange-500 to-[#E86A58] hover:from-orange-500 hover:via-amber-500 hover:to-orange-600 text-white font-extrabold text-sm tracking-wider uppercase shadow-xl hover:shadow-2xl hover:shadow-orange-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 ring-4 ring-orange-300/60 flex items-center justify-center gap-2 cursor-pointer group"
+                <span
+                  className="w-full py-4.5 px-6 rounded-full bg-stone-200 text-stone-500 font-extrabold text-sm tracking-wider uppercase flex items-center justify-center gap-2 cursor-not-allowed select-none"
                   id="pro-checkout-acompanamiento"
                 >
-                  <Sparkles className="w-4 h-4 text-amber-100 group-hover:rotate-12 transition-transform" />
-                  <span>Inscribirme al Plan Acompañamiento</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
+                  <span>Próximamente</span>
+                </span>
               </div>
 
             </div>
@@ -714,10 +678,8 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
                   </p>
                 </div>
 
-                <div className="flex items-baseline gap-1.5 bg-stone-50 p-4.5 rounded-2xl border border-stone-200">
-                  <span className="text-xs font-bold text-stone-400 font-sans">CLP</span>
-                  <span className="text-3xl font-serif font-extrabold text-[#2D3142]">${priceConsulta}</span>
-                  <span className="text-xs text-stone-500 font-light ml-auto">Por Sesión</span>
+                <div className="flex items-center justify-center bg-stone-50 py-3.5 px-4 rounded-2xl border border-stone-200">
+                  <span className="text-sm sm:text-base font-serif font-bold text-[#2D3142] text-center tracking-wide">Próximamente</span>
                 </div>
 
                 <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans">
@@ -743,22 +705,18 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
                   </li>
                   <li className="flex items-start gap-2 text-stone-400">
                     <X className="w-4 h-4 shrink-0 mt-0.5" />
-                    <span>No otorga acceso continuo a los 10 módulos de la certificación.</span>
+                    <span>No otorga acceso continuo a los 10 módulos de la formación.</span>
                   </li>
                 </ul>
               </div>
 
               <div className="pt-8">
-                <a
-                  href={urls.proConsulta}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => handleCheckoutClick(e, 'Kem Pro Consulta Individual', urls.proConsulta)}
-                  className="block text-center w-full py-3.5 rounded-full bg-[#2D3142] text-white font-bold text-xs tracking-wider uppercase hover:bg-stone-850 transition-colors cursor-pointer"
+                <span
+                  className="block text-center w-full py-3.5 rounded-full bg-stone-200 text-stone-500 font-bold text-xs tracking-wider uppercase cursor-not-allowed select-none"
                   id="pro-checkout-consulta"
                 >
-                  Agendar Consulta Individual
-                </a>
+                  Próximamente
+                </span>
               </div>
 
             </div>
@@ -787,36 +745,15 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
         </div>
       </section>
 
-      {/* 9. Prueba social de profesionales */}
-      <section className="py-12 sm:py-20 bg-bg-warm/40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-center space-y-3 max-w-xl mx-auto">
-            <span className="text-[#6FA987] font-mono text-xs uppercase tracking-widest font-bold">Confianza de colegas</span>
-            <h2 className="font-serif text-3xl font-semibold text-carbon-title tracking-tight text-center">Nutricionistas que ya atienden con total seguridad y confianza</h2>
-            <p className="text-sm text-stone-500 font-light">Lee las palabras de otros nutricionistas que aplicaron nuestra metodología de cálculo y pautas.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {proTestimonials.map((t) => (
-              <div key={t.id} className="bg-white p-6 rounded-2xl border border-stone-200/60 shadow-2xs hover:-translate-y-1 transition-all">
-                <div className="flex gap-1 text-violeta mb-3 text-sm">
-                  {"★".repeat(t.rating)}
-                </div>
-                <p className="text-xs sm:text-sm text-stone-600 italic font-light leading-relaxed mb-4">
-                  "{t.text}"
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-violeta/10 text-violeta font-serif font-bold text-xs flex items-center justify-center">
-                    {t.name[0]}
-                  </div>
-                  <div>
-                    <h5 className="text-xs font-bold text-carbon-title tracking-tight">{t.name}</h5>
-                    <p className="text-[10px] text-stone-400">{t.role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+      {/* 9. Primeras colegas en KEM Pro */}
+      <section className="py-12 sm:py-16 bg-bg-warm/60 border-t border-stone-200/55" id="testimonios">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
+          <h2 className="font-serif text-2xl sm:text-3xl font-semibold text-carbon-title tracking-tight">
+            Primeras colegas en KEM Pro
+          </h2>
+          <p className="text-stone-500 font-light text-base">
+            (Próximamente)
+          </p>
         </div>
       </section>
 
@@ -834,10 +771,10 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
               <div className="absolute -bottom-1 -right-1 bg-[#6FA987] text-white p-1 rounded-full"><Award className="w-3.5 h-3.5" /></div>
             </div>
             <div className="space-y-3 text-center sm:text-left">
-              <span className="px-2 py-0.5 rounded-full bg-violeta/10 text-violeta text-[9px] font-bold uppercase tracking-wider font-mono">Docente</span>
+              <span className="px-2 py-0.5 rounded-full bg-violeta/10 text-violeta text-[9px] font-bold uppercase tracking-wider font-mono">QUIÉN TE ACOMPAÑA</span>
               <h4 className="font-serif text-lg font-bold text-carbon-title">Aprende con Katherinne Elgueta Mora</h4>
               <p className="text-xs text-[#514F5C] leading-relaxed font-light">
-                Postgrado en el INTA, Universidad de Chile. No es teoría por teoría: cada contenido está pensado para que lo apliques en tu próxima consulta.
+                Nutricionista con magíster en el INTA (U. de Chile). No es teoría por teoría: cada contenido está pensado para que lo apliques en tu próxima consulta.
               </p>
             </div>
           </div>

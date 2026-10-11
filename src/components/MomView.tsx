@@ -5,7 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { PageId, CheckoutUrls } from '../types';
-import { momModules, momTestimonials, momFaqs } from '../data';
+import { momModules, momFaqs } from '../data';
 import { 
   Heart, 
   ArrowRight, 
@@ -84,7 +84,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
             <div className="lg:col-span-8 space-y-6 text-center lg:text-left">
               <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-naranja/10 border border-naranja/20 text-naranja">
                 <Heart className="w-3.5 h-3.5 fill-naranja/10" />
-                <span className="text-xs font-bold uppercase tracking-wider">Kem Mom Academy</span>
+                <span className="text-xs font-bold uppercase tracking-wider">KEM Mom</span>
               </div>
 
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-carbon-title font-semibold tracking-tight">
@@ -105,7 +105,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                   className="w-full sm:w-auto text-center px-8 py-4 rounded-full bg-naranja hover:bg-orange-500 text-white font-bold text-sm tracking-wide shadow-md hover:shadow-lg transition-all"
                   id="mom-hero-cta"
                 >
-                  Ver Planes de Inscripción
+                  Ver planes
                 </a>
                 <a
                   href="mailto:kemnutritioncl@gmail.com"
@@ -123,7 +123,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                 <div className="absolute inset-0 bg-white rounded-full overflow-hidden border-2 border-stone-100 shadow-md">
                   <img 
                     src="https://lh3.googleusercontent.com/d/1pBHcfrQ4Uf0MIzL3Fb-JsqAOaEyjK1m3"
-                    alt="KEM Mom Academy Hero" 
+                    alt="KEM Mom Hero" 
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover"
                   />
@@ -137,49 +137,32 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
 
       {/* 2. Para quién es */}
       <section className="py-12 sm:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-6 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+            <span className="text-[#6FA987] font-mono text-xs uppercase tracking-widest font-bold">Público Objetivo</span>
             
-            <div className="space-y-6 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
-              <span className="text-[#6FA987] font-mono text-xs uppercase tracking-widest font-bold">Público Objetivo</span>
-              
-              <h2 className="font-serif text-3xl text-carbon-title font-semibold tracking-tight">
-                ¿Este programa es idóneo para mí?
-              </h2>
+            <h2 className="font-serif text-3xl text-carbon-title font-semibold tracking-tight">
+              ¿Este programa es idóneo para mí?
+            </h2>
 
-              <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
-                Este programa ha sido diseñado exclusivamente para mujeres y futuras madres que desean transitar la preconcepción, fertilidad, embarazo activo, postparto o lactancia libre de agobios.
-              </p>
+            <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
+              Este programa está pensado para mujeres que buscan embarazarse, gestantes y mamás, y también para quien las acompaña en este proceso, que desean transitar la preconcepción, fertilidad, embarazo activo, postparto o lactancia libre de agobios.
+            </p>
 
-              <div className="space-y-3 pt-2">
-                <div className="flex gap-3">
-                  <div className="w-5 h-5 rounded-full bg-naranja/10 text-naranja flex items-center justify-center shrink-0 mt-0.5">✔</div>
-                  <p className="text-xs sm:text-sm text-stone-600">Buscas información de nutrición validada clínicamente y no consejos anecdóticos de redes sociales.</p>
-                </div>
-                <div className="flex gap-3">
-                  <div className="w-5 h-5 rounded-full bg-naranja/10 text-naranja flex items-center justify-center shrink-0 mt-0.5">✔</div>
-                  <p className="text-xs sm:text-sm text-stone-600">Te sientes cansada de las estrictas dietas restrictivas y buscas un camino balanceado y nutritivo.</p>
-                </div>
-                <div className="flex gap-3">
-                  <div className="w-5 h-5 rounded-full bg-naranja/10 text-naranja flex items-center justify-center shrink-0 mt-0.5">✔</div>
-                  <p className="text-xs sm:text-sm text-stone-600">Quieres prevenir o controlar condiciones digestivas, fatiga, anemia, o diabetes gestacional con nutrición guiada.</p>
-                </div>
+            <div className="space-y-3 pt-2">
+              <div className="flex gap-3">
+                <div className="w-5 h-5 rounded-full bg-naranja/10 text-naranja flex items-center justify-center shrink-0 mt-0.5">✔</div>
+                <p className="text-xs sm:text-sm text-stone-600">Buscas información de nutrición validada clínicamente y no consejos anecdóticos de redes sociales.</p>
+              </div>
+              <div className="flex gap-3">
+                <div className="w-5 h-5 rounded-full bg-naranja/10 text-naranja flex items-center justify-center shrink-0 mt-0.5">✔</div>
+                <p className="text-xs sm:text-sm text-stone-600">Te sientes cansada de las estrictas dietas restrictivas y buscas un camino balanceado y nutritivo.</p>
+              </div>
+              <div className="flex gap-3">
+                <div className="w-5 h-5 rounded-full bg-naranja/10 text-naranja flex items-center justify-center shrink-0 mt-0.5">✔</div>
+                <p className="text-xs sm:text-sm text-stone-600">Quieres prevenir o controlar condiciones digestivas, fatiga, anemia, o diabetes gestacional con nutrición guiada.</p>
               </div>
             </div>
-
-            <div className="bg-[#FBF9F6] border border-orange-100/40 rounded-3xl p-6 sm:p-8 space-y-6 text-center">
-              <span className="text-[10px] uppercase font-mono tracking-widest text-[#6FA987] font-bold block">
-                Comentarios de las alumnas
-              </span>
-              <p className="text-base font-serif italic text-carbon-title leading-relaxed">
-                "Este programa eliminó por completo los constantes temores de qué comer cada noche. Encontré seguridad, respuestas sencillas y un grupo humano maravilloso rodeándome."
-              </p>
-              <div className="flex justify-center gap-3 items-center">
-                <div className="w-8 h-8 rounded-full bg-naranja/15 text-naranja font-bold text-xs flex items-center justify-center">L</div>
-                <span className="text-xs font-bold text-stone-600">Lorena Cáceres, 14 semanas gestando</span>
-              </div>
-            </div>
-
           </div>
         </div>
       </section>
@@ -236,7 +219,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="text-center space-y-3">
-            <span className="text-naranja font-mono text-xs uppercase tracking-widest font-bold">Recursos Académicos</span>
+            <span className="text-naranja font-mono text-xs uppercase tracking-widest font-bold">Qué incluye</span>
             <h2 className="font-serif text-3xl text-carbon-title font-semibold tracking-tight">¿Qué obtienes exactamente al inscribirte?</h2>
             <p className="text-sm text-stone-500 font-light">Herramientas estructuradas de calidad clínica adaptadas al hogar.</p>
           </div>
@@ -245,20 +228,20 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
             
             <div className="p-6 bg-white rounded-2xl border border-stone-200/50 space-y-3">
               <div className="w-10 h-10 rounded-lg bg-naranja/10 text-naranja flex items-center justify-center font-bold">▶</div>
-              <h4 className="font-serif font-bold text-base text-carbon-title">Videoclases cortas</h4>
+              <h4 className="font-serif font-bold text-base text-carbon-title">Videos cortos</h4>
               <p className="text-xs text-stone-500 leading-relaxed">Micro-cápsulas directas de 10-15 minutos ideales para ver a tu propio ritmo sin abrumarte del cansancio diario.</p>
             </div>
 
             <div className="p-6 bg-white rounded-2xl border border-stone-200/50 space-y-3">
               <div className="w-10 h-10 rounded-lg bg-[#6FA987]/10 text-[#6FA987] flex items-center justify-center font-bold">📄</div>
-              <h4 className="font-serif font-bold text-base text-carbon-title">Checklists y resúmenes PDF</h4>
+              <h4 className="font-serif font-bold text-base text-carbon-title">Checklists y resúmenes</h4>
               <p className="text-xs text-stone-500 leading-relaxed">Hojas ágiles visuales por trimestre para monitorear qué comprar, qué suplementos tomar y qué exámenes exigir.</p>
             </div>
 
             <div className="p-6 bg-white rounded-2xl border border-stone-200/50 space-y-3">
               <div className="w-10 h-10 rounded-lg bg-violeta/10 text-violeta flex items-center justify-center font-bold">💊</div>
               <h4 className="font-serif font-bold text-base text-carbon-title">Guía de suplementación</h4>
-              <p className="text-xs text-stone-500 leading-relaxed">Dosis exactas sugeridas, compatibilidad (no juntas hierro con calcio) y las mejores marcas comerciales revisadas.</p>
+              <p className="text-xs text-stone-500 leading-relaxed">Dosis exactas sugeridas y compatibilidad (no juntas hierro con calcio).</p>
             </div>
 
             <div className="p-6 bg-white rounded-2xl border border-stone-200/50 space-y-3">
@@ -270,13 +253,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
             <div className="p-6 bg-white rounded-2xl border border-stone-200/50 space-y-3">
               <div className="w-10 h-10 rounded-lg bg-[#6FA987]/10 text-[#6FA987] flex items-center justify-center font-bold">🩸</div>
               <h4 className="font-serif font-bold text-base text-carbon-title">Protocolo diabetes gestacional</h4>
-              <p className="text-xs text-stone-500 leading-relaxed">Guía metabólica detallada para modular cargas glucémicas sin pasar hambre, disminuyendo curvas de insulina.</p>
-            </div>
-
-            <div className="p-6 bg-white rounded-2xl border border-stone-200/50 space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-violeta/10 text-violeta flex items-center justify-center font-bold">👥</div>
-              <h4 className="font-serif font-bold text-base text-carbon-title">Comunidad privada de sostén</h4>
-              <p className="text-xs text-stone-500 leading-relaxed">Un espacio virtual cerrado con otras mamás gestionado bajo la supervisión docente de Katherinne Elgueta.</p>
+              <p className="text-xs text-stone-500 leading-relaxed">Guía para ordenar tus carbohidratos y acompañar tu monitoreo junto a tu equipo tratante.</p>
             </div>
 
           </div>
@@ -499,9 +476,9 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
               
               <div className="space-y-2.5">
                 <div className="w-8 h-8 rounded-full bg-[#6FA987]/20 text-[#6FA987] flex items-center justify-center font-bold text-sm">2</div>
-                <h4 className="font-serif font-bold text-white text-base">Clases al grano</h4>
+                <h4 className="font-serif font-bold text-white text-base">Al grano</h4>
                 <p className="text-xs text-stone-300 leading-relaxed font-light">
-                  Clases de 8 a 15 minutos. Ves solo lo de tu momento.
+                  Videos de 8 a 15 minutos. Ves solo lo de tu momento.
                 </p>
               </div>
               
@@ -544,32 +521,37 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
             
             {/* Card 1: Plan Esencial */}
-            <div className="bg-white rounded-3xl border border-stone-200/70 p-8 flex flex-col justify-between shadow-xs hover:border-naranja/40 hover:shadow-md transition-all">
+            <div className="bg-white rounded-3xl border border-stone-200/70 p-8 flex flex-col justify-between shadow-xs hover:border-naranja/40 hover:shadow-md transition-all text-left">
               
-              <div className="space-y-6">
+              <div className="space-y-6 text-left">
                 <div>
-                  <span className="px-3 py-1 rounded-full bg-stone-100 text-stone-600 text-[10px] font-bold uppercase tracking-wider">
+                  <span className="px-3 py-1 rounded-full bg-stone-100 text-stone-600 text-[10px] font-bold uppercase tracking-wider inline-block">
                     Plan Esencial (Asíncrono)
                   </span>
-                  <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2">Programa Kem Mom (Para madres)</h3>
-                  <p className="text-xs text-stone-500 mt-1">Estudia a tu propio ritmo con la guía oficial.</p>
+                  <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2 text-left">Programa Kem Mom (Para gestantes y familias)</h3>
+                  <p className="text-xs text-stone-500 mt-1 text-left">Avanza a tu ritmo.</p>
                 </div>
 
-                <div className="flex items-baseline gap-1 bg-stone-50 p-4 rounded-xl border border-stone-100">
-                  <span className="text-xs font-bold text-stone-400 font-sans">CLP</span>
-                  <span className="text-3xl font-serif font-extrabold text-[#2D3142]">${priceEsencial}</span>
-                  <span className="text-xs text-stone-500 font-light">Pago Único</span>
+                <div className="bg-stone-50 p-4 rounded-xl border border-stone-100 flex flex-col items-center justify-center text-center gap-1">
+                  <div className="flex items-baseline justify-center gap-1.5">
+                    <span className="text-xs font-bold text-stone-400 font-sans">CLP</span>
+                    <span className="text-3xl font-serif font-extrabold text-[#2D3142] tracking-tight whitespace-nowrap">${priceEsencial}</span>
+                  </div>
+                  <span className="text-xs text-stone-500 font-medium">Pago único</span>
                 </div>
 
-                <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans">
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-verde shrink-0" /> Acceso de por vida a los 8 módulos grabados.
+                <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans text-left">
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-verde shrink-0 mt-0.5" />
+                    <span>Acceso de por vida a los 8 módulos grabados.</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-verde shrink-0" /> Guías descargables en PDF, recetarios y checklists.
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-verde shrink-0 mt-0.5" />
+                    <span>Guías, recetarios y checklists.</span>
                   </li>
-                  <li className="flex items-center gap-2 text-stone-400">
-                    <X className="w-4 h-4 shrink-0" /> No incluye sesiones grupales en vivo ni consultas uno a uno.
+                  <li className="flex items-start gap-2 text-stone-400">
+                    <X className="w-4 h-4 shrink-0 mt-0.5" />
+                    <span>No incluye sesiones grupales en vivo ni consultas uno a uno.</span>
                   </li>
                 </ul>
               </div>
@@ -590,38 +572,44 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
             </div>
 
             {/* Card 2: Plan Acompañamiento - DESTACADO */}
-            <div className="bg-white rounded-3xl border-2 border-naranja p-8 flex flex-col justify-between shadow-xl relative transform md:scale-102 ring-2 ring-naranja/20">
+            <div className="bg-white rounded-3xl border-2 border-naranja p-8 flex flex-col justify-between shadow-xl relative transform md:scale-102 ring-2 ring-naranja/20 text-left">
               <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-naranja text-white font-mono text-[9px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md whitespace-nowrap">
                 Altamente Recomendado
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-6 text-left">
                 <div>
-                  <span className="px-3 py-1 rounded-full bg-naranja/10 text-naranja text-[10px] font-bold uppercase tracking-wider">
-                    Plan Completo + Acompañamiento (Para madres)
+                  <span className="px-3 py-1 rounded-full bg-naranja/10 text-naranja text-[10px] font-bold uppercase tracking-wider inline-block">
+                    Plan Completo + Acompañamiento (Para gestantes y familias)
                   </span>
-                  <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2">Programa Kem Mom (Para madres)</h3>
-                  <p className="text-xs text-stone-500 mt-1">Seguridad + cercanía con sesiones en vivo y supervisión uno a uno.</p>
+                  <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2 text-left">Programa Kem Mom (Para gestantes y familias)</h3>
+                  <p className="text-xs text-stone-500 mt-1 text-left">Seguridad + cercanía con sesiones en vivo y supervisión uno a uno.</p>
                 </div>
 
-                <div className="flex items-baseline gap-1 bg-gradient-to-tr from-naranja/5 to-naranja/15 p-4 rounded-xl border border-naranja/10">
-                  <span className="text-xs font-bold text-naranja font-sans">CLP</span>
-                  <span className="text-3xl font-serif font-extrabold text-[#2D3142]">${priceAcompañamiento}</span>
-                  <span className="text-xs text-stone-500 font-light">Pago Único</span>
+                <div className="bg-gradient-to-tr from-naranja/5 to-naranja/15 p-4 rounded-xl border border-naranja/10 flex flex-col items-center justify-center text-center gap-1">
+                  <div className="flex items-baseline justify-center gap-1.5">
+                    <span className="text-xs font-bold text-naranja font-sans">CLP</span>
+                    <span className="text-3xl font-serif font-extrabold text-[#2D3142] tracking-tight whitespace-nowrap">${priceAcompañamiento}</span>
+                  </div>
+                  <span className="text-xs text-stone-500 font-medium">Pago único</span>
                 </div>
 
-                <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans">
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-naranja shrink-0 font-bold" /> Acceso ilimitado a todos los 8 módulos.
+                <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans text-left">
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-naranja shrink-0 font-bold mt-0.5" />
+                    <span>Acceso ilimitado a todos los 8 módulos.</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-naranja shrink-0 font-bold" /> <strong>2 sesiones grupales de mentoría en vivo al mes</strong>.
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-naranja shrink-0 font-bold mt-0.5" />
+                    <span>2 sesiones grupales de mentoría en vivo al mes durante 3 meses.</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-naranja shrink-0 font-bold" /> <strong>1 sesión clínica individual exclusiva al mes</strong> con Katherinne.
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-naranja shrink-0 font-bold mt-0.5" />
+                    <span>1 sesión clínica individual exclusiva al mes durante 3 meses con Katherinne.</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-naranja shrink-0 font-bold" /> Prioridad de consultoría directa por correo.
+                  <li className="flex items-start gap-2">
+                    <Check className="w-4 h-4 text-naranja shrink-0 font-bold mt-0.5" />
+                    <span>Prioridad de consultoría directa por correo.</span>
                   </li>
                 </ul>
               </div>
@@ -644,35 +632,40 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
             </div>
 
             {/* Card 3: Consulta Clínica Individual */}
-            <div className="bg-white rounded-3xl border border-stone-200/70 p-8 flex flex-col justify-between shadow-xs hover:border-verde/40 hover:shadow-md transition-all">
+            <div className="bg-white rounded-3xl border border-stone-200/70 p-8 flex flex-col justify-between shadow-xs hover:border-verde/40 hover:shadow-md transition-all text-left">
               
-              <div className="space-y-6">
+              <div className="space-y-6 text-left">
                 <div>
-                  <span className="px-3 py-1 rounded-full bg-verde/10 text-verde text-[10px] font-bold uppercase tracking-wider">
+                  <span className="px-3 py-1 rounded-full bg-verde/10 text-verde text-[10px] font-bold uppercase tracking-wider inline-block">
                     Sesión Individual Online
                   </span>
-                  <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2">Consulta clínica 1:1</h3>
-                  <p className="text-xs text-stone-600 mt-2 leading-relaxed">
-                    Sesión individual personalizada online de 60 min. Evaluación clínica completa, análisis de tus exámenes y generación de indicaciones nutricionales según tus objetivos.
+                  <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2 text-left">Consulta clínica 1:1</h3>
+                  <p className="text-xs text-stone-600 mt-2 leading-relaxed text-left">
+                    Sesión individual personalizada online de 45 - 60 min. Evaluación clínica completa, análisis de tus exámenes y generación de indicaciones nutricionales según tus objetivos.
                   </p>
                 </div>
 
                 <div className="space-y-2 bg-stone-50 p-4 rounded-xl border border-stone-100">
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-xs font-bold text-stone-400 font-sans">CLP</span>
-                    <span className="text-3xl font-serif font-extrabold text-[#2D3142]">${priceConsulta}</span>
-                    <span className="text-xs text-stone-500 font-light">Por Sesión</span>
+                  <div className="flex flex-col items-center justify-center text-center gap-1">
+                    <div className="flex items-baseline justify-center gap-1.5">
+                      <span className="text-xs font-bold text-stone-400 font-sans">CLP</span>
+                      <span className="text-3xl font-serif font-extrabold text-[#2D3142] tracking-tight whitespace-nowrap">${priceConsulta || '35.000'}</span>
+                    </div>
+                    <span className="text-xs text-stone-500 font-medium">Por sesión</span>
                   </div>
-                  <div className="text-[11px] font-medium text-emerald-800 bg-emerald-50 px-2.5 py-1.5 rounded-lg border border-emerald-200/70 flex items-start gap-1.5 leading-snug">
+                  <div className="text-[11px] font-medium text-emerald-800 bg-emerald-50 px-2.5 py-1.5 rounded-lg border border-emerald-200/70 flex items-start gap-1.5 leading-snug text-left">
                     <Sparkles className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                    <span><strong>Pacientes FONASA:</strong> Descuento especial previo envío del certificado de afiliación.</span>
+                    <span><strong>Beneficiarias Fonasa:</strong> $30.000, enviando el certificado de afiliación vigente antes de pagar.</span>
                   </div>
+                  <p className="text-[10px] text-stone-500 leading-tight text-left">
+                    Pacientes Isapre: pueden solicitar reembolso con la boleta, según su plan. Algunas Isapres exigen orden médica.
+                  </p>
                 </div>
 
-                <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans">
+                <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans text-left">
                   <li className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-verde shrink-0 mt-0.5" />
-                    <span><strong>Sesión 1:1 online de 60 min</strong> por videollamada.</span>
+                    <span>Consulta nutricional online individual de 45 a 60 minutos.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-verde shrink-0 mt-0.5" />
@@ -681,10 +674,6 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                   <li className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-verde shrink-0 mt-0.5" />
                     <span>Pauta alimentaria e indicaciones nutricionales adaptadas a tus metas.</span>
-                  </li>
-                  <li className="flex items-start gap-2 text-emerald-800 bg-emerald-50/70 p-2 rounded-lg border border-emerald-100">
-                    <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span><strong>Descuento FONASA:</strong> Arancel especial disponible previo envío de tu certificado de afiliación al agendar.</span>
                   </li>
                   <li className="flex items-start gap-2 text-stone-400">
                     <X className="w-4 h-4 shrink-0 mt-0.5" />
@@ -722,7 +711,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
             </h4>
             
             <p className="text-xs text-stone-600 font-light">
-              Para garantizar total transparencia técnica y ético-legal en KEM Nutrition Academy, explicitamos lo que esta formación de educación general no contempla:
+              Para garantizar total transparencia técnica y ético-legal en KEM Nutrition Academy, explicitamos lo que este programa educativo no contempla:
             </p>
 
             <ul className="space-y-2 text-xs text-stone-600 pl-4 list-disc font-light">
@@ -735,36 +724,12 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
         </div>
       </section>
 
-      {/* 9. Prueba social de madres */}
-      <section className="py-12 sm:py-20 bg-bg-warm/40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-center space-y-3 max-w-xl mx-auto">
-            <span className="text-naranja font-mono text-xs uppercase tracking-widest font-bold">Reseñas clínicas</span>
-            <h2 className="font-serif text-3xl font-semibold text-carbon-title tracking-tight text-center">La tranquilidad de mamás que ya viven su embarazo sin miedos</h2>
-            <p className="text-sm text-stone-500 font-light">Observa los comentarios auténticos de mujeres que redefinieron su proceso de gestación.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {momTestimonials.map((t) => (
-              <div key={t.id} className="bg-white p-6 rounded-2xl border border-stone-250/50 shadow-2xs hover:-translate-y-1 transition-all">
-                <div className="flex gap-1 text-orange-400 mb-3 text-sm">
-                  {"★".repeat(t.rating)}
-                </div>
-                <p className="text-xs sm:text-sm text-stone-600 italic font-light leading-relaxed mb-4">
-                  "{t.text}"
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-naranja/10 text-naranja font-serif font-bold text-xs flex items-center justify-center">
-                    {t.name[0]}
-                  </div>
-                  <div>
-                    <h5 className="text-xs font-bold text-carbon-title tracking-tight">{t.name}</h5>
-                    <p className="text-[10px] text-stone-400">{t.role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+      {/* 9. Primeras mamás */}
+      <section className="py-12 sm:py-16 bg-bg-warm/40">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
+          <h2 className="font-serif text-2xl sm:text-3xl font-semibold text-carbon-title tracking-tight">
+            Sé de las primeras mamás en vivir Kem Mom
+          </h2>
         </div>
       </section>
 
@@ -782,10 +747,10 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
               <div className="absolute -bottom-1 -right-1 bg-verde text-white p-1 rounded-full"><Award className="w-3.5 h-3.5" /></div>
             </div>
             <div className="space-y-3 text-center sm:text-left">
-              <span className="px-2 py-0.5 rounded-full bg-naranja/10 text-naranja text-[9px] font-bold uppercase tracking-wider font-mono">Tu mentora experta</span>
+              <span className="px-2 py-0.5 rounded-full bg-naranja/10 text-naranja text-[9px] font-bold uppercase tracking-wider font-mono">Tu nutricionista</span>
               <h4 className="font-serif text-lg font-bold text-carbon-title">Sobre Katherinne Elgueta Mora</h4>
               <p className="text-xs text-[#514F5C] leading-relaxed font-light">
-                Especialista con postgrado en el INTA (U. de Chile), entregándote la tranquilidad de un respaldo científico de excelencia combinado con el cuidado empático que merece tu proceso.
+                Nutricionista con magíster en el INTA (U. de Chile), entregándote la tranquilidad de un respaldo científico de excelencia combinado con el cuidado empático que merece tu proceso.
               </p>
             </div>
           </div>
@@ -830,7 +795,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10">
           <h2 className="font-serif text-3xl sm:text-4xl font-semibold tracking-tight">Inicia hoy tu embarazo sin preocupaciones</h2>
           <p className="text-sm text-stone-300 max-w-xl mx-auto font-light">
-            Únete a cientos de madres en Chile que redujeron su ansiedad y prepararon un nacimiento saludable con bases científicas.
+            Empieza hoy tu embarazo con más claridad y tranquilidad.
           </p>
           <div className="pt-2">
             <a

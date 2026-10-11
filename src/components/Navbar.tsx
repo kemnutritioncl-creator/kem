@@ -123,38 +123,35 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
 
           {/* Contact CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <a
-              href="https://calendly.com/kemnutritioncl/30min?month=2026-10"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 transition-all shadow-xs cursor-pointer inline-flex items-center gap-1.5 hover:scale-[1.02] active:scale-[0.98]"
-              id="nav-agenda-btn"
-            >
-              <Calendar className="w-3.5 h-3.5 text-emerald-600" />
-              <span>Agenda aquí</span>
-            </a>
-
-            {currentPage === 'home' ? (
-              <button
-                onClick={() => {
-                  document.getElementById('programas')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }}
-                className="px-4 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white bg-violeta hover:bg-violeta-dark transition-all shadow-xs cursor-pointer"
-                id="nav-cta-btn"
+            {currentPage !== 'kem-pro' && (
+              <a
+                href="https://calendly.com/kemnutritioncl/30min?month=2026-10"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 transition-all shadow-xs cursor-pointer inline-flex items-center gap-1.5 hover:scale-[1.02] active:scale-[0.98]"
+                id="nav-agenda-btn"
               >
-                Ver Programas
-              </button>
-            ) : (
-              <button
-                onClick={() => {
-                  document.getElementById('planes-precios')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }}
-                className="px-4 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white bg-violeta hover:bg-violeta-dark transition-all shadow-xs cursor-pointer"
-                id="nav-cta-btn"
-              >
-                Inscribirme
-              </button>
+                <Calendar className="w-3.5 h-3.5 text-emerald-600" />
+                <span>Agenda aquí</span>
+              </a>
             )}
+
+            <button
+              onClick={() => {
+                if (currentPage !== 'home') {
+                  setCurrentPage('home');
+                  setTimeout(() => {
+                    document.getElementById('programas')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }, 150);
+                } else {
+                  document.getElementById('programas')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+              className="px-4 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white bg-violeta hover:bg-violeta-dark transition-all shadow-xs cursor-pointer"
+              id="nav-cta-btn"
+            >
+              Ver programas
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -190,7 +187,7 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
             }`}
             id="mobile-nav-mom"
           >
-            Kem Mom (Para madres)
+            Kem Mom (Para gestantes y familias)
           </button>
           <button
             onClick={() => handleNavClick('kem-pro')}
@@ -210,45 +207,39 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
           </button>
 
           <div className="pt-4 border-t border-stone-100 flex flex-col gap-2.5 px-4">
-            <a
-              href="https://calendly.com/kemnutritioncl/30min?month=2026-10"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setIsOpen(false)}
-              className="w-full text-center py-3 rounded-xl text-xs font-bold tracking-wider uppercase text-emerald-800 bg-emerald-50 border border-emerald-300 flex items-center justify-center gap-2 hover:bg-emerald-100 transition-colors"
-              id="mobile-nav-agenda"
-            >
-              <Calendar className="w-4 h-4 text-emerald-600" />
-              <span>Agenda tu Consulta aquí</span>
-            </a>
+            {currentPage !== 'kem-pro' && (
+              <a
+                href="https://calendly.com/kemnutritioncl/30min?month=2026-10"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="w-full text-center py-3 rounded-xl text-xs font-bold tracking-wider uppercase text-emerald-800 bg-emerald-50 border border-emerald-300 flex items-center justify-center gap-2 hover:bg-emerald-100 transition-colors"
+                id="mobile-nav-agenda"
+              >
+                <Calendar className="w-4 h-4 text-emerald-600" />
+                <span>Agenda tu Consulta aquí</span>
+              </a>
+            )}
 
-            {currentPage === 'home' ? (
-              <button
-                onClick={() => {
-                  setIsOpen(false);
+            <button
+              onClick={() => {
+                setIsOpen(false);
+                if (currentPage !== 'home') {
+                  setCurrentPage('home');
+                  setTimeout(() => {
+                    document.getElementById('programas')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }, 150);
+                } else {
                   setTimeout(() => {
                     document.getElementById('programas')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }, 100);
-                }}
-                className="w-full text-center py-3 rounded-xl text-sm font-semibold tracking-wider uppercase text-white bg-violeta"
-                id="mobile-nav-cta"
-              >
-                Ver Programas
-              </button>
-            ) : (
-              <button
-                onClick={() => {
-                  setIsOpen(false);
-                  setTimeout(() => {
-                    document.getElementById('planes-precios')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }, 100);
-                }}
-                className="w-full text-center py-3 rounded-xl text-sm font-semibold tracking-wider uppercase text-white bg-violeta"
-                id="mobile-nav-cta"
-              >
-                Inscribirse al Programa
-              </button>
-            )}
+                }
+              }}
+              className="w-full text-center py-3 rounded-xl text-sm font-semibold tracking-wider uppercase text-white bg-violeta"
+              id="mobile-nav-cta"
+            >
+              Ver programas
+            </button>
           </div>
         </div>
       )}

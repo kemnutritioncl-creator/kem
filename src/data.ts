@@ -203,7 +203,7 @@ export const momFaqs: FaqItem[] = [
   },
   {
     question: "Tengo muy poco tiempo y energía durante el embarazo, ¿cómo lo haré?",
-    answer: "Cada clase en video está grabada en micro-módulos directos al grano de entre 10 y 15 minutos. Además, tienes checklists y resúmenes descargables en PDF que puedes consultar en un minuto para resolver dudas inmediatas sobre porciones, suplementos o síntomas."
+    answer: "Cada clase en video está grabada en micro-módulos directos al grano de entre 10 y 15 minutos. Además, tienes checklists y resúmenes que puedes consultar en un minuto para resolver dudas inmediatas sobre porciones, suplementos o síntomas."
   },
   {
     question: "No sé si este programa se adapta a mi caso específico (diabetes gestacional, hipotiroidismo, etc.)",
@@ -226,7 +226,7 @@ export const proFaqs: FaqItem[] = [
   },
   {
     question: "Ya he tomado otros cursos y todavía no me siento preparada para atender.",
-    answer: "La diferencia es nuestro enfoque práctico. No solo te damos teoría; te entregamos herramientas listas para descargar y usar: plantillas de anamnesis, algoritmos en PDF para guiar tu diagnóstico clínico, y excels de cálculo de requerimiento calibrados para gestantes. Terminarás lista para tu primera cita."
+    answer: "La diferencia es nuestro enfoque práctico. No solo te damos teoría; te entregamos herramientas listas para usar: plantillas de anamnesis, algoritmos para guiar tu diagnóstico clínico, y excels de cálculo de requerimiento calibrados para gestantes. Terminarás lista para tu primera cita."
   },
   {
     question: "¿Voy a recuperar rápido la inversión económica?",
