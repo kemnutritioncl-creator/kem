@@ -221,12 +221,12 @@ export const momFaqs: FaqItem[] = [
 
 export const proFaqs: FaqItem[] = [
   {
-    question: "¿Qué tan profundo es el contenido técnico de este curso?",
-    answer: "El programa está dictado por Katherinne Elgueta Mora, nutricionista con Magíster en Alimentación y Nutrición, mención Nutrición Clínica Pediátrica, del INTA, Universidad de Chile, y experiencia clínica en atención pediátrica, adulta y de personas mayores. Analizamos curvas antropométricas de incremento de peso, guías de suplementación chilenas e internacionales avanzadas, desgloses hormonales de la diabetes gestacional y pautas de suplementación y análisis de exámenes basados en publicaciones científicas actualizadas."
+    question: "¿Qué tan profundo es el contenido técnico de este programa?",
+    answer: "El programa está dictado por Katherinne Elgueta Mora, nutricionista con Magíster en Alimentación y Nutrición, mención Nutrición Clínica Pediátrica, del INTA, Universidad de Chile, y experiencia clínica en atención pediátrica, adulta y de personas mayores. Abordará la evaluación del incremento de peso gestacional, las guías de suplementación chilenas e internacionales, el manejo metabólico de la diabetes gestacional y la interpretación de exámenes, con base en publicaciones científicas actualizadas."
   },
   {
-    question: "Ya he tomado otros cursos y todavía no me siento preparada para atender.",
-    answer: "La diferencia es nuestro enfoque práctico. No solo te damos teoría; te entregamos herramientas listas para usar: plantillas de anamnesis, algoritmos para guiar tu diagnóstico clínico, y excels de cálculo de requerimiento calibrados para gestantes. Terminarás lista para tu primera cita."
+    question: "Ya he estudiado por mi cuenta y todavía no me siento preparada para atender.",
+    answer: "La diferencia está en el enfoque práctico. Además de la base teórica, el programa incluirá herramientas listas para usar: plantillas de anamnesis, algoritmos de apoyo a la decisión clínica y planillas de cálculo de requerimientos para gestantes, pensadas para que llegues con más seguridad a tu primera consulta."
   },
   {
     question: "No tengo el tiempo para destinar horas de estudio por mi carga laboral actual.",

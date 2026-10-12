@@ -92,7 +92,7 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
               </h1>
 
               <p className="text-base sm:text-lg text-carbon-body leading-relaxed max-w-3xl">
-                Formación clínica enfocada en la práctica real. Aprende a evaluar a la mujer en preconcepción, embarazo y lactancia, interpretar exámenes bioquímicos, hacer diagnóstico preventivo y diseñar estrategias dietoterapéuticas con seguridad.
+                Próximamente: un programa clínico enfocado en la práctica real, para evaluar a la mujer en preconcepción, embarazo y lactancia, interpretar exámenes bioquímicos, hacer diagnóstico preventivo y diseñar estrategias dietoterapéuticas con seguridad.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">

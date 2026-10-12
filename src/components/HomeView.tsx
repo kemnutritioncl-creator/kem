@@ -585,7 +585,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                 </h3>
 
                 <p className="text-base text-stone-600 leading-relaxed font-light">
-                  Formación clínica enfocada en la práctica real. Aprende a evaluar a la mujer en preconcepción, embarazo y lactancia, interpretar exámenes bioquímicos, hacer diagnóstico preventivo y diseñar estrategias dietoterapéuticas con seguridad.
+                  Próximamente: un programa clínico enfocado en la práctica real, para evaluar a la mujer en preconcepción, embarazo y lactancia, interpretar exámenes bioquímicos, hacer diagnóstico preventivo y diseñar estrategias dietoterapéuticas con seguridad.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-stone-700">
