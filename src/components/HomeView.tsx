@@ -291,7 +291,10 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                 <h5 className="text-xs font-bold text-carbon-title uppercase tracking-wide mb-2">Credenciales científicas</h5>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-stone-600">
                   <li className="flex items-center gap-1.5">
-                    <span className="text-verde">✔</span> Nutricionista Dietista, licenciada con distinción máx.
+                    <span className="text-verde">✔</span> Nutricionista, licenciada en Nutrición y Dietética.
+                  </li>
+                  <li className="flex items-center gap-1.5">
+                    <span className="text-verde">✔</span> Magíster en Alimentación y Nutrición, mención Nutrición Clínica Pediátrica, INTA, Universidad de Chile.
                   </li>
                   <li className="flex items-center gap-1.5">
                     <span className="text-verde">✔</span> Respaldo con postgrado INTA (U. de Chile) para brindarte absoluta seguridad.
@@ -332,7 +335,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                 Mamá en búsqueda de claridad
               </h4>
               <p className="text-sm text-stone-600 leading-relaxed font-light">
-                Recibe comentarios opuestos de su suegra, internet y su ginecólogo. Teme suplementarse incorrectamente, se agobia regulando la glicemia por diabetes gestacional o siente inseguridad ante los síntomas digestivos.
+                Recibe comentarios opuestos de familiares, amigos, internet y distintos profesionales. Teme suplementarse incorrectamente, se agobia regulando la glicemia por diabetes gestacional o siente inseguridad ante los síntomas digestivos.
               </p>
             </div>
 

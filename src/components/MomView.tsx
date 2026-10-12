@@ -92,7 +92,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
               </h1>
 
               <p className="text-base sm:text-lg text-[#514F5C] leading-relaxed max-w-3xl">
-                Un programa de educación y acompañamiento nutricional para la preconcepción, el embarazo, el postparto y la lactancia. Basado en rigurosa evidencia científica internacional y explicado de manera amable para tu vida real.
+                Un programa de acompañamiento nutricional para la preconcepción, el embarazo, el postparto y la lactancia. Basado en rigurosa evidencia científica internacional y explicado de manera amable para tu vida real.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
@@ -229,7 +229,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
             <div className="p-6 bg-white rounded-2xl border border-stone-200/50 space-y-3">
               <div className="w-10 h-10 rounded-lg bg-naranja/10 text-naranja flex items-center justify-center font-bold">▶</div>
               <h4 className="font-serif font-bold text-base text-carbon-title">Videos cortos</h4>
-              <p className="text-xs text-stone-500 leading-relaxed">Micro-cápsulas directas de 10-15 minutos ideales para ver a tu propio ritmo sin abrumarte del cansancio diario.</p>
+              <p className="text-xs text-stone-500 leading-relaxed">Videos breves y directos, ideales para ver a tu propio ritmo sin abrumarte del cansancio diario.</p>
             </div>
 
             <div className="p-6 bg-white rounded-2xl border border-stone-200/50 space-y-3">
@@ -478,7 +478,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                 <div className="w-8 h-8 rounded-full bg-[#6FA987]/20 text-[#6FA987] flex items-center justify-center font-bold text-sm">2</div>
                 <h4 className="font-serif font-bold text-white text-base">Al grano</h4>
                 <p className="text-xs text-stone-300 leading-relaxed font-light">
-                  Videos de 8 a 15 minutos. Ves solo lo de tu momento.
+                  Videos cortos y directos. Ves solo lo de tu momento.
                 </p>
               </div>
               
@@ -538,6 +538,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                     <span className="text-3xl font-serif font-extrabold text-[#2D3142] tracking-tight whitespace-nowrap">${priceEsencial}</span>
                   </div>
                   <span className="text-xs text-stone-500 font-medium">Pago único</span>
+                  <span className="text-[11px] text-stone-500 font-normal">Hasta 12 cuotas precio contado con tarjeta de crédito</span>
                 </div>
 
                 <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans text-left">
@@ -592,6 +593,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                     <span className="text-3xl font-serif font-extrabold text-[#2D3142] tracking-tight whitespace-nowrap">${priceAcompañamiento}</span>
                   </div>
                   <span className="text-xs text-stone-500 font-medium">Pago único</span>
+                  <span className="text-[11px] text-stone-500 font-normal">Hasta 12 cuotas precio contado con tarjeta de crédito</span>
                 </div>
 
                 <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans text-left">
@@ -641,7 +643,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                   </span>
                   <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2 text-left">Consulta clínica 1:1</h3>
                   <p className="text-xs text-stone-600 mt-2 leading-relaxed text-left">
-                    Sesión individual personalizada online de 45 - 60 min. Evaluación clínica completa, análisis de tus exámenes y generación de indicaciones nutricionales según tus objetivos.
+                    Consulta nutricional online individual de 45 a 60 minutos. Evaluación clínica completa, análisis de tus exámenes y generación de indicaciones nutricionales según tus objetivos.
                   </p>
                 </div>
 
@@ -711,7 +713,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
             </h4>
             
             <p className="text-xs text-stone-600 font-light">
-              Para garantizar total transparencia técnica y ético-legal en KEM Nutrition Academy, explicitamos lo que este programa educativo no contempla:
+              Para garantizar total transparencia técnica y ético-legal en KEM Nutrition Academy, explicitamos lo que este programa no contempla:
             </p>
 
             <ul className="space-y-2 text-xs text-stone-600 pl-4 list-disc font-light">

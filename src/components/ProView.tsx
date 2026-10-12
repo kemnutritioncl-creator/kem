@@ -84,7 +84,7 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
             <div className="lg:col-span-8 space-y-6 text-center lg:text-left">
               <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-violeta/10 border border-violeta/20 text-violeta">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span className="text-xs font-bold uppercase tracking-wider">Kem Pro Academy</span>
+                <span className="text-xs font-bold uppercase tracking-wider">KEM Pro</span>
               </div>
 
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-carbon-title font-semibold tracking-tight">
@@ -106,13 +106,6 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
                   id="pro-hero-cta"
                 >
                   Ver planes
-                </a>
-                <a
-                  href="mailto:kemnutritioncl@gmail.com"
-                  className="w-full sm:w-auto text-center px-8 py-4 rounded-full bg-white border border-stone-200 text-carbon-title font-semibold text-sm hover:bg-stone-50 transition-colors"
-                  id="pro-hero-contact-email"
-                >
-                  Consultar por correo
                 </a>
               </div>
             </div>
@@ -183,7 +176,7 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
             <div className="bg-white p-6 rounded-2xl border border-stone-200/50">
               <span className="text-xl font-serif text-[#6FA987] font-extrabold block mb-2">02</span>
               <h4 className="font-serif font-bold text-sm text-carbon-title mb-1">Miedo a patologías</h4>
-              <p className="text-xs text-stone-505 leading-relaxed font-light">Incertidumbre al formular pautas para diabetes gestacional con curvas alteradas o hipertiroidismo subclínico.</p>
+              <p className="text-xs text-stone-505 leading-relaxed font-light">Incertidumbre al formular pautas para diabetes gestacional con curvas alteradas.</p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-stone-200/50">
               <span className="text-xl font-serif text-naranja font-extrabold block mb-2">03</span>
@@ -236,7 +229,7 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
 
             <div className="p-6 bg-white rounded-2xl border border-stone-200/50 space-y-3">
               <div className="w-10 h-10 rounded-lg bg-violeta/10 text-violeta flex items-center justify-center font-bold">📑</div>
-              <h4 className="font-serif font-bold text-base text-carbon-title">Material educativo para pacientes</h4>
+              <h4 className="font-serif font-bold text-base text-carbon-title">Material para pacientes</h4>
               <p className="text-xs text-stone-500 leading-relaxed">Infografías clínicas limpias de tu autoría para enviar a tus pacientes sobre mitos, porciones y manejo de acidez.</p>
             </div>
 
@@ -644,11 +637,11 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-violeta shrink-0 font-bold mt-0.5" />
-                    <span className="leading-normal"><strong>2 mentorías grupales al mes en vivo con Katherinne</strong></span>
+                    <span className="leading-normal"><strong>2 mentorías grupales al mes en vivo con Katherinne, durante 3 meses</strong></span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-violeta shrink-0 font-bold mt-0.5" />
-                    <span className="leading-normal"><strong>1 sesión de consultoría técnica individual al mes</strong> para analizar tus propios pacientes.</span>
+                    <span className="leading-normal"><strong>1 sesión de consultoría técnica individual al mes para analizar tus propios pacientes, durante 3 meses.</strong></span>
                   </li>
                 </ul>
               </div>
@@ -736,8 +729,8 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
             </h4>
 
             <ul className="space-y-3 text-xs text-stone-600 pl-4 list-disc font-light leading-relaxed">
-              <li>No es un postítulo, posgrado ni especialización médica reconocida por CONACEM. Es una formación clínica privada, certificada por KEM Academy.</li>
-              <li>El certificado es emitido por KEM Academy, no por una institución universitaria estatal. No tiene efecto directo ante organismos públicos.</li>
+              <li>No es un postítulo, posgrado ni especialización médica reconocida por CONACEM. Es una formación clínica privada de KEM Nutrition Academy.</li>
+              <li>La constancia de participación es emitida por KEM Nutrition Academy, no por una institución universitaria. No tiene efecto ante organismos públicos.</li>
               <li>No incluye supervisión clínica continua de pacientes ni disponibilidad fuera de las instancias grupales e individuales contempladas en el programa.</li>
               <li>No garantiza ingresos ni captación automática de pacientes. Lo que sí garantiza es que tendrás las herramientas para construirlo.</li>
             </ul>
@@ -817,22 +810,16 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
       <section className="py-12 sm:py-20 bg-gradient-to-tr from-[#2D3142] to-[#14151B] text-white text-center relative overflow-hidden">
         <div className="absolute top-1/2 left-1/4 w-80 h-80 bg-violeta/10 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10">
-          <h2 className="font-serif text-3xl sm:text-4xl font-semibold tracking-tight">Diferénciate hoy mismo en tu consulta</h2>
+          <h2 className="font-serif text-3xl sm:text-4xl font-semibold tracking-tight">Muy pronto en KEM Nutrition Academy</h2>
           <p className="text-sm text-stone-300 max-w-xl mx-auto font-light">
-            Suma la nutrición clínica materna a tu cartera de servicios. Adquiere herramientas que tus pacientes y pediatras valorarán de inmediato.
+            Un programa para sumar la nutrición clínica materna a tu práctica profesional.
           </p>
           <div className="pt-2">
-            <a
-              href="#planes-precios"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('planes-precios')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="px-8 py-4 rounded-full bg-violeta hover:bg-violeta-dark text-white font-bold text-sm tracking-wide shadow-md hover:shadow-lg transition-transform inline-flex gap-2 items-center cursor-pointer"
+            <span
+              className="px-8 py-4 rounded-full bg-violeta text-white font-bold text-sm tracking-wide shadow-md select-none inline-flex gap-2 items-center cursor-default"
             >
-              <span>Elegir mi Plan Pro KEM</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
+              <span>Próximamente</span>
+            </span>
           </div>
         </div>
       </section>

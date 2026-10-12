@@ -85,7 +85,7 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
             </div>
             
             <p className="text-sm text-stone-400 max-w-sm font-sans leading-relaxed">
-              Nutrición clínica materna de excelencia. Acompañamiento empático basado en evidencia científica para madres y capacitación de primer nivel para profesionales de la salud.
+              Nutrición clínica materna basada en evidencia. Acompañamiento cercano para gestantes, mamás y sus familias.
             </p>
 
             {/* Social Link & Share */}
@@ -133,7 +133,7 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
 
           {/* Programs Shortcuts */}
           <div className="space-y-4">
-            <h4 className="font-serif text-white font-medium text-base tracking-wide">Academias</h4>
+            <h4 className="font-serif text-white font-medium text-base tracking-wide">Programas</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <button 
@@ -152,7 +152,7 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
                   id="footer-shortcut-pro"
                 >
                   <Sparkles className="w-3.5 h-3.5 text-[#8C6CE6]" />
-                  Kem Pro (Para profesionales)
+                  Kem Pro (Próximamente)
                 </button>
               </li>
               <li>
@@ -160,7 +160,7 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
                   onClick={onScrollToTeacher}
                   className="hover:text-white transition-colors cursor-pointer text-stone-400 text-left"
                 >
-                  Sobre la Directora
+                  Sobre Katherinne
                 </button>
               </li>
               <li>
@@ -197,6 +197,12 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
                   @kemnutrition
                 </a>
               </li>
+              <li className="flex items-center gap-2">
+                <Linkedin className="w-4 h-4 text-[#6FA987]" />
+                <a href="https://www.linkedin.com/in/katherinne-elgueta-mora-b48631260/" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-white transition-colors">
+                  LinkedIn
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -210,7 +216,7 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
               <span className="font-semibold text-[#F2994A] block mb-1 uppercase tracking-wider text-[10px]">
                 Aviso importante de responsabilidad médica
               </span>
-              El contenido educativo de Kem Mom y Kem Pro (videos, guías, checklists, recetarios y sesiones grupales) es informativo y general. No reemplaza la consulta clínica individualizada ni los controles ginecológicos, obstétricos, de matronería o pediátricos. Las indicaciones personalizadas se entregan solo en las consultas clínicas individuales con Katherinne Elgueta Mora, nutricionista. Ante cualquier síntoma o urgencia, acude a tu centro de salud.
+              El contenido informativo de Kem Mom y Kem Pro (videos, guías, checklists, recetarios y sesiones grupales) es informativo y general. No reemplaza la consulta clínica individualizada ni los controles ginecológicos, obstétricos, de matronería o pediátricos. Las indicaciones personalizadas se entregan solo en las consultas clínicas individuales con Katherinne Elgueta Mora, nutricionista. Ante cualquier síntoma o urgencia, acude a tu centro de salud.
             </div>
           </div>
         </div>

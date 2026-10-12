@@ -135,23 +135,6 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
                 <span>Agenda aquí</span>
               </a>
             )}
-
-            <button
-              onClick={() => {
-                if (currentPage !== 'home') {
-                  setCurrentPage('home');
-                  setTimeout(() => {
-                    document.getElementById('programas')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }, 150);
-                } else {
-                  document.getElementById('programas')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }}
-              className="px-4 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white bg-violeta hover:bg-violeta-dark transition-all shadow-xs cursor-pointer"
-              id="nav-cta-btn"
-            >
-              Ver programas
-            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -206,8 +189,8 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
             Sobre Katherinne
           </button>
 
-          <div className="pt-4 border-t border-stone-100 flex flex-col gap-2.5 px-4">
-            {currentPage !== 'kem-pro' && (
+          {currentPage !== 'kem-pro' && (
+            <div className="pt-4 border-t border-stone-100 flex flex-col gap-2.5 px-4">
               <a
                 href="https://calendly.com/kemnutritioncl/30min?month=2026-10"
                 target="_blank"
@@ -219,28 +202,8 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
                 <Calendar className="w-4 h-4 text-emerald-600" />
                 <span>Agenda tu Consulta aquí</span>
               </a>
-            )}
-
-            <button
-              onClick={() => {
-                setIsOpen(false);
-                if (currentPage !== 'home') {
-                  setCurrentPage('home');
-                  setTimeout(() => {
-                    document.getElementById('programas')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }, 150);
-                } else {
-                  setTimeout(() => {
-                    document.getElementById('programas')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }, 100);
-                }
-              }}
-              className="w-full text-center py-3 rounded-xl text-sm font-semibold tracking-wider uppercase text-white bg-violeta"
-              id="mobile-nav-cta"
-            >
-              Ver programas
-            </button>
-          </div>
+            </div>
+          )}
         </div>
       )}
     </nav>

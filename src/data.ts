@@ -180,64 +180,60 @@ export const proTestimonials: Testimonial[] = [
 export const generalFaqs: FaqItem[] = [
   {
     question: "¿Qué es KEM Nutrition Academy?",
-    answer: "Es la plataforma de educación nutricional especializada dirigida por Katherinne Elgueta Mora, Magíster en Nutrición Clínica Pediátrica. Proporcionamos una vía para que las madres vivan su proceso con tranquilidad (Kem Mom) y para que los profesionales se capaciten con base científica aplicada (Kem Pro)."
+    answer: "Es un espacio de acompañamiento nutricional dirigido por Katherinne Elgueta Mora, nutricionista con Magíster en Alimentación y Nutrición, mención Nutrición Clínica Pediátrica, del INTA, Universidad de Chile. A través de Kem Mom acompañamos a gestantes y mamás para que vivan su proceso con tranquilidad. Próximamente, Kem Pro estará disponible para nutricionistas titulados."
   },
   {
-    question: "¿Los cursos son en vivo o grabados?",
-    answer: "Nuestros planes Esenciales son grabados (asíncronos) para que puedas avanzar a tu propio ritmo desde cualquier dispositivo. Los planes de Acompañamiento incluyen además sesiones grupales en vivo cada mes y sesiones individuales personalizadas directamente con Katherinne."
+    question: "¿Los programas son en vivo o grabados?",
+    answer: "Los planes Esenciales son grabados (asíncronos), para que avances a tu ritmo desde cualquier dispositivo. Los planes de Acompañamiento incluyen además sesiones grupales en vivo y una sesión individual al mes con Katherinne, durante 3 meses."
   },
   {
     question: "¿Recibo certificación al terminar?",
-    answer: "Sí, todos los inscritos en Kem Pro reciben un certificado de finalización emitido por KEM Nutrition Academy que acredita las horas lectivas del programa clínico. Kem Mom emite una constancia de participación al completar el programa de educación para el hogar."
+    answer: "Kem Mom entrega una constancia de participación al completar el programa. Kem Pro, cuando esté disponible, entregará una constancia de participación de KEM Nutrition Academy."
   },
   {
     question: "¿Qué métodos de pago están disponibles?",
-    answer: "Puedes pagar de forma segura vía Webpay (Tarjetas de Débito y Crédito) o PayPal si te encuentras fuera de Chile."
+    answer: "Puedes pagar de forma segura a través de Flow, con tarjetas de débito, crédito o transferencia bancaria. Los planes de Kem Mom se pueden pagar en hasta 12 cuotas precio contado con tarjeta de crédito."
   }
 ];
 
 export const momFaqs: FaqItem[] = [
   {
     question: "Ya hay mucha información gratis en internet, ¿por qué pagar por un programa?",
-    answer: "En internet abunda la sobreinformación y los consejos contradictorios que generan confusión y dudas. Este programa condensa evidencia científica actualizada, filtrada por una docente universitaria y clínica, dándote respuestas claras y prácticas adaptadas a tu vida real, sin mitos ni restricciones innecesarias."
+    answer: "En internet abunda la sobreinformación y los consejos contradictorios que generan confusión y dudas. Este programa condensa evidencia científica actualizada, seleccionada por una nutricionista clínica, dándote respuestas claras y prácticas adaptadas a tu vida real, sin mitos ni restricciones innecesarias."
   },
   {
     question: "Tengo muy poco tiempo y energía durante el embarazo, ¿cómo lo haré?",
-    answer: "Cada clase en video está grabada en micro-módulos directos al grano de entre 10 y 15 minutos. Además, tienes checklists y resúmenes que puedes consultar en un minuto para resolver dudas inmediatas sobre porciones, suplementos o síntomas."
+    answer: "Cada video es corto y directo al grano, para que avances a tu ritmo. Además, tienes checklists y resúmenes que puedes consultar en un minuto para resolver dudas inmediatas sobre porciones, suplementos o síntomas."
   },
   {
     question: "No sé si este programa se adapta a mi caso específico (diabetes gestacional, hipotiroidismo, etc.)",
-    answer: "Contamos con módulos exclusivos dedicados a patologías comunes de la gestación como diabetes gestacional, reflujo, resistencia a la insulina y estreñimiento. Si deseas un análisis individual, el Plan de Acompañamiento incluye una sesión clínica uno a uno con Katherinne para afinar tu plan."
+    answer: "Contamos con módulos exclusivos dedicados a patologías comunes de la gestación como diabetes gestacional, reflujo, resistencia a la insulina y estreñimiento. Si deseas un análisis individual, el Plan de Acompañamiento incluye una sesión clínica individual al mes con Katherinne, durante 3 meses."
   },
   {
     question: "El precio representa una inversión importante, ¿vale la pena?",
-    answer: "La nutrición durante los 1000 primeros días (desde la preconcepción hasta los 2 años) programa la salud futura de tu hijo de por vida. Invertir en guías libres de error te evita pagar múltiples consultas aisladas de médicos y nutricionistas que a menudo se contradicen."
+    answer: "La nutrición durante los primeros 1.000 días, desde la preconcepción hasta los 2 años, influye en la salud futura de tu hijo. Tener información ordenada y confiable desde el inicio te ayuda a tomar mejores decisiones y a aprovechar mejor tus controles con tu equipo de salud."
   },
   {
     question: "Prefiero consultar directo cuando tenga una duda particular, ¿cómo me ayuda el programa?",
-    answer: "El programa te enseña las bases esenciales para prevenir complicaciones antes de que aparezcan. Te brinda autonomía. Y si tienes inquietudes, cuentas con las sesiones de mentoría y consultas personalizadas del programa."
+    answer: "El programa te entrega las bases para entender tu alimentación en cada etapa y reconocer a tiempo cuándo consultar. Te da autonomía. Y si tomas el Plan Acompañamiento, cuentas además con sesiones grupales e individuales con Katherinne."
   }
 ];
 
 export const proFaqs: FaqItem[] = [
   {
     question: "¿Qué tan profundo es el contenido técnico de este curso?",
-    answer: "El curso está dictado por una académica universitaria con postgrado INTA de la Universidad de Chile. Analizamos curvas antropométricas de incremento de peso, guías de suplementación chilenas e internacionales avanzadas, desgloses hormonales de la diabetes gestacional y pautas de suplementación y análisis de exámenes basados en journals actualizados."
+    answer: "El programa está dictado por Katherinne Elgueta Mora, nutricionista con Magíster en Alimentación y Nutrición, mención Nutrición Clínica Pediátrica, del INTA, Universidad de Chile, y experiencia clínica en atención pediátrica, adulta y de personas mayores. Analizamos curvas antropométricas de incremento de peso, guías de suplementación chilenas e internacionales avanzadas, desgloses hormonales de la diabetes gestacional y pautas de suplementación y análisis de exámenes basados en publicaciones científicas actualizadas."
   },
   {
     question: "Ya he tomado otros cursos y todavía no me siento preparada para atender.",
     answer: "La diferencia es nuestro enfoque práctico. No solo te damos teoría; te entregamos herramientas listas para usar: plantillas de anamnesis, algoritmos para guiar tu diagnóstico clínico, y excels de cálculo de requerimiento calibrados para gestantes. Terminarás lista para tu primera cita."
   },
   {
-    question: "¿Voy a recuperar rápido la inversión económica?",
-    answer: "Perfectamente. La consulta en nutrición materna es un área con alta demanda y poca oferta especializada de calidad. Con solo atender a 2 gestantes mensuales con un estándar premium, habrás amortizado la totalidad del programa Kem Pro."
-  },
-  {
     question: "No tengo el tiempo para destinar horas de estudio por mi carga laboral actual.",
-    answer: "El acceso es de por vida y los módulos asíncronos son breves y enfocados en la práctica. Puedes verlos en tus tiempos de traslado, almuerzos or fines de semana. Implementas el aprendizaje a tu propio paso."
+    answer: "El acceso es de por vida y los módulos asíncronos son breves y enfocados en la práctica. Puedes verlos en tus tiempos de traslado, almuerzos o fines de semana. Implementas el aprendizaje a tu propio paso."
   },
   {
     question: "¿Las herramientas que entregan son realmente aplicables en Chile?",
-    answer: "Absolutamente. Están adaptadas a las normativas vigentes del MINSAL (Ministerio de Salud), complementadas con las normativas internacionales de la ACOG, de la OMS y las pautas clínicas del INTA de la Universidad de Chile."
+    answer: "Sí. Están basadas en las normas vigentes del MINSAL y en recomendaciones internacionales, como las de la OMS y el ACOG."
   }
 ];
