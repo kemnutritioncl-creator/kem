@@ -185,8 +185,8 @@ export default function App() {
       desc = "Programas y consulta de nutrición personalizada para embarazo, preconcepción y postparto con Katherinne Elgueta Mora en KEM Nutrition Academy.";
       canonicalUrl = "https://kemnutritionacademy.com/#kem-mom";
     } else if (currentPage === 'kem-pro') {
-      title = "KEM Pro | Formación Clínica Avanzada para Nutricionistas";
-      desc = "Formación profesional especializada y mentoría clínica en nutrición materno-infantil impartida por Katherinne Elgueta Mora en KEM Nutrition Academy.";
+      title = "KEM Pro | Próximamente, programa clínico para nutricionistas";
+      desc = "Próximamente: programa clínico de KEM Nutrition Academy para nutricionistas titulados que quieren atender gestantes con seguridad.";
       canonicalUrl = "https://kemnutritionacademy.com/#kem-pro";
     }
 
