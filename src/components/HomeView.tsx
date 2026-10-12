@@ -297,9 +297,6 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                     <span className="text-verde">✔</span> Magíster en Alimentación y Nutrición, mención Nutrición Clínica Pediátrica, INTA, Universidad de Chile.
                   </li>
                   <li className="flex items-center gap-1.5">
-                    <span className="text-verde">✔</span> Respaldo con postgrado INTA (U. de Chile) para brindarte absoluta seguridad.
-                  </li>
-                  <li className="flex items-center gap-1.5">
                     <span className="text-verde">✔</span> Información ordenada y práctica para tu día a día.
                   </li>
                 </ul>
@@ -462,7 +459,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
               <div className="lg:col-span-7 space-y-6">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-naranja/10 border border-naranja/20 text-naranja">
                   <Heart className="w-3.5 h-3.5 fill-naranja/10" />
-                  <span className="text-xs font-bold uppercase tracking-wider">Academia para Mamás</span>
+                  <span className="text-xs font-bold uppercase tracking-wider">Programa para Mamás</span>
                 </div>
 
                 <h3 className="font-serif text-3xl sm:text-4xl text-carbon-title font-semibold leading-tight">
@@ -476,7 +473,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-stone-700">
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-[#6FA987] shrink-0" />
-                    <span>8 módulos completos con videos cortos.</span>
+                    <span>8 módulos con presentaciones y videos resumen.</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-[#6FA987] shrink-0" />
@@ -577,7 +574,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
               <div className="lg:col-span-7 space-y-6">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-violeta/10 border border-violeta/20 text-violeta">
                   <Sparkles className="w-3.5 h-3.5" />
-                  <span className="text-xs font-bold uppercase tracking-wider">Academia para Profesionales</span>
+                  <span className="text-xs font-bold uppercase tracking-wider">Próximamente para Profesionales</span>
                 </div>
 
                 <h3 className="font-serif text-3xl sm:text-4xl text-carbon-title font-semibold leading-tight">

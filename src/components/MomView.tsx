@@ -228,8 +228,8 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
             
             <div className="p-6 bg-white rounded-2xl border border-stone-200/50 space-y-3">
               <div className="w-10 h-10 rounded-lg bg-naranja/10 text-naranja flex items-center justify-center font-bold">▶</div>
-              <h4 className="font-serif font-bold text-base text-carbon-title">Videos cortos</h4>
-              <p className="text-xs text-stone-500 leading-relaxed">Videos breves y directos, ideales para ver a tu propio ritmo sin abrumarte del cansancio diario.</p>
+              <h4 className="font-serif font-bold text-base text-carbon-title">Presentaciones y videos resumen</h4>
+              <p className="text-xs text-stone-500 leading-relaxed">Cada módulo incluye presentaciones y videos resumen, para revisar a tu propio ritmo sin abrumarte del cansancio diario.</p>
             </div>
 
             <div className="p-6 bg-white rounded-2xl border border-stone-200/50 space-y-3">
@@ -544,7 +544,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                 <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans text-left">
                   <li className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-verde shrink-0 mt-0.5" />
-                    <span>Acceso de por vida a los 8 módulos grabados.</span>
+                    <span>Acceso de por vida a los 8 módulos, con presentaciones y videos resumen.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-verde shrink-0 mt-0.5" />
@@ -599,7 +599,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                 <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans text-left">
                   <li className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-naranja shrink-0 font-bold mt-0.5" />
-                    <span>Acceso ilimitado a todos los 8 módulos.</span>
+                    <span>Acceso ilimitado a los 8 módulos, con presentaciones y videos resumen.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-naranja shrink-0 font-bold mt-0.5" />
@@ -679,7 +679,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                   </li>
                   <li className="flex items-start gap-2 text-stone-400">
                     <X className="w-4 h-4 shrink-0 mt-0.5" />
-                    <span>No otorga acceso continuo a los 8 módulos de la academia grabada.</span>
+                    <span>No incluye acceso a los 8 módulos de Kem Mom.</span>
                   </li>
                 </ul>
               </div>

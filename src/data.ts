@@ -203,7 +203,7 @@ export const momFaqs: FaqItem[] = [
   },
   {
     question: "Tengo muy poco tiempo y energía durante el embarazo, ¿cómo lo haré?",
-    answer: "Cada video es corto y directo al grano, para que avances a tu ritmo. Además, tienes checklists y resúmenes que puedes consultar en un minuto para resolver dudas inmediatas sobre porciones, suplementos o síntomas."
+    answer: "Cada módulo tiene presentaciones y videos resumen directos al grano, para que avances a tu ritmo. Además, tienes checklists y resúmenes que puedes consultar en un minuto para resolver dudas inmediatas sobre porciones, suplementos o síntomas."
   },
   {
     question: "No sé si este programa se adapta a mi caso específico (diabetes gestacional, hipotiroidismo, etc.)",
