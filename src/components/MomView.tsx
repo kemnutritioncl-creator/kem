@@ -700,6 +700,36 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
 
           </div>
 
+          <p className="text-xs text-stone-500 text-center font-light">
+            Al comprar aceptas los{' '}
+            <a
+              href="#terminos"
+              onClick={(e) => {
+                e.preventDefault();
+                setCurrentPage('terminos');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="underline underline-offset-2 hover:text-stone-800 transition-colors"
+              id="mom-pricing-legal-terms"
+            >
+              Términos y condiciones
+            </a>{' '}
+            y la{' '}
+            <a
+              href="#privacidad"
+              onClick={(e) => {
+                e.preventDefault();
+                setCurrentPage('privacidad');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="underline underline-offset-2 hover:text-stone-800 transition-colors"
+              id="mom-pricing-legal-privacy"
+            >
+              Política de privacidad
+            </a>
+            .
+          </p>
+
         </div>
       </section>
 

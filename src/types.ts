@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export type PageId = 'home' | 'kem-mom' | 'kem-pro';
+export type PageId = 'home' | 'kem-mom' | 'kem-pro' | 'terminos' | 'privacidad';
 
 export interface CheckoutUrls {
   momEsencial: string;

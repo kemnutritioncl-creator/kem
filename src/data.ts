@@ -36,22 +36,22 @@ export const universities = [
 export const momModules: CourseModule[] = [
   {
     num: 1,
-    title: "Preparándome para el embarazo",
+    title: "Preparándome para la gestación",
     desc: "Optimiza la fertilidad natural y la preconcepción. Aprende sobre nutrientes críticos, salud digestiva y cómo preparar el nido antes de la gestación."
   },
   {
     num: 2,
-    title: "Primer trimestre: Los primeros cambios",
+    title: "Primer trimestre: los primeros cambios",
     desc: "Aprende a manejar las náuseas, el cansancio y los primeros síntomas físicos con estrategias de alimentación amables y seguras para tu bebé."
   },
   {
     num: 3,
-    title: "Alimentación y nutrición en el embarazo",
+    title: "Alimentación y nutrición en la gestación",
     desc: "La guía definitiva sobre porciones, nutrientes clave (hierro, calcio, DHA, colina) y cómo estructurar tus comidas sin caer en mitos obsoletos."
   },
   {
     num: 4,
-    title: "Situaciones frecuentes durante el embarazo",
+    title: "Situaciones frecuentes durante la gestación",
     desc: "Manejo práctico del estreñimiento, náuseas, acidez, reflujo y antojos desde un enfoque nutricional seguro y basado en evidencia."
   },
   {

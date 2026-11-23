@@ -222,8 +222,32 @@ export default function Footer({ setCurrentPage, onScrollToTeacher }: FooterProp
 
         {/* Bottom Credits block */}
         <div className="mt-8 border-t border-stone-800/40 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-stone-500">
-          <div>
-            &copy; {new Date().getFullYear()} KEM Nutrition Academy. Todos los derechos reservados.
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-3 gap-y-1">
+            <span>&copy; {new Date().getFullYear()} KEM Nutrition Academy. Todos los derechos reservados.</span>
+            <span aria-hidden="true">·</span>
+            <a
+              href="#terminos"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('terminos');
+              }}
+              className="hover:text-stone-300 underline underline-offset-2 transition-colors cursor-pointer"
+              id="footer-legal-terms"
+            >
+              Términos y condiciones
+            </a>
+            <span aria-hidden="true">·</span>
+            <a
+              href="#privacidad"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('privacidad');
+              }}
+              className="hover:text-stone-300 underline underline-offset-2 transition-colors cursor-pointer"
+              id="footer-legal-privacy"
+            >
+              Política de privacidad
+            </a>
           </div>
           <div className="flex gap-4">
             <span className="cursor-default">Chile</span>

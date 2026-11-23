@@ -16,6 +16,8 @@ import Footer from './components/Footer';
 import HomeView from './components/HomeView';
 import MomView from './components/MomView';
 import ProView from './components/ProView';
+import TermsView from './components/TermsView';
+import PrivacyView from './components/PrivacyView';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageId>('home');
@@ -59,6 +61,8 @@ export default function App() {
       const hash = window.location.hash.replace('#', '');
       if (hash === 'kem-mom') setCurrentPage('kem-mom');
       else if (hash === 'kem-pro') setCurrentPage('kem-pro');
+      else if (hash === 'terminos') setCurrentPage('terminos');
+      else if (hash === 'privacidad') setCurrentPage('privacidad');
       else setCurrentPage('home');
       window.scrollTo(0, 0);
     };
@@ -68,6 +72,8 @@ export default function App() {
     const initialHash = window.location.hash.replace('#', '');
     if (initialHash === 'kem-mom') setCurrentPage('kem-mom');
     else if (initialHash === 'kem-pro') setCurrentPage('kem-pro');
+    else if (initialHash === 'terminos') setCurrentPage('terminos');
+    else if (initialHash === 'privacidad') setCurrentPage('privacidad');
 
     return () => window.removeEventListener('hashchange', handleHash);
   }, []);
@@ -86,6 +92,14 @@ export default function App() {
       title = "KEM Pro | Próximamente, programa clínico para nutricionistas";
       desc = "Próximamente: programa clínico de KEM Nutrition Academy para nutricionistas titulados que quieren atender gestantes con seguridad.";
       canonicalUrl = "https://kemnutritionacademy.com/#kem-pro";
+    } else if (currentPage === 'terminos') {
+      title = "Términos y condiciones | KEM Nutrition Academy";
+      desc = "Términos y condiciones de contratación de los programas y consultas clínicas de KEM Nutrition Academy (KEM NUTRITION SpA).";
+      canonicalUrl = "https://kemnutritionacademy.com/#terminos";
+    } else if (currentPage === 'privacidad') {
+      title = "Política de privacidad | KEM Nutrition Academy";
+      desc = "Política de privacidad y tratamiento de datos personales y de salud de KEM Nutrition Academy (KEM NUTRITION SpA).";
+      canonicalUrl = "https://kemnutritionacademy.com/#privacidad";
     }
 
     document.title = title;
@@ -150,6 +164,12 @@ export default function App() {
             priceConsulta={PRICES.consulta}
             setCurrentPage={handlePageChange}
           />
+        )}
+        {currentPage === 'terminos' && (
+          <TermsView setCurrentPage={handlePageChange} />
+        )}
+        {currentPage === 'privacidad' && (
+          <PrivacyView setCurrentPage={handlePageChange} />
         )}
       </main>
 
