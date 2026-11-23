@@ -594,7 +594,6 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                   </div>
                   <span className="text-xs text-stone-500 font-medium">Pago único</span>
                   <span className="text-[11px] text-stone-500 font-normal">Hasta 12 cuotas precio contado con tarjeta de crédito</span>
-                  <span className="text-[11px] text-stone-500 font-normal leading-snug pt-1 mt-1 border-t border-naranja/10">Valor por separado: programa ($97.000) más 3 consultas ($105.000) = $202.000, sin soporte por correo.</span>
                 </div>
 
                 <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans text-left">
