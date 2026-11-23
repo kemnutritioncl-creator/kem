@@ -293,7 +293,7 @@ Por Katherinne Elgueta Mora · KEM Nutrition Academy 🥑
                   <div className="space-y-1">
                     <h4 className="font-serif font-bold text-stone-900 text-base">Preconcepción</h4>
                     <p className="text-xs text-stone-600 leading-relaxed font-light">
-                      <strong>Entra ácido fólico 0,4 mg al día.</strong> El tubo neural se cierra entre el día 21 y el 28 tras la concepción, cuando muchas mujeres aún no saben que están embarazadas. Empezar después de la falta ya llega tarde para ese efecto. Se revisa también ferritina, vitamina D, TSH y hemograma. Si hay déficit, se corrige antes.
+                      <strong>Entra ácido fólico 1 mg al día.</strong> El tubo neural se cierra entre el día 21 y el 28 tras la concepción, cuando muchas mujeres aún no saben que están embarazadas. Empezar después de la falta ya llega tarde para ese efecto. Se revisa también ferritina, vitamina D, TSH y hemograma. Si hay déficit, se corrige antes.
                     </p>
                   </div>
                 </div>
@@ -379,8 +379,8 @@ Por Katherinne Elgueta Mora · KEM Nutrition Academy 🥑
                   <tbody className="divide-y divide-stone-200 bg-white">
                     <tr className="hover:bg-stone-50">
                       <td className="p-3 font-semibold text-stone-900">Ácido fólico (suplemento)</td>
-                      <td className="p-3 text-stone-600">0,4 mg/día <span className="text-[10px] text-stone-400 block">(desde 3 meses antes)</span></td>
-                      <td className="p-3 font-bold text-naranja">0,4 a 0,8 mg/día <span className="text-[10px] text-stone-400 block font-normal">(hasta semana 12)</span></td>
+                      <td className="p-3 text-stone-600">1 mg/día <span className="text-[10px] text-stone-400 block">(desde 3 meses antes)</span></td>
+                      <td className="p-3 font-bold text-naranja">1 mg/día <span className="text-[10px] text-stone-400 block font-normal">(hasta semana 12)</span></td>
                       <td className="p-3 text-stone-400">No de rutina</td>
                     </tr>
                     <tr className="hover:bg-stone-50 bg-stone-50/40">
@@ -493,7 +493,7 @@ Por Katherinne Elgueta Mora · KEM Nutrition Academy 🥑
                     <strong>Para qué:</strong> Reduce drásticamente el riesgo de defectos del tubo neural (espina bífida y anencefalia). Evidencia sólida desde 1991.
                   </p>
                   <p>
-                    <strong>En Chile la harina está fortificada desde el año 2000:</strong> Eso bajó los defectos a la mitad a nivel país. No reemplaza el suplemento, pero explica por qué la dosis estándar chilena (0,4 mg) es suficiente.
+                    <strong>En Chile la harina está fortificada desde el año 2000:</strong> Eso bajó los defectos a la mitad a nivel país. No reemplaza el suplemento. La indicación de MINSAL es 1 mg al día en mujeres sin factores de riesgo, desde 3 meses antes del embarazo hasta las 12 semanas (Guía Perinatal 2015 y GPC Disrafias espinales). La OMS recomienda 0,4 mg a nivel internacional.
                   </p>
                   <p>
                     <strong>La pregunta del metilfolato:</strong> La evidencia disponible no muestra mejores resultados que el ácido fólico en población general. Si te cobran el triple por metilfolato diciendo que es indispensable, pide el estudio clínico que lo respalde.

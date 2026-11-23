@@ -10,10 +10,9 @@ import { Heart, Sparkles, Instagram, Linkedin, Mail, ShieldAlert, Share2, Check,
 interface FooterProps {
   setCurrentPage: (page: PageId) => void;
   onScrollToTeacher: () => void;
-  whatsappUrl: string;
 }
 
-export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl }: FooterProps) {
+export default function Footer({ setCurrentPage, onScrollToTeacher }: FooterProps) {
   const [logoError, setLogoError] = useState(false);
   const [copied, setCopied] = useState(false);
   const logoUrl = "https://lh3.googleusercontent.com/d/1p0asa7stCkGKjn1gVpgUglAdt6qzDYG0";
@@ -216,7 +215,7 @@ export default function Footer({ setCurrentPage, onScrollToTeacher, whatsappUrl 
               <span className="font-semibold text-[#F2994A] block mb-1 uppercase tracking-wider text-[10px]">
                 Aviso importante de responsabilidad médica
               </span>
-              El contenido informativo de Kem Mom y Kem Pro (videos, guías, checklists, recetarios y sesiones grupales) es informativo y general. No reemplaza la consulta clínica individualizada ni los controles ginecológicos, obstétricos, de matronería o pediátricos. Las indicaciones personalizadas se entregan solo en las consultas clínicas individuales con Katherinne Elgueta Mora, nutricionista. Ante cualquier síntoma o urgencia, acude a tu centro de salud.
+              El contenido informativo de Kem Mom y Kem Pro (videos, guías, checklists y recetarios) es informativo y general. No reemplaza la consulta clínica individualizada ni los controles ginecológicos, obstétricos, de matronería o pediátricos. Las indicaciones personalizadas se entregan solo en las consultas clínicas individuales con Katherinne Elgueta Mora, nutricionista. Ante cualquier síntoma o urgencia, acude a tu centro de salud.
             </div>
           </div>
         </div>

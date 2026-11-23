@@ -4,6 +4,7 @@
  */
 import React, { useState, useEffect } from 'react';
 import { PageId, CheckoutUrls } from '../types';
+import { PRICES, CALENDLY_URL } from '../config';
 import { generalFaqs } from '../data';
 import GuideModal from './GuideModal';
 import { 
@@ -81,7 +82,7 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
                   </span>
                 </div>
                 <a
-                  href="https://calendly.com/kemnutritioncl/30min?month=2026-10"
+                  href={CALENDLY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 text-emerald-800 text-xs font-bold uppercase tracking-wider shadow-xs hover:shadow-sm transition-all group"
@@ -519,12 +520,12 @@ export default function HomeView({ setCurrentPage, urls }: HomeViewProps) {
 
                 <div className="flex justify-around text-xs text-carbon-body font-medium">
                   <div>
-                    <span className="block font-bold text-carbon-title text-base">97.000 CLP</span>
+                    <span className="block font-bold text-carbon-title text-base">{PRICES.esencial} CLP</span>
                     <span>Plan Esencial</span>
                   </div>
                   <div className="w-px bg-naranja/10" />
                   <div>
-                    <span className="block font-bold text-carbon-title text-base">217.000 CLP</span>
+                    <span className="block font-bold text-carbon-title text-base">{PRICES.acompanamiento} CLP</span>
                     <span>Acompañamiento</span>
                   </div>
                 </div>

@@ -12,7 +12,6 @@ export interface CheckoutUrls {
   proEsencial: string;
   proAcompañamiento: string;
   proConsulta: string;
-  whatsapp: string;
 }
 
 export interface Testimonial {

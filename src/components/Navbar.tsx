@@ -5,16 +5,16 @@
 
 import React, { useState } from 'react';
 import { PageId } from '../types';
+import { CALENDLY_URL } from '../config';
 import { Menu, X, Heart, Sparkles, Calendar } from 'lucide-react';
 
 interface NavbarProps {
   currentPage: PageId;
   setCurrentPage: (page: PageId) => void;
   onScrollToTeacher: () => void;
-  whatsappUrl: string;
 }
 
-export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher, whatsappUrl }: NavbarProps) {
+export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [logoError, setLogoError] = useState(false);
   const logoUrl = "https://lh3.googleusercontent.com/d/1p0asa7stCkGKjn1gVpgUglAdt6qzDYG0";
@@ -125,7 +125,7 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
           <div className="hidden md:flex items-center gap-3">
             {currentPage !== 'kem-pro' && (
               <a
-                href="https://calendly.com/kemnutritioncl/30min?month=2026-10"
+                href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 transition-all shadow-xs cursor-pointer inline-flex items-center gap-1.5 hover:scale-[1.02] active:scale-[0.98]"
@@ -192,7 +192,7 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher,
           {currentPage !== 'kem-pro' && (
             <div className="pt-4 border-t border-stone-100 flex flex-col gap-2.5 px-4">
               <a
-                href="https://calendly.com/kemnutritioncl/30min?month=2026-10"
+                href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}

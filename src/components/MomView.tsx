@@ -515,7 +515,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
           <div className="text-center space-y-3">
             <span className="text-naranja font-mono text-xs uppercase tracking-widest font-bold">Precios Transparentes</span>
             <h2 className="font-serif text-3xl sm:text-4xl text-carbon-title font-semibold tracking-tight">Elige el nivel de acompañamiento</h2>
-            <p className="text-sm text-stone-500 max-w-md mx-auto font-light">Valores en pesos chilenos (CLP). Inscripción inmediata segura vía Webpay.</p>
+            <p className="text-sm text-stone-500 max-w-md mx-auto font-light">Valores en pesos chilenos (CLP). Pago seguro vía Flow.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
@@ -544,7 +544,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                 <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans text-left">
                   <li className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-verde shrink-0 mt-0.5" />
-                    <span>Acceso de por vida a los 8 módulos, con presentaciones y videos resumen.</span>
+                    <span>Acceso por 12 meses a los 8 módulos, con presentaciones y videos resumen.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-verde shrink-0 mt-0.5" />
@@ -552,7 +552,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                   </li>
                   <li className="flex items-start gap-2 text-stone-400">
                     <X className="w-4 h-4 shrink-0 mt-0.5" />
-                    <span>No incluye sesiones grupales en vivo ni consultas uno a uno.</span>
+                    <span>No incluye sesiones individuales ni soporte por correo.</span>
                   </li>
                 </ul>
               </div>
@@ -584,7 +584,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                     Plan Completo + Acompañamiento (Para gestantes y familias)
                   </span>
                   <h3 className="font-serif text-2xl font-bold text-carbon-title mt-2 text-left">Programa Kem Mom (Para gestantes y familias)</h3>
-                  <p className="text-xs text-stone-500 mt-1 text-left">Seguridad + cercanía con sesiones en vivo y supervisión uno a uno.</p>
+                  <p className="text-xs text-stone-500 mt-1 text-left">Todo el programa más seguimiento individual con Katherinne.</p>
                 </div>
 
                 <div className="bg-gradient-to-tr from-naranja/5 to-naranja/15 p-4 rounded-xl border border-naranja/10 flex flex-col items-center justify-center text-center gap-1">
@@ -594,24 +594,25 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                   </div>
                   <span className="text-xs text-stone-500 font-medium">Pago único</span>
                   <span className="text-[11px] text-stone-500 font-normal">Hasta 12 cuotas precio contado con tarjeta de crédito</span>
+                  <span className="text-[11px] text-stone-500 font-normal leading-snug pt-1 mt-1 border-t border-naranja/10">Valor por separado: programa ($97.000) más 3 consultas ($105.000) = $202.000, sin soporte por correo.</span>
                 </div>
 
                 <ul className="space-y-3 text-xs text-stone-600 leading-relaxed font-sans text-left">
                   <li className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-naranja shrink-0 font-bold mt-0.5" />
-                    <span>Acceso ilimitado a los 8 módulos, con presentaciones y videos resumen.</span>
+                    <span>Acceso por 12 meses a los 8 módulos, con presentaciones y videos resumen.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-naranja shrink-0 font-bold mt-0.5" />
-                    <span>2 sesiones grupales de mentoría en vivo al mes durante 3 meses.</span>
+                    <span>3 sesiones clínicas individuales online con Katherinne, con pauta e indicaciones personalizadas, agendadas en los momentos clave de tu etapa.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-naranja shrink-0 font-bold mt-0.5" />
-                    <span>1 sesión clínica individual exclusiva al mes durante 3 meses con Katherinne.</span>
+                    <span>Respuesta a tus dudas de alimentación y suplementación por correo durante 3 meses, en un plazo de 48 horas hábiles.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-naranja shrink-0 font-bold mt-0.5" />
-                    <span>Prioridad de consultoría directa por correo.</span>
+                    <span>Agenda preferente para tus sesiones.</span>
                   </li>
                 </ul>
               </div>
@@ -651,7 +652,7 @@ export default function MomView({ urls, priceEsencial, priceAcompañamiento, pri
                   <div className="flex flex-col items-center justify-center text-center gap-1">
                     <div className="flex items-baseline justify-center gap-1.5">
                       <span className="text-xs font-bold text-stone-400 font-sans">CLP</span>
-                      <span className="text-3xl font-serif font-extrabold text-[#2D3142] tracking-tight whitespace-nowrap">${priceConsulta || '35.000'}</span>
+                      <span className="text-3xl font-serif font-extrabold text-[#2D3142] tracking-tight whitespace-nowrap">${priceConsulta}</span>
                     </div>
                     <span className="text-xs text-stone-500 font-medium">Por sesión</span>
                   </div>

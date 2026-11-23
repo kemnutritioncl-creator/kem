@@ -184,7 +184,7 @@ export const generalFaqs: FaqItem[] = [
   },
   {
     question: "¿Los programas son en vivo o grabados?",
-    answer: "Los planes Esenciales son grabados (asíncronos), para que avances a tu ritmo desde cualquier dispositivo. Los planes de Acompañamiento incluyen además sesiones grupales en vivo y una sesión individual al mes con Katherinne, durante 3 meses."
+    answer: "Los planes Esenciales son grabados (asíncronos), para que avances a tu ritmo desde cualquier dispositivo. Los planes de Acompañamiento incluyen además 3 sesiones individuales con Katherinne y soporte por correo durante 3 meses."
   },
   {
     question: "¿Recibo certificación al terminar?",
@@ -215,7 +215,7 @@ export const momFaqs: FaqItem[] = [
   },
   {
     question: "Prefiero consultar directo cuando tenga una duda particular, ¿cómo me ayuda el programa?",
-    answer: "El programa te entrega las bases para entender tu alimentación en cada etapa y reconocer a tiempo cuándo consultar. Te da autonomía. Y si tomas el Plan Acompañamiento, cuentas además con sesiones grupales e individuales con Katherinne."
+    answer: "El programa te entrega las bases para entender tu alimentación en cada etapa y reconocer a tiempo cuándo consultar. Te da autonomía. Y si tomas el Plan Acompañamiento, cuentas además con 3 sesiones individuales con Katherinne y soporte por correo durante 3 meses."
   }
 ];
 

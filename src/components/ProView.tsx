@@ -637,10 +637,6 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="w-4 h-4 text-violeta shrink-0 font-bold mt-0.5" />
-                    <span className="leading-normal"><strong>2 mentorías grupales al mes en vivo con Katherinne, durante 3 meses</strong></span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-violeta shrink-0 font-bold mt-0.5" />
                     <span className="leading-normal"><strong>1 sesión de consultoría técnica individual al mes para analizar tus propios pacientes, durante 3 meses.</strong></span>
                   </li>
                 </ul>
@@ -731,7 +727,7 @@ export default function ProView({ urls, priceEsencial, priceAcompañamiento, pri
             <ul className="space-y-3 text-xs text-stone-600 pl-4 list-disc font-light leading-relaxed">
               <li>No es un postítulo, posgrado ni especialización médica reconocida por CONACEM. Es una formación clínica privada de KEM Nutrition Academy.</li>
               <li>La constancia de participación es emitida por KEM Nutrition Academy, no por una institución universitaria. No tiene efecto ante organismos públicos.</li>
-              <li>No incluye supervisión clínica continua de pacientes ni disponibilidad fuera de las instancias grupales e individuales contempladas en el programa.</li>
+              <li>No incluye supervisión clínica continua de pacientes ni disponibilidad fuera de las instancias individuales contempladas en el programa.</li>
               <li>No garantiza ingresos ni captación automática de pacientes. Lo que sí garantiza es que tendrás las herramientas para construirlo.</li>
             </ul>
           </div>
