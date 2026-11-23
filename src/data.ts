@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { CourseModule, Testimonial, FaqItem } from './types';
+import { CourseModule, Testimonial, FaqItem, OpinionKemMom } from './types';
+import { SHOW_KEM_PRO } from './config';
 
 export const universities = [
   { 
@@ -66,7 +67,7 @@ export const momModules: CourseModule[] = [
   },
   {
     num: 7,
-    title: "Nutrición integral en el postparto",
+    title: "Nutrición integral en el posparto",
     desc: "Recuperación de tejidos, fatiga materna, alimentación idónea para reponer reservas sin prisa, respetando los ritmos de tu cuerpo."
   },
   {
@@ -109,8 +110,8 @@ export const proModules: CourseModule[] = [
   },
   {
     num: 7,
-    title: "Postparto y lactancia",
-    desc: "Requerimientos en lactancia, pérdida de peso postparto sin comprometer la producción de leche y acompañamiento clínico en suplementación."
+    title: "Posparto y lactancia",
+    desc: "Requerimientos en lactancia, pérdida de peso posparto sin comprometer la producción de leche y acompañamiento clínico en suplementación."
   },
   {
     num: 8,
@@ -177,22 +178,22 @@ export const proTestimonials: Testimonial[] = [
   }
 ];
 
+export const OPINIONES_KEM_MOM: OpinionKemMom[] = [];
+
 export const generalFaqs: FaqItem[] = [
   {
     question: "¿Qué es KEM Nutrition Academy?",
-    answer: "Es un espacio de acompañamiento nutricional dirigido por Katherinne Elgueta Mora, nutricionista con Magíster en Alimentación y Nutrición, mención Nutrición Clínica Pediátrica, del INTA, Universidad de Chile. A través de Kem Mom acompañamos a gestantes y mamás para que vivan su proceso con tranquilidad. Próximamente, Kem Pro estará disponible para nutricionistas titulados."
+    answer: SHOW_KEM_PRO
+      ? "Es un espacio de acompañamiento nutricional dirigido por Katherinne Elgueta Mora, nutricionista con Magíster en Alimentación y Nutrición, mención Nutrición Clínica Pediátrica, del INTA, Universidad de Chile. A través de KEM Mom acompañamos a gestantes y mamás para que vivan su proceso con tranquilidad. Próximamente, KEM Pro estará disponible para nutricionistas titulados."
+      : "Es un espacio de acompañamiento nutricional dirigido por Katherinne Elgueta Mora, nutricionista con Magíster en Alimentación y Nutrición, mención Nutrición Clínica Pediátrica, del INTA, Universidad de Chile. A través de KEM Mom acompañamos a gestantes y mamás para que vivan su proceso con tranquilidad."
   },
   {
     question: "¿Los programas son en vivo o grabados?",
     answer: "Los planes Esenciales son grabados (asíncronos), para que avances a tu ritmo desde cualquier dispositivo. Los planes de Acompañamiento incluyen además 3 sesiones individuales con Katherinne y soporte por correo durante 3 meses."
   },
   {
-    question: "¿Recibo certificación al terminar?",
-    answer: "Kem Mom entrega una constancia de participación al completar el programa. Kem Pro, cuando esté disponible, entregará una constancia de participación de KEM Nutrition Academy."
-  },
-  {
     question: "¿Qué métodos de pago están disponibles?",
-    answer: "Puedes pagar de forma segura a través de Flow, con tarjetas de débito, crédito o transferencia bancaria. Los planes de Kem Mom se pueden pagar en hasta 12 cuotas precio contado con tarjeta de crédito."
+    answer: "Puedes pagar de forma segura a través de Flow, con tarjetas de débito, crédito o transferencia bancaria. Paga en cuotas con tu tarjeta de crédito, según las condiciones de tu banco."
   }
 ];
 

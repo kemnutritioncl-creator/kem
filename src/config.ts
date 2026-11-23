@@ -5,6 +5,8 @@
 
 import { CheckoutUrls } from './types';
 
+export const SHOW_KEM_PRO = false;
+
 export const PRICES = {
   esencial: '97.000',
   acompanamiento: '217.000',

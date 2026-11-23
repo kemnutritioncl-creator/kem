@@ -38,19 +38,19 @@ export default function GuideModal({ isOpen, onClose }: GuideModalProps) {
   };
 
   const handleShare = () => {
-    const guideShareMessage = `📚 Guía Gratuita: Suplementos en los primeros 1.000 días 🌸
+    const guideShareMessage = `Guía gratuita: Suplementos en los primeros 1.000 días
 Dosis y cronología para preconcepción, embarazo y lactancia según la Guía Perinatal MINSAL y revisiones vigentes.
-Por Katherinne Elgueta Mora · KEM Nutrition Academy 🥑
+Por Katherinne Elgueta Mora, KEM Nutrition Academy
 
-✨ 12 páginas · 9 nutrientes clave · 1 tabla maestra de dosificación
-✔ Acceso 100% libre sin registros ni correos
+12 páginas - 9 nutrientes clave - 1 tabla maestra de dosificación
+Acceso 100% libre sin registros ni correos
 
-📖 Léela gratis aquí:
-👉 https://kemnutritionacademy.com/`;
+Léela gratis aquí:
+https://kemnutritionacademy.com/`;
 
     if (navigator.share) {
       navigator.share({
-        title: '🌸 Guía de Suplementos en los primeros 1.000 días | KEM Nutrition Academy 🥑',
+        title: 'Guía de suplementos en los primeros 1.000 días | KEM Nutrition Academy',
         text: guideShareMessage,
         url: 'https://kemnutritionacademy.com/',
       }).catch(() => {});
@@ -79,7 +79,7 @@ Por Katherinne Elgueta Mora · KEM Nutrition Academy 🥑
             </div>
             <div>
               <span className="text-[10px] font-mono tracking-widest text-[#6FA987] uppercase font-bold block">
-                Guía de Inicio Gratuita · Edición 2026
+                Guía de inicio gratuita - Edición 2026
               </span>
               <h3 className="font-serif text-base sm:text-lg font-bold text-white leading-tight">
                 Suplementos en los primeros 1.000 días
@@ -122,7 +122,7 @@ Por Katherinne Elgueta Mora · KEM Nutrition Academy 🥑
                 : 'text-stone-600 hover:text-stone-900 hover:bg-stone-200/60'
             }`}
           >
-            Portada & Resumen
+            Portada y resumen
           </button>
           <button
             onClick={() => setActiveTab('cronologia')}
@@ -132,7 +132,7 @@ Por Katherinne Elgueta Mora · KEM Nutrition Academy 🥑
                 : 'text-stone-600 hover:text-stone-900 hover:bg-stone-200/60'
             }`}
           >
-            Cronología por Etapas
+            Cronología por etapas
           </button>
           <button
             onClick={() => setActiveTab('tabla')}
@@ -142,7 +142,7 @@ Por Katherinne Elgueta Mora · KEM Nutrition Academy 🥑
                 : 'text-stone-600 hover:text-stone-900 hover:bg-stone-200/60'
             }`}
           >
-            Tabla Maestra de Dosis ⭐
+            Tabla maestra de dosis
           </button>
           <button
             onClick={() => setActiveTab('nutrientes')}
@@ -152,7 +152,7 @@ Por Katherinne Elgueta Mora · KEM Nutrition Academy 🥑
                 : 'text-stone-600 hover:text-stone-900 hover:bg-stone-200/60'
             }`}
           >
-            Nutriente por Nutriente
+            Nutriente por nutriente
           </button>
           <button
             onClick={() => setActiveTab('mitos')}
@@ -162,7 +162,7 @@ Por Katherinne Elgueta Mora · KEM Nutrition Academy 🥑
                 : 'text-stone-600 hover:text-stone-900 hover:bg-stone-200/60'
             }`}
           >
-            Sin Respaldo (Mitos)
+            Sin respaldo (mitos)
           </button>
           <button
             onClick={() => setActiveTab('rutina')}
@@ -172,7 +172,7 @@ Por Katherinne Elgueta Mora · KEM Nutrition Academy 🥑
                 : 'text-stone-600 hover:text-stone-900 hover:bg-stone-200/60'
             }`}
           >
-            Rutina & Preguntas
+            Rutina y preguntas
           </button>
         </div>
 
@@ -186,7 +186,7 @@ Por Katherinne Elgueta Mora · KEM Nutrition Academy 🥑
               {/* Header Hero of Guide */}
               <div className="bg-gradient-to-br from-bg-warm to-stone-100 rounded-2xl p-6 sm:p-8 border border-stone-200 text-center space-y-4">
                 <span className="text-xs font-mono font-bold tracking-widest text-[#6FA987] uppercase">
-                  Guía de Inicio · Consulta Gratuita
+                  Guía de inicio - Consulta gratuita
                 </span>
                 <h2 className="font-serif text-2xl sm:text-4xl text-stone-900 font-bold tracking-tight">
                   Suplementos en los primeros 1.000 días
@@ -207,13 +207,13 @@ Por Katherinne Elgueta Mora · KEM Nutrition Academy 🥑
                   </div>
                   <div className="bg-white px-5 py-3 rounded-xl border border-stone-200 shadow-2xs text-center min-w-[110px]">
                     <span className="block font-serif font-extrabold text-2xl text-violeta">1</span>
-                    <span className="text-[11px] text-stone-500 font-medium uppercase tracking-wider">Tabla Maestra</span>
+                    <span className="text-[11px] text-stone-500 font-medium uppercase tracking-wider">Tabla maestra</span>
                   </div>
                 </div>
 
                 <div className="text-xs text-stone-500 pt-2">
-                  Por <strong>Katherinne Elgueta Mora</strong> · Nutricionista Especialista en nutrición materno infantil. <br/>
-                  <span className="text-stone-400">Edición 2026 · Basada en Guía Perinatal MINSAL y revisiones sistemáticas vigentes.</span>
+                  Por <strong>Katherinne Elgueta Mora</strong>, nutricionista especialista en nutrición materno infantil. <br/>
+                  <span className="text-stone-400">Edición 2026. Basada en Guía Perinatal MINSAL y revisiones sistemáticas vigentes.</span>
                 </div>
               </div>
 
@@ -228,21 +228,21 @@ Por Katherinne Elgueta Mora · KEM Nutrition Academy 🥑
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
                   <div className="bg-stone-50 p-4 rounded-xl border border-stone-200">
-                    <span className="text-[10px] font-mono font-bold text-naranja uppercase">Etapa 1 · 270 días</span>
+                    <span className="text-[10px] font-mono font-bold text-naranja uppercase">Etapa 1 - 270 días</span>
                     <h4 className="font-serif font-bold text-stone-900 mt-1">Embarazo</h4>
                     <p className="text-xs text-stone-500 mt-1 font-light leading-relaxed">
                       Formación del tubo neural, la placenta y las reservas de hierro del bebé.
                     </p>
                   </div>
                   <div className="bg-stone-50 p-4 rounded-xl border border-stone-200">
-                    <span className="text-[10px] font-mono font-bold text-[#6FA987] uppercase">Etapa 2 · 365 días</span>
+                    <span className="text-[10px] font-mono font-bold text-[#6FA987] uppercase">Etapa 2 - 365 días</span>
                     <h4 className="font-serif font-bold text-stone-900 mt-1">Primer año</h4>
                     <p className="text-xs text-stone-500 mt-1 font-light leading-relaxed">
                       Lactancia, alimentación complementaria y crecimiento acelerado.
                     </p>
                   </div>
                   <div className="bg-stone-50 p-4 rounded-xl border border-stone-200">
-                    <span className="text-[10px] font-mono font-bold text-violeta uppercase">Etapa 3 · 365 días</span>
+                    <span className="text-[10px] font-mono font-bold text-violeta uppercase">Etapa 3 - 365 días</span>
                     <h4 className="font-serif font-bold text-stone-900 mt-1">Segundo año</h4>
                     <p className="text-xs text-stone-500 mt-1 font-light leading-relaxed">
                       Consolidación de hábitos alimentarios y curva de crecimiento.
@@ -264,7 +264,7 @@ Por Katherinne Elgueta Mora · KEM Nutrition Academy 🥑
                   onClick={() => setActiveTab('tabla')}
                   className="px-6 py-3 rounded-full bg-naranja hover:bg-orange-600 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center gap-2 cursor-pointer"
                 >
-                  <span>Ver la Tabla Maestra de Dosificación</span>
+                  <span>Ver la tabla maestra de dosificación</span>
                   <ChevronRight className="w-4 h-4" />
                 </button>
               </div>
@@ -345,7 +345,7 @@ Por Katherinne Elgueta Mora · KEM Nutrition Academy 🥑
                   <div className="space-y-1">
                     <h4 className="font-serif font-bold text-stone-900 text-base">Lactancia</h4>
                     <p className="text-xs text-stone-600 leading-relaxed font-light">
-                      El hierro sigue hasta los 3 meses postparto para reponer las pérdidas del parto. Sube el yodo, sube la colina, baja el requerimiento de hierro dietario. El ácido fólico en dosis de suplemento ya no es necesario de rutina.
+                      El hierro sigue hasta los 3 meses posparto para reponer las pérdidas del parto. Sube el yodo, sube la colina, baja el requerimiento de hierro dietario. El ácido fólico en dosis de suplemento ya no es necesario de rutina.
                     </p>
                   </div>
                 </div>
@@ -393,7 +393,7 @@ Por Katherinne Elgueta Mora · KEM Nutrition Academy 🥑
                       <td className="p-3 font-semibold text-stone-900">Hierro elemental</td>
                       <td className="p-3 text-stone-600">Según ferritina</td>
                       <td className="p-3 font-bold text-naranja">30 a 60 mg/día <span className="text-[10px] text-stone-400 block font-normal">(desde sem 16)</span></td>
-                      <td className="p-3 text-stone-600">Hasta 3 meses postparto</td>
+                      <td className="p-3 text-stone-600">Hasta 3 meses posparto</td>
                     </tr>
                     <tr className="hover:bg-stone-50 bg-stone-50/40">
                       <td className="p-3 font-semibold text-stone-900">Calcio (dieta + suplemento)</td>
@@ -504,7 +504,7 @@ Por Katherinne Elgueta Mora · KEM Nutrition Academy 🥑
                 <div className="border border-stone-200 rounded-2xl p-5 space-y-3 bg-white">
                   <div className="flex items-center justify-between border-b border-stone-100 pb-2">
                     <h4 className="font-serif font-bold text-stone-900 text-base">02. Hierro elemental (30 a 60 mg/día)</h4>
-                    <span className="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 font-mono font-bold text-[10px]">Semana 16 a 3 meses postparto</span>
+                    <span className="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 font-mono font-bold text-[10px]">Semana 16 a 3 meses posparto</span>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                     <div className="bg-emerald-50/70 p-3 rounded-xl border border-emerald-100">
@@ -633,7 +633,7 @@ Por Katherinne Elgueta Mora · KEM Nutrition Academy 🥑
           {activeTab === 'rutina' && (
             <div className="space-y-6 animate-fade-in">
               <div className="border-b border-stone-200 pb-3">
-                <span className="text-xs font-mono font-bold text-[#6FA987] uppercase tracking-wider">Aplicación Práctica</span>
+                <span className="text-xs font-mono font-bold text-[#6FA987] uppercase tracking-wider">Aplicación práctica</span>
                 <h3 className="font-serif text-2xl font-bold text-stone-900">Tu día, hora por hora</h3>
                 <p className="text-xs text-stone-500 font-light mt-1">
                   Ejemplo de distribución para una mujer en segundo trimestre con hierro, calcio y vitamina D indicados.
@@ -710,7 +710,7 @@ Por Katherinne Elgueta Mora · KEM Nutrition Academy 🥑
         {/* Modal Footer with Actions */}
         <div className="bg-stone-50 px-6 py-4 border-t border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-3 shrink-0 print:hidden">
           <div className="text-xs text-stone-500 font-light text-center sm:text-left">
-            Guía de distribución libre · Compártela con quien la necesite.
+            Guía de distribución libre. Compártela con quien la necesite.
           </div>
           <div className="flex items-center gap-3 w-full sm:w-auto">
             <button
@@ -724,7 +724,7 @@ Por Katherinne Elgueta Mora · KEM Nutrition Academy 🥑
               onClick={onClose}
               className="flex-1 sm:flex-initial px-5 py-2.5 rounded-full bg-stone-900 hover:bg-stone-800 text-white font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer"
             >
-              Cerrar Guía
+              Cerrar guía
             </button>
           </div>
         </div>

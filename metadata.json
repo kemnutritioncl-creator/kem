@@ -1,6 +1,6 @@
 {
   "name": "KEM Nutrition Academy",
-  "description": "Acompañamiento nutricional en embarazo, postparto y lactancia por Katherinne Elgueta Mora, nutricionista clínica. Consulta 1:1, programa Kem Mom, Kem Pro (próximamente) y guía gratuita.",
+  "description": "Acompañamiento nutricional en embarazo, posparto y lactancia por Katherinne Elgueta Mora, nutricionista clínica. Consulta 1:1, programa KEM Mom y guía gratuita.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

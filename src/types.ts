@@ -33,3 +33,12 @@ export interface FaqItem {
   question: string;
   answer: string;
 }
+
+export interface OpinionKemMom {
+  nombre: string;
+  etapa: string;
+  ciudad?: string;
+  fecha: string;
+  texto: string;
+  accesoSinCosto: boolean;
+}

@@ -52,7 +52,7 @@ export default function TermsView({ setCurrentPage }: TermsViewProps) {
                   2. Servicios
                 </h2>
                 <p>
-                  KEM Nutrition Academy ofrece el programa Kem Mom en dos modalidades (Plan Esencial y Plan Completo + Acompañamiento) y la consulta clínica individual online. El contenido y alcance de cada servicio es el que se describe en su página al momento de la compra.
+                  KEM Nutrition Academy ofrece el programa KEM Mom en dos modalidades (Plan Esencial y Plan Completo + Acompañamiento) y la consulta clínica individual online. El contenido y alcance de cada servicio es el que se describe en su página al momento de la compra.
                 </p>
               </section>
 
@@ -61,7 +61,7 @@ export default function TermsView({ setCurrentPage }: TermsViewProps) {
                   3. Precios y pago
                 </h2>
                 <p>
-                  Los precios están expresados en pesos chilenos. El pago se realiza a través de Flow, con los medios que esa plataforma habilite. Las cuotas precio contado dependen de las condiciones de tu tarjeta. Por cada pago se emite la boleta correspondiente.
+                  Los precios están expresados en pesos chilenos. El pago se realiza a través de Flow, con los medios que esa plataforma habilite. Las cuotas precio contado dependen de las condiciones de tu tarjeta. Por cada pago se emite la boleta correspondiente. El valor preferente para beneficiarias Fonasa requiere enviar el certificado de afiliación vigente antes del pago.
                 </p>
               </section>
 

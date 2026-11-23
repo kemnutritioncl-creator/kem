@@ -10,7 +10,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { PageId } from './types';
-import { PRICES, CHECKOUT_URLS } from './config';
+import { PRICES, CHECKOUT_URLS, SHOW_KEM_PRO } from './config';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomeView from './components/HomeView';
@@ -80,17 +80,24 @@ export default function App() {
 
   // Sync dynamic SEO metadata and document title for Google Search & social cards
   useEffect(() => {
-    let title = "KEM Nutrition Academy | Nutrición en la Maternidad y Consulta Clínica";
-    let desc = "Acompañamiento nutricional en embarazo, postparto y lactancia por Katherinne Elgueta Mora, nutricionista clínica. Consulta 1:1, programa Kem Mom, Kem Pro (próximamente) y guía gratuita.";
+    let title = "KEM Nutrition Academy | Nutrición en la maternidad y consulta clínica";
+    let desc = SHOW_KEM_PRO
+      ? "Acompañamiento nutricional en embarazo, posparto y lactancia por Katherinne Elgueta Mora, nutricionista clínica. Consulta 1:1, programa KEM Mom, KEM Pro (próximamente) y guía gratuita."
+      : "Acompañamiento nutricional en embarazo, posparto y lactancia por Katherinne Elgueta Mora, nutricionista clínica. Consulta 1:1, programa KEM Mom y guía gratuita.";
     let canonicalUrl = "https://kemnutritionacademy.com/";
 
     if (currentPage === 'kem-mom') {
-      title = "KEM Mom | Nutrición y Acompañamiento en Embarazo y Maternidad";
-      desc = "Programas y consulta de nutrición personalizada para embarazo, preconcepción y postparto con Katherinne Elgueta Mora en KEM Nutrition Academy.";
+      title = "KEM Mom | Nutrición y acompañamiento en embarazo y maternidad";
+      desc = "Programas y consulta de nutrición personalizada para embarazo, preconcepción y posparto con Katherinne Elgueta Mora en KEM Nutrition Academy.";
       canonicalUrl = "https://kemnutritionacademy.com/#kem-mom";
     } else if (currentPage === 'kem-pro') {
-      title = "KEM Pro | Próximamente, programa clínico para nutricionistas";
-      desc = "Próximamente: programa clínico de KEM Nutrition Academy para nutricionistas titulados que quieren atender gestantes con seguridad.";
+      if (SHOW_KEM_PRO) {
+        title = "KEM Pro | Próximamente, programa clínico para nutricionistas";
+        desc = "Próximamente: programa clínico de KEM Nutrition Academy para nutricionistas titulados que quieren atender gestantes con seguridad.";
+      } else {
+        title = "KEM Nutrition, próximamente";
+        desc = "KEM Nutrition, próximamente";
+      }
       canonicalUrl = "https://kemnutritionacademy.com/#kem-pro";
     } else if (currentPage === 'terminos') {
       title = "Términos y condiciones | KEM Nutrition Academy";

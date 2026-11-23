@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import { PageId } from '../types';
-import { CALENDLY_URL } from '../config';
+import { CALENDLY_URL, SHOW_KEM_PRO } from '../config';
 import { Menu, X, Heart, Sparkles, Calendar } from 'lucide-react';
 
 interface NavbarProps {
@@ -91,7 +91,7 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher 
             >
               <span className="flex items-center gap-1">
                 <Heart className="w-3.5 h-3.5 inline text-naranja fill-naranja/20" />
-                Kem Mom
+                KEM Mom
               </span>
               {currentPage === 'kem-mom' && (
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-naranja rounded-full" />
@@ -106,7 +106,7 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher 
             >
               <span className="flex items-center gap-1">
                 <Sparkles className="w-3.5 h-3.5 inline text-violeta" />
-                Kem Pro
+                {SHOW_KEM_PRO ? 'KEM Pro' : 'Próximamente'}
               </span>
               {currentPage === 'kem-pro' && (
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-violeta rounded-full" />
@@ -142,7 +142,7 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher 
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-lg text-carbon-title hover:bg-stone-50 cursor-pointer focus:outline-hidden"
-              aria-label="Abrir Menú"
+              aria-label="Abrir menú"
               id="nav-mobile-hamburger"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -170,7 +170,7 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher 
             }`}
             id="mobile-nav-mom"
           >
-            Kem Mom (Para gestantes y familias)
+            KEM Mom (para gestantes y familias)
           </button>
           <button
             onClick={() => handleNavClick('kem-pro')}
@@ -179,7 +179,7 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher 
             }`}
             id="mobile-nav-pro"
           >
-            Kem Pro (Para profesionales)
+            {SHOW_KEM_PRO ? 'KEM Pro (para profesionales)' : 'Próximamente'}
           </button>
           <button
             onClick={handleTeacherClick}
@@ -200,7 +200,7 @@ export default function Navbar({ currentPage, setCurrentPage, onScrollToTeacher 
                 id="mobile-nav-agenda"
               >
                 <Calendar className="w-4 h-4 text-emerald-600" />
-                <span>Agenda tu Consulta aquí</span>
+                <span>Agenda tu consulta aquí</span>
               </a>
             </div>
           )}

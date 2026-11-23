@@ -5,6 +5,7 @@
 
 import React, { useState } from 'react';
 import { PageId } from '../types';
+import { SHOW_KEM_PRO } from '../config';
 import { Heart, Sparkles, Instagram, Linkedin, Mail, ShieldAlert, Share2, Check, BookOpen } from 'lucide-react';
 
 interface FooterProps {
@@ -24,15 +25,23 @@ export default function Footer({ setCurrentPage, onScrollToTeacher }: FooterProp
 
   const handleShareLink = () => {
     const shareUrl = "https://kemnutritionacademy.com/";
-    const shareTitle = "🌸 KEM Nutrition Academy | Maternidad & Nutrición Clínica 🥑";
-    const shareMessage = `🌸 KEM Nutrition Academy · Nutrición en Maternidad 🤰 & Formación Profesional 👩‍⚕️
-🥑 Dirigida por Katherinne Elgueta Mora (Nutricionista Clínica · Magíster INTA U. de Chile)
+    const shareTitle = "KEM Nutrition Academy | Maternidad y nutrición clínica";
+    const shareMessage = SHOW_KEM_PRO
+      ? `KEM Nutrition Academy - Nutrición en maternidad y formación profesional
+Dirigida por Katherinne Elgueta Mora (Nutricionista clínica, magíster INTA U. de Chile)
 
-🤰 Kem Mom: Nutrición para preconcepción, embarazo y lactancia sin mitos
-👩‍⚕️ Kem Pro: Formación clínica avanzada y prescripción para profesionales
-📚 Guía Gratuita: Suplementos en los primeros 1.000 días
+KEM Mom: Nutrición para preconcepción, embarazo y lactancia sin mitos
+KEM Pro: Formación clínica avanzada y prescripción para profesionales
+Guía gratuita: Suplementos en los primeros 1.000 días
 
-🌐 Visítanos en: https://kemnutritionacademy.com/`;
+Visítanos en: https://kemnutritionacademy.com/`
+      : `KEM Nutrition Academy - Nutrición en maternidad y consulta clínica
+Dirigida por Katherinne Elgueta Mora (Nutricionista clínica, magíster INTA U. de Chile)
+
+KEM Mom: Nutrición para preconcepción, embarazo y lactancia sin mitos
+Guía gratuita: Suplementos en los primeros 1.000 días
+
+Visítanos en: https://kemnutritionacademy.com/`;
 
     if (navigator.share) {
       navigator.share({
@@ -141,7 +150,7 @@ export default function Footer({ setCurrentPage, onScrollToTeacher }: FooterProp
                   id="footer-shortcut-mom"
                 >
                   <Heart className="w-3.5 h-3.5 text-naranja fill-naranja/10" />
-                  Kem Mom (Para gestantes y familias)
+                  KEM Mom (para gestantes y familias)
                 </button>
               </li>
               <li>
@@ -151,7 +160,7 @@ export default function Footer({ setCurrentPage, onScrollToTeacher }: FooterProp
                   id="footer-shortcut-pro"
                 >
                   <Sparkles className="w-3.5 h-3.5 text-[#8C6CE6]" />
-                  Kem Pro (Próximamente)
+                  {SHOW_KEM_PRO ? 'KEM Pro (próximamente)' : 'Próximamente'}
                 </button>
               </li>
               <li>
@@ -174,7 +183,7 @@ export default function Footer({ setCurrentPage, onScrollToTeacher }: FooterProp
                   id="footer-shortcut-guia"
                 >
                   <BookOpen className="w-3.5 h-3.5 text-naranja" />
-                  Guía Suplementos 1.000 días (Gratis)
+                  Guía suplementos 1.000 días (gratis)
                 </button>
               </li>
             </ul>
@@ -215,7 +224,7 @@ export default function Footer({ setCurrentPage, onScrollToTeacher }: FooterProp
               <span className="font-semibold text-[#F2994A] block mb-1 uppercase tracking-wider text-[10px]">
                 Aviso importante de responsabilidad médica
               </span>
-              El contenido informativo de Kem Mom y Kem Pro (videos, guías, checklists y recetarios) es informativo y general. No reemplaza la consulta clínica individualizada ni los controles ginecológicos, obstétricos, de matronería o pediátricos. Las indicaciones personalizadas se entregan solo en las consultas clínicas individuales con Katherinne Elgueta Mora, nutricionista. Ante cualquier síntoma o urgencia, acude a tu centro de salud.
+              El contenido informativo de {SHOW_KEM_PRO ? 'KEM Mom y KEM Pro' : 'KEM Mom'} (videos, guías, checklists y recetarios) es informativo y general. No reemplaza la consulta clínica individualizada ni los controles ginecológicos, obstétricos, de matronería o pediátricos. Las indicaciones personalizadas se entregan solo en las consultas clínicas individuales con Katherinne Elgueta Mora, nutricionista. Ante cualquier síntoma o urgencia, acude a tu centro de salud.
             </div>
           </div>
         </div>
@@ -224,7 +233,7 @@ export default function Footer({ setCurrentPage, onScrollToTeacher }: FooterProp
         <div className="mt-8 border-t border-stone-800/40 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-stone-500">
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-3 gap-y-1">
             <span>&copy; {new Date().getFullYear()} KEM Nutrition Academy. Todos los derechos reservados.</span>
-            <span aria-hidden="true">·</span>
+            <span aria-hidden="true">|</span>
             <a
               href="#terminos"
               onClick={(e) => {
@@ -236,7 +245,7 @@ export default function Footer({ setCurrentPage, onScrollToTeacher }: FooterProp
             >
               Términos y condiciones
             </a>
-            <span aria-hidden="true">·</span>
+            <span aria-hidden="true">|</span>
             <a
               href="#privacidad"
               onClick={(e) => {
@@ -251,8 +260,8 @@ export default function Footer({ setCurrentPage, onScrollToTeacher }: FooterProp
           </div>
           <div className="flex gap-4">
             <span className="cursor-default">Chile</span>
-            <span>·</span>
-            <span className="cursor-default">Evidencia y Confianza</span>
+            <span aria-hidden="true">|</span>
+            <span className="cursor-default">Evidencia y confianza</span>
           </div>
         </div>
 
